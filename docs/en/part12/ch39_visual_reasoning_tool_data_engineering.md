@@ -1,28 +1,237 @@
-# Chapter 41: MedImage-ToolVQA Medical Image Tool-Use VQA Data Engineering
+# Chapter 39: Visual Reasoning and Tool-Calling Data Engineering
 
 ## Abstract
 
-This chapter uses MedImage-ToolVQA as a focused dataset case for medical image tool-use data engineering. It examines task definition, sample structure, construction workflow, quality control, evaluation protocol, and safety boundaries. The chapter emphasizes how the dataset validates earlier data-engineering principles and clarifies its reproducibility conditions, model-training role, benchmark value, and deployment limits.
-
-The companion implementation repository is **MedImage-ToolVQA-Mindspore**: <https://github.com/blackkiring/MedImage-ToolVQA-Mindspore>. It is the implementation entry point for the MindSpore version of data construction, MindRecord packaging, SFT fine-tuning, inference serving, evaluation, and documentation. The engineering examples below therefore use the MindSpore stack as the default implementation frame.
+This chapter combines multi-chart infographic reasoning and medical image tool-calling into one specialized-dataset chapter. Multi-chart infographic reasoning emphasizes cross-chart evidence aggregation, numerical relations, and multi-step reasoning chains; MedImage-ToolVQA emphasizes ROI, masks, bounding boxes, and tool-call trajectories. Both cases require datasets to record visual evidence, question structure, reasoning processes, and human-review boundaries together.
 
 ## Keywords
 
-MedImage-ToolVQA; specialized dataset; evaluation benchmark; annotation workflow; quality control
+visual reasoning; chart question answering; medical images; tool calling; ROI; multimodal evaluation
 
-Medical image question answering is often treated as a special form of visual question answering (VQA). That classification is reasonable, but it can hide a crucial difference: **seeing** in medical images is not the same as recognizing objects in natural images. In natural images, subjects usually have clear outlines and semantic boundaries. In medical images, slight ground-glass opacity on a chest X-ray, a small low-density lesion in CT, local cell arrangement on pathology slides, or weak-boundary echoes in ultrasound may occupy only a tiny region. Their meaning depends on anatomy, modality, acquisition conditions, and the clinical question.
+## Case A: Multi-Chart Infographics: Cross-Chart Evidence Aggregation and Multi-Step Reasoning
 
-Medical VQA datasets such as VQA-RAD, PathVQA, and SLAKE show that sample design must consider image modality, professional semantics, question source, and human verification (Lau et al. 2018; He et al. 2020; Liu et al. 2021). Data engineering therefore cannot stop at the image-question-answer triple. A medical image agent often works more like this: view the whole image, identify the structure or finding mentioned by the question, decide whether local zoom, segmentation, or boundary refinement is needed, use tool observations to update judgment, and then answer. The final answer is only the endpoint; the evidence path is also training signal.
+### Case A.0: Learning Objectives
 
-MedImage-ToolVQA is a data engineering case built around this idea. It does not simply add more medical knowledge or raise multiple-choice accuracy. It organizes medical image QA as multi-turn supervision for models that can use visual tools. The model learns not only the final option, but also when a tool is needed, which tool to call, how to write tool parameters, how to wait for observations, and how to use the returned image. In other words, it expands medical VQA from answer supervision to behavior supervision, similar in spirit to ReAct and Toolformer (Yao et al. 2023; Schick et al. 2023).
+After studying this case, readers should be able to:
 
-This chapter explains the difference between medical image VQA and ordinary VQA, why tool trajectories are useful supervision, how MedImage-ToolVQA structures samples, how the construction pipeline and tool system work, and how to handle quality control, privacy, compliance, and medical safety boundaries. The chapter discusses data engineering and model-training supervision only. It does not provide clinical diagnostic advice.
+- Distinguish the one-image, one-question paradigm of traditional single-chart VQA from the data-design requirements of real compound infographic reasoning.
+- Explain why compound infographics naturally require cross-chart data aggregation, serial multi-step calculation, and joint visual-context reasoning.
+- Understand the sample organization built from 354 native infographics and 1,917 chained subquestions, including the decision to preserve whole-image multi-subchart layouts.
+- Identify how random combinations of 23 subchart types and 13 question types increase the difficulty of cross-format data reading and multi-step reasoning.
+- Analyze typical model failures such as legend misreading, cross-chart data confusion, and cascading errors from earlier calculations.
 
-![Figure 41-1: Local evidence loop for a medical image agent](../../images/part12/ch41_01_medimage_tool_vqa_evidence_loop_en.svg)
+### Case A.1: Problem Scenario: Limits of Single-Chart VQA
 
-*Figure 41-1: The key is to record where to look again, how to look, and how judgment changes after observation.*
+#### Case A.1.1 Boundary of Traditional Single-Chart VQA
 
-## 41.1 Medical Image VQA vs. Ordinary VQA
+Mainstream chart VQA datasets such as ChartQA, FigureQA, and PlotQA usually follow a one-image, one-question, single-chart paradigm. One sample image contains one independent chart, and all data, legends, labels, and values needed for answering are contained in that single chart. The model mainly needs to locate coordinates, read annotated numbers, and perform a one-step arithmetic or classification operation.
+
+At the task level, single-chart VQA mostly stops at single-step extraction: maximum lookup, category sum, or one ratio calculation. It lacks cross-view data linkage. In standardized lab datasets, chart styles are usually cleaned up: legends are neat, axes are unambiguous, partitions are clear, and there are few surrounding notes. This differs fundamentally from native infographics in the open web and commercial publications.
+
+In real deployments, models trained only on single-chart data become unbalanced. They may read local pixel-level values well but lack cross-region association. Annual-report infographics, public-health visualizations, market-research reports, and industry dashboards rarely use only one chart. Designers split indicators into multiple subcharts, each carrying category statistics, time trends, geographic distribution, risk comparison, or explanatory notes. Final conclusions often require integrating several subcharts, so the single-chart paradigm does not match the scenario.
+
+#### Case A.1.2 Reasoning Characteristics of Compound Infographics
+
+A compound infographic is a nested visual carrier. It is one image file divided into several physical regions. Each region may contain a different chart type, accompanied by global legends, region notes, side text, and warning annotations. Compared with single charts, real compound infographic reasoning has three core requirements.
+
+- **Cross-chart data aggregation.** Different statistical dimensions are split across subcharts. In the shark-attack case, county-level historical attacks, state-level attacks over the last decade, and accidental-death comparisons appear in separate regions. Complex questions require aggregating data from multiple views.
+- **Multi-step serial numerical calculation.** Real questions form chains. First identify a target region, then use that region's state to retrieve another value, then compare against another state. Earlier answers become later inputs.
+- **Visual and contextual reasoning.** Important information often appears in legends, side notes, symbols, footnotes, and natural-language annotations rather than axis values. The model must combine visual symbols and text context.
+
+#### Case A.1.3 Benchmark Gap and Dataset Significance
+
+Public multimodal chart-reasoning benchmarks have a supply gap. Synthetic chart datasets dominate, while native compound infographics from web pages, newspapers, and science publications are rare. Many datasets split compound infographics into independent images to reduce annotation difficulty, but this destroys spatial association and contextual logic.
+
+This dataset keeps the native structure: multiple subcharts on the same canvas, shared legends, interleaved notes, and original layout. It fills a gap in real-world cross-chart reasoning benchmarks. For algorithm research, it pushes VQA models beyond “single-chart reading” toward subchart segmentation, cross-view memory, and multi-step calculation.
+
+### Case A.2: Dataset Overview
+
+The dataset is described from four perspectives: sample size, domain coverage, chart types, and question types.
+
+#### Case A.2.1 Quantitative Scale
+
+- **Image samples:** 354 screened real-world compound infographics. Each image is stored as one complete infographic and is not manually split into separate chart images. Original layout, shared legends, and annotation positions are preserved.
+- **QA samples:** 1,917 logically connected multi-step subquestions. Each infographic contains several dependent subquestions and one additional unanswerable question to test refusal and robustness. On average, each infographic has about 5.41 valid reasoning subquestions plus one unanswerable test question.
+
+#### Case A.2.2 Domain Coverage Across 28 Fields
+
+The dataset samples across 28 vertical fields covering public life, industry, research, entertainment, and economics: animals, business, career & jobs, home & garden, computers & internet, industry, law and legal, lifestyle, education, energy, entertainment, environment, finance & money, food & drink, health & beauty, pregnancy & parenting, marketing, politics and history, people, real estate, shopping, science, social media, sports, technology, transportation, and travel.
+
+Multi-domain design reduces overfitting to a single theme. Chart conventions, legends, and domain abbreviations differ across fields, raising the difficulty of visual-context reasoning.
+
+![Figure 39-1: Domain distribution in the multi-chart infographic reasoning dataset](../../images/part12/ch40_domain_en_new.png)
+
+*Figure 40-1. Distribution of domain coverage in the Multi-Chart Infographic Reasoning Dataset, spanning 28 fine-grained domains.*
+
+#### Case A.2.3 Chart Types and Layout Features
+
+The dataset contains more than 20 common visualization styles, including bar charts, map charts, tabular charts, card charts, donut charts, pie charts, bubble charts, ranking charts, stacked bar charts, line charts, grouped bar charts, pictogram charts, treemaps, ranking card charts, chord diagrams, tree charts, radial charts, radial bar charts, tile charts, gantt charts, scatter plots, 3d bar charts, and timeline charts.
+
+Each infographic uses whatever mixed layout the original creator used, such as “map + tabular + stacked bar + pictogram” or “pie + ranking card + line.” Different chart types store data differently: tables use rows and columns, maps use geographic regions, pictograms use icon counts, and line charts use temporal sequences. The model must adapt reading rules across formats and then aggregate across them.
+
+![Figure 39-2: Chart type distribution](../../images/part12/ch40_chart_en_new.png)
+
+*Figure 40-2. Distribution of sub-chart types in the Multi-Chart Infographic Reasoning Dataset, covering 23 distinct chart categories.*
+
+#### Case A.2.4 Question Types
+
+The subquestions cover 13 reasoning types: value, categorization, sum, average, median, extrema, count, ranking, proportion, trend, difference, anomaly, assuming, visual, condition, calculation, and other.
+
+Questions within one infographic are randomly mixed across types, creating chains such as “maximum lookup + difference calculation + conditional reasoning” or “counting + ratio calculation + visual reasoning.” Extraction questions focus on reading; calculation questions combine multiple values; conditional questions use legends and filters; visual questions use symbols and visual context.
+
+![Figure 39-3: Question type distribution](../../images/part12/ch40_question_en_new.png)
+
+*Figure 40-3. Distribution of sub-question types in the Multi-Chart Infographic Reasoning Dataset, comprising 13 question categories.*
+
+#### Case A.2.5 Standardized Core Tasks
+
+**Cross-chart data aggregation** groups, merges, and summarizes heterogeneous data scattered across subcharts and physical regions. This is the main feature distinguishing the dataset from traditional ChartQA.
+
+**Multi-step serial calculation** arranges subquestions as dependent chains. Earlier answers are inputs to later calculations, so a final answer cannot be solved in one step.
+
+**Visual and contextual reasoning** combines legends, icons, annotations, and natural-language side text. In the shark-attack example, the species in a fatal 2018 Massachusetts attack is identified from symbol and text annotations rather than axis values.
+
+### Case A.3: Sample Structure: Shark-Attack Example
+
+The dataset's shark-attack example illustrates subchart partitioning, question chain, evidence locations, and reasoning path.
+
+#### Case A.3.1 Physical Layers of One Compound Infographic
+
+![Figure 39-4: Shark-attack compound infographic example](../../images/part12/ch40_where_the_most_shark_attacks_occur_in_the_united_states_1.jpg)
+
+*Figure 40-4. Example of a multi-chart infographic sample from the dataset (Shark Attacks).*
+
+The example is one integrated science infographic with several subchart regions:
+
+- **Subchart A: Radial chart.** Historical shark-attack county ranking in the United States. Key value: Volusia, Florida has 343 attacks, the county maximum. It supports Q1.
+- **Subchart B: Map chart.** State-level shark attacks in the last ten years. Key values: Florida 242, Hawaii 71. It supports Q2 and Q3.
+- **Subchart C: Table chart / side annotation.** Fatal shark-attack species in Massachusetts in 2018. Key answer: Presumed Great White. It supports Q4.
+- **Subchart D: Bar chart.** Average annual accidental deaths in the United States. Key values: falling from bed 450, cats none. It supports Q5 and Q6.
+
+#### Case A.3.2 Full Question Chain
+
+| ID | Type | Question | Answer | Evidence Source | Dependency |
+| --- | --- | --- | --- | --- | --- |
+| Q1 | Maximum lookup | Which U.S. county has the highest historical shark-attack count? | Volusia, FL | Subchart A | None |
+| Q2 | Count | What is the total number of shark attacks over the last ten years in the state containing the county from Q1? | 242 | Subchart B | Uses Q1's Florida keyword |
+| Q3 | Difference | How many more shark attacks did Florida have than Hawaii in the last ten years? | 171 | Subchart B: FL=242, HI=71 | Uses Florida value from Q2, then extracts Hawaii |
+| Q4 | Conditional reasoning | What species was involved in the fatal Massachusetts shark attack in 2018? | Presumed Great White | Subchart C / notes | Uses symbols and text context |
+| Q5 | Count | How many people die each year from falling out of bed? | 450 | Subchart D | Switches evidence source |
+| Q6 | Count | How many people die each year from cats? | None | Subchart D | Same local chart |
+
+Q1-Q2-Q3 form a three-step cross-subchart calculation path. Q4 is visual-context reasoning. Q5/Q6 are local extraction from another subchart.
+
+#### Case A.3.3 Evidence Localization and Reasoning Path
+
+#### Case A.3.3.1 Cross-Chart Evidence Localization
+
+Evidence localization uses several rules:
+
+- **Keyword linkage:** Q1 outputs Volusia, Florida; “Florida” becomes a retrieval label for Subchart B.
+- **Region semantic matching:** “fatal,” “2018,” and “Massachusetts” match side timeline annotation rather than numeric charts.
+- **Topic-region matching:** “falling from bed” and “cat deaths” match the accidental-death chart.
+
+#### Case A.3.3.2 Full Chained Reasoning Path
+
+The full path is: Subchart A county maximum -> extract state keyword -> Subchart B ten-year state data -> extract Hawaii value -> difference calculation; side annotation for Q4; Subchart D for Q5/Q6. The model must segment subcharts, retrieve across views, store numbers, perform arithmetic, and interpret legends.
+
+#### Case A.3.4 Purpose of Unanswerable Questions
+
+Each infographic includes one question that cannot be answered from the image. This tests hallucination suppression and refusal robustness. The goal is to prevent models from fabricating unsupported numbers.
+
+### Case A.4: Construction Pipeline
+
+The dataset construction process has four core stages: collecting and filtering real compound infographics, manually partitioning subchart regions, designing layered question chains, and cross-checking answers. No synthetic charts are generated. Large models can help propose questions, but humans verify and revise them.
+
+![Figure 39-5: Multi-chart infographic dataset construction pipeline](../../images/part12/ch40_pipeline_en_new.png)
+
+*Figure 40-5. Overview of the four-stage data construction pipeline for the Multi-Chart Infographic Reasoning Dataset.*
+
+#### Case A.4.1 Collecting and Filtering Real Infographics
+
+Sources include real infographic websites such as Bee Infographic, Best Infographics, Centers for Disease Control and Prevention, Cool Infographics, and other infographic websites.
+
+Filtering rules include: the full image contains at least two different chart types; cross-chart statistical relationships exist; legends, annotations, and category labels are complete; low-quality or cropped images are removed; and samples are balanced across the 28 domains. After filtering, 354 valid images enter annotation.
+
+#### Case A.4.2 Subchart Boundary Identification
+
+Annotators manually mark each subchart's physical boundary, chart type, statistical period, and statistical dimension such as region, time, or category. This step defines data boundaries for later cross-chart questions.
+
+#### Case A.4.3 Multi-Step Question Design
+
+For each infographic, annotators select target question types, use a large model to draft candidate chained questions constrained by those types and by the subchart structure, then manually revise them against the original image, legends, and region data. Invalid or unsupported questions are removed, natural language is refined, and standard answers are recalculated by humans. The final dataset contains 1,917 valid subquestions and one unanswerable question per image.
+
+#### Case A.4.4 Answer Cross-Checking and Standardized Annotation
+
+A two-person cross-check is used. Annotator A designs questions and answers. Annotator B independently reads the image and recalculates answers. Calculation errors and legend misreads are corrected. Answer format is standardized: numerical answers use Arabic numerals, and text answers normalize proper names and abbreviations.
+
+### Case A.5: Evaluation Protocol
+
+Unlike traditional ChartQA, which often uses answer-string accuracy, this dataset needs layered metrics for chained reasoning.
+
+#### Case A.5.1 Independent Single-Step Accuracy
+
+This metric ignores dependencies and checks each subquestion independently. It measures basic reading and calculation ability. Its limitation is that it cannot reveal chain coherence.
+
+#### Case A.5.2 Full-Chain Accuracy
+
+For a dependent question chain, all subquestions must be correct for the chain to count as correct. Any earlier error fails the whole chain. This is the core metric because it measures multi-step reasoning and cross-chart linkage stability. If Q1 identifies the wrong county, Q2 and Q3 fail as a reasoning chain even if their formulas are correct.
+
+#### Case A.5.3 Cross-Chart Evidence Localization Accuracy
+
+This metric checks whether the model locates the correct subchart or legend region for the answer. If the answer should use Subchart A and B but the model retrieves from Subchart C, evidence localization fails. It directly measures cross-chart aggregation.
+
+### Case A.6: Evaluation Difficulty and Failure Modes
+
+#### Case A.6.1 Technical Difficulties
+
+- **Legend ambiguity:** global legends and icons may shift meaning across subcharts.
+- **Cross-subchart filtering:** names and categories appear in different regions, causing mismatch.
+- **Statistical-scope confusion:** historical totals, ten-year counts, and annual averages must not be mixed.
+- **Error propagation:** one wrong early answer invalidates later calculations.
+- **Unanswerable robustness:** large models may fabricate answers when the image lacks evidence.
+
+#### Case A.6.2 Typical Model Failures
+
+- Misreading fatal versus nonfatal attack icons.
+- Confusing subchart partitions, such as using accidental-death data for shark-attack calculations.
+- Mixing historical cumulative counts with last-ten-year counts.
+- Propagating an early wrong maximum into later values.
+- Hallucinating a number for an unanswerable question.
+
+### Case A.7: Current Limits and Future Iteration
+
+The project currently has annotations but no released baseline algorithm or trained benchmark model.
+
+#### Case A.7.1 Current Limits
+
+- **Small sample size:** high-quality native compound infographics are scarce, so 354 source images are not enough for large-scale pretraining.
+- **No baseline algorithm:** there is no public cross-chart reasoning SOTA for direct comparison.
+- **Native imperfections:** some web-native images contain blurry handwriting, inconsistent abbreviations, or other real-source defects.
+
+#### Case A.7.2 Future Directions
+
+- Expand source images and subquestions from authoritative publications across domains.
+- Develop baseline cross-chart multi-step reasoning models.
+- Add higher-order questions such as ratio conversion, nested multi-condition filtering, and unit conversion.
+
+### Case A: Summary
+
+The multi-chart infographic reasoning dataset starts from real compound infographics and breaks away from the single-chart QA paradigm. It reconstructs chart VQA evaluation around cross-chart aggregation, serial calculation, and visual-context reasoning. The structure of 354 multi-subchart images and 1,917 chained subquestions reflects how people actually read compound data visualizations. The shark-attack example shows that real infographic reasoning requires region-specific evidence retrieval, stepwise calculation, and symbol interpretation. Although the dataset currently lacks companion baselines, it fills an important benchmark gap and can support future cross-modal chart reasoning research.
+
+## Case B: MedImage-ToolVQA: Medical Image Local Evidence and Tool-Call Trajectories
+
+### Case B.0: Learning Objectives
+
+After studying this case, readers should be able to:
+
+- Explain how medical image VQA differs from ordinary VQA in evidence scale, professional semantics, safety boundaries, and evaluation objects.
+- Understand why medical image QA should be extended from answer supervision to tool-behavior supervision, and why this matters for auditability and reinforcement-learning interfaces.
+- Describe the sample structure built from BiomedParse region-level information, including original images, ROI, masks, bounding boxes, target descriptions, and tool observations.
+- Distinguish the boundaries of tools such as zoom-in and segmentation, and explain how tool calls, parameters, and observations become multi-turn training trajectories.
+- Assess noise introduced by tool trajectories and design quality-control and human-review rules under medical privacy, compliance, and safety constraints.
+
+### Case B.1: Medical Image VQA vs. Ordinary VQA
 
 Ordinary VQA questions ask things like how many people are in the image, what object is on the table, or what color a car is. These questions may be difficult, but they usually rely on object recognition, spatial relations, and commonsense reasoning. Medical image VQA is different. Key evidence may appear as gray-level change, fuzzy boundary, texture shift, local density difference, or abnormal proportion. The challenge is not only recognizing an object, but judging whether limited local evidence supports an option.
 
@@ -34,7 +243,7 @@ The third difference is **safety boundary**. Ordinary VQA mistakes are usually i
 
 The fourth difference is **evaluation target**. Ordinary VQA often checks only the final answer. Medical tool-use data must also evaluate whether the evidence-gathering process is reasonable. A model may answer correctly while calling a tool on an irrelevant region; or it may choose a good region but select the wrong final option. Data engineering should record these signals separately.
 
-## 41.2 From Answer Supervision to Tool Behavior Supervision
+### Case B.2: From Answer Supervision to Tool Behavior Supervision
 
 Traditional VQA supervision is simple: given image and question, output answer. The reasoning process is hidden inside the model. For medical images, that opacity is risky because we do not know whether the model looked at the relevant region or used local evidence.
 
@@ -44,7 +253,7 @@ This has three benefits. First, it teaches a workflow closer to medical image re
 
 The goal is not to create more complex-looking samples. Each tool action should explain what uncertainty it resolves.
 
-## 41.3 Data Objects and Scale
+### Case B.3: Data Objects and Scale
 
 MedImage-ToolVQA targets medical image multiple-choice QA. Samples are built on region-level information from BiomedParse (Zhao et al. 2025), including original image, target region, mask, bbox, target description, question, candidate options, correct answer, and local observation images returned by tools. The final training data has **24,992 records**.
 
@@ -66,7 +275,7 @@ This is not merely a scale table. It highlights option imbalance, the importance
 
 MedImage-ToolVQA sits between a VQA dataset and an agent trajectory dataset. It still has image, question, and answer, but it also records tool actions and observations.
 
-## 41.4 ROI, Mask, and Bbox as Local Evidence
+### Case B.4: ROI, Mask, and Bbox as Local Evidence
 
 The first step is to make local evidence operational. Natural language can say “a small nodule near the pleura in the right upper lung,” but tools need an interface. ROI, mask, bbox, and target description provide that interface.
 
@@ -78,7 +287,7 @@ ROI also prevents questions from becoming pure text medical QA. “What organ do
 
 At the same time, local evidence can create **localization leakage**. If the question says “the boxed region” or “inside the mask,” the model does not learn active localization. Good questions imply the need for local observation without exposing bbox or mask.
 
-### 41.4.1 Question and Option Design
+#### Case B.4.1 Question and Option Design
 
 A good medical image VQA question should satisfy three conditions: it is tied to a concrete image region, it does not leak annotation position, and its options differ by observable visual evidence.
 
@@ -86,7 +295,7 @@ The question should not be general medical knowledge or a broad modality/organ l
 
 Medical questions should also avoid asking for clinical treatment or diagnosis. Multiple-choice answers can select the option that best matches image appearance, but explanations should not expand into patient advice.
 
-### 41.4.2 Observation Image Lifecycle
+#### Case B.4.2 Observation Image Lifecycle
 
 Observation images are not ordinary illustrations. They are derived from the original image and returned to the model as new inputs.
 
@@ -97,11 +306,11 @@ Observation images are not ordinary illustrations. They are derived from the ori
 
 Observation images are both training inputs and audit objects. Without maintaining this relationship, multi-image trajectories become “one original image plus some extra pictures” rather than evidence paths.
 
-## 41.5 Conceptual Construction Flow
+### Case B.5: Conceptual Construction Flow
 
 MedImage-ToolVQA construction has six stages: region sample organization, question generation, quality verification, tool observation generation, trajectory synthesis, and training packaging. The following example rewrites the former pseudocode as MindSpore-oriented implementation entries. It uses MindRecord for durable sample storage, `mindspore.dataset` for training input, and `vllm-mindspore` for LLM serving during question and trajectory generation. The official `vllm-mindspore` codebase is hosted on AtomGit at <https://atomgit.com/mindspore/vllm-mindspore>. The example leaves project-specific de-identification rules and error handling to the repository implementation, but keeps the data contracts and quality gates explicit.
 
-### 41.5.1 Region Merging: Write Evidence into MindRecord
+#### Case B.5.1 Region Merging: Write Evidence into MindRecord
 
 `merge` converts region evidence from different parsing tools or intermediate results into a MindSpore-readable data asset. The example keeps only the core contract: deduplicate by `image_id` and `region_id`, preserve bbox, mask, target description, and source fields, and write the result into MindRecord.
 
@@ -123,7 +332,7 @@ writer.write_raw_data(deduplicate_regions(raw_regions, keys=["image_id", "region
 writer.commit()
 ```
 
-### 41.5.2 LLM Serving: Use vllm-mindspore
+#### Case B.5.2 LLM Serving: Use vllm-mindspore
 
 `make_vqa` and `makereasoning` call a locally deployed LLM. In the MindSpore stack, `vllm-mindspore` can expose an OpenAI-compatible service. Its official codebase is hosted on AtomGit at <https://atomgit.com/mindspore/vllm-mindspore>.
 
@@ -139,7 +348,7 @@ from openai import OpenAI
 client = OpenAI(base_url="http://127.0.0.1:8000/v1", api_key="EMPTY")
 ```
 
-### 41.5.3 Question Generation: Read Region Evidence from MindDataset
+#### Case B.5.3 Question Generation: Read Region Evidence from MindDataset
 
 `make_vqa` reads region evidence from `MindDataset` and generates the question, candidate options, and reference answer. The prompt hides bbox, mask paths, and region IDs to avoid leaking annotation mechanics into the question.
 
@@ -158,7 +367,7 @@ for row in dataset.create_dict_iterator(output_numpy=True):
     write_jsonl("vqa_candidates.jsonl", parse_vqa(reply.choices[0].message.content, row))
 ```
 
-### 41.5.4 Quality Verification: Produce Gate Results
+#### Case B.5.4 Quality Verification: Produce Gate Results
 
 `verify` does not rewrite the answer directly. It attaches quality-gate results to each sample. Only samples with complete fields, clear image dependency, region consistency, and valid tool JSON move into trajectory synthesis.
 
@@ -174,7 +383,7 @@ sample["review_status"] = "pass" if all(gates.values()) else "revise"
 sample["quality_gates"] = gates
 ```
 
-### 41.5.5 Trajectory Synthesis: Return Tool Observations to Dialogue
+#### Case B.5.5 Trajectory Synthesis: Return Tool Observations to Dialogue
 
 `makereasoning` is not about generating longer explanations. Its core task is to place tool calls and returned observation images into the next dialogue turn. If local evidence is unnecessary, the sample keeps a direct visual reasoning path.
 
@@ -190,7 +399,7 @@ reply = client.chat.completions.create(
 sample["trajectory"] = build_tool_trajectory(sample, observation, reply)
 ```
 
-### 41.5.6 SFT Packaging: Store Training Records in MindRecord
+#### Case B.5.6 SFT Packaging: Store Training Records in MindRecord
 
 `make_sft` writes multi-turn messages, image references, answers, and quality labels into a training MindRecord. The SFT side then loads it through `mindspore.dataset.MindDataset` and batches it for fine-tuning.
 
@@ -210,7 +419,7 @@ writer.commit()
 train_ds = ds.MindDataset("tool_sft.mindrecord").shuffle(4096).batch(8)
 ```
 
-![Figure 41-2: MedImage-ToolVQA conceptual construction flow](../../images/part12/ch41_02_medimage_tool_vqa_pipeline_en.svg)
+![Figure 39-6: MedImage-ToolVQA conceptual construction flow](../../images/part12/ch41_02_medimage_tool_vqa_pipeline_en.svg)
 
 Key principles:
 
@@ -222,7 +431,7 @@ Key principles:
 
 Evidence must not be lost: source image, region, observation generation, and answer verification all need to remain traceable.
 
-## 41.6 Three Tools and Their Boundaries
+### Case B.6: Three Tools and Their Boundaries
 
 MedImage-ToolVQA uses three visual tools: `Zoom-in`, `BiomedParse`, and `SAM2`.
 
@@ -234,11 +443,11 @@ MedImage-ToolVQA uses three visual tools: `Zoom-in`, `BiomedParse`, and `SAM2`.
 
 `Zoom-in` crops; it is not a diagnostic tool. `BiomedParse` performs semantic medical image segmentation; it does not produce pathological conclusions. `SAM2` is a general segmentation tool and does not understand clinical context (Kirillov et al. 2023; Ravi et al. 2024; Ma et al. 2024). Data and prompts should keep these boundaries clear so the model learns evidence acquisition rather than professional judgment replacement.
 
-## 41.7 Organizing Tool Trajectories as Multi-Turn Samples
+### Case B.7: Organizing Tool Trajectories as Multi-Turn Samples
 
 The core of a tool trajectory is multi-turn structure: action, observation, continued judgment.
 
-![Figure 41-3: Multi-turn structure of tool-call trajectories](../../images/part12/ch41_03_tool_trajectory_structure_en.svg)
+![Figure 39-7: Multi-turn structure of tool-call trajectories](../../images/part12/ch41_03_tool_trajectory_structure_en.svg)
 
 A simplified trajectory has four steps. The user provides the original image, question, and options. The assistant decides local evidence is needed and outputs a structured tool call. The environment returns a new observation image. The assistant uses both original and observation images to answer.
 
@@ -273,7 +482,7 @@ to be only artifact.
 
 Tool arguments must be structured. Tool returns must become new multimodal input, not a text note saying “already zoomed.” The final answer should consume the observation. The trajectory should avoid diagnostic claims and stay within the option-comparison task.
 
-### 41.7.1 Three-Layer Reading of a Sample
+#### Case B.7.1 Three-Layer Reading of a Sample
 
 Each record can be read at three layers:
 
@@ -283,13 +492,13 @@ Each record can be read at three layers:
 
 All three layers must work. If the question is good but evidence is missing, it is ordinary VQA. If evidence exists but behavior ignores the observation, it is VQA with extra annotations. If behavior is complete but the question is text-answerable, the tool call becomes formal decoration.
 
-### 41.7.2 Difference from Ordinary Chain-of-Thought
+#### Case B.7.2 Difference from Ordinary Chain-of-Thought
 
 Tool trajectories are sometimes confused with chain-of-thought data. Both include intermediate process, but the training meaning differs. Ordinary CoT unfolds in text. Tool trajectories include external actions and environment feedback: the model calls a tool, receives a new observation, then continues. It does not merely “think in more detail”; it sees something new.
 
 This matters in medical images. A model can write “I need to inspect the local region” without obtaining a local image. A tool trajectory requires the model to actually call zoom or segmentation and use the returned image.
 
-## 41.8 SFT Data and RL Data
+### Case B.8: SFT Data and RL Data
 
 Tool trajectories can support both SFT and RL. SFT is behavior demonstration: format, order, and basic strategy. RL is policy optimization under reward feedback.
 
@@ -297,7 +506,7 @@ In SFT, clarity and stability matter most. The model must learn that `<tool_call
 
 Medical image SFT records should also keep an imaging-task schema. Here “diagnosis” means structuring the training task, candidate labels, evidence region, and safety boundary; it does not ask the model to provide clinical conclusions.
 
-![Figure 41-5: Real image and bbox evidence in the SFT schema](../../images/part12/ch41_05_sft_schema_real_bbox_example_en.svg)
+![Figure 39-8: Real image and bbox evidence in the SFT schema](../../images/part12/ch41_05_sft_schema_real_bbox_example_en.svg)
 
 *Figure 41-5: Bbox is a structured field and should be recoverable as reviewable visual evidence.*
 
@@ -397,7 +606,7 @@ This schema helps quality control distinguish medical-label errors, evidence-reg
 
 In RL, the environment can validate tool name, argument schema, bbox bounds, and image index. Final answers can receive rule rewards. More advanced rewards can include tool necessity, overuse, and observation use. SFT teaches legal actions; RL optimizes when to act.
 
-## 41.9 Common Failure Modes
+### Case B.9: Common Failure Modes
 
 | Failure Mode | Symptom | Risk | Governance Method |
 | --- | --- | --- | --- |
@@ -410,11 +619,11 @@ In RL, the environment can validate tool name, argument schema, bbox bounds, and
 
 Tool-use data quality is not determined by answer correctness alone. A sample should pass checks for visual evidence need, tool validity, and observation consumption.
 
-## 41.10 Quality Control and Human Review
+### Case B.10: Quality Control and Human Review
 
 Quality control should be layered across question generation, region validation, observation generation, trajectory synthesis, and training packaging.
 
-![Figure 41-4: Quality-control and human-review gates](../../images/part12/ch41_04_quality_review_gate_en.svg)
+![Figure 39-9: Quality-control and human-review gates](../../images/part12/ch41_04_quality_review_gate_en.svg)
 
 The first layer is **structure validation**: prompt, options, answer, image references, region fields, and tool parameters must be complete and parseable. Tool names must come from a whitelist; bbox coordinates must be in bounds.
 
@@ -428,7 +637,7 @@ The fifth layer is **human review**. High-risk or low-confidence samples enter a
 
 Review results should not be only pass/fail. Better categories are `passed`, `revise`, `downgrade`, and `discard`, with reasons written back into version records.
 
-### 41.10.1 Evaluation Protocol
+#### Case B.10.1 Evaluation Protocol
 
 Accuracy is only the first layer. A complete evaluation should cover:
 
@@ -441,7 +650,7 @@ Aggregate accuracy can be misleading because option distribution is imbalanced. 
 
 The evaluation principle is: answer correctness is only the first layer; reasonable behavior is the full target.
 
-### 41.10.2 Data Cards and Version Notes
+#### Case B.10.2 Data Cards and Version Notes
 
 Medical image tool-use data contains images, region evidence, tool trajectories, answers, and safety boundaries, so it needs a data card and version notes (Gebru et al. 2021).
 
@@ -449,7 +658,7 @@ A data card should describe task definition, data composition, construction flow
 
 Version notes should record changes in sample membership, annotations, tool schema, bbox conventions, observation generation, trajectory templates, and reward fields. For example, changing crop padding changes local observation content; renaming a tool argument changes action format; filtering text-answerable samples changes difficulty. Without version notes, training differences are hard to attribute.
 
-## 41.11 Medical Privacy and Compliance Boundaries
+### Case B.11: Medical Privacy and Compliance Boundaries
 
 Medical images involve personal privacy and sensitive health information. Even when images do not show names, metadata, image corner labels, exam IDs, timestamps, institution names, and report snippets may reveal identity. Before training or publication, data should be de-identified by removing direct identifiers, embedded image text, sensitive paths or filenames, and by recording source and authorization.
 
@@ -459,7 +668,7 @@ Use boundaries must be explicit. MedImage-ToolVQA is for research, training, and
 
 Tool boundaries also matter. `Zoom-in` crops images; `BiomedParse` and `SAM2` segment or localize. They should not be presented as disease-diagnosis tools. Language in training data should describe acquiring local visual evidence, observing boundaries, and comparing options, not confirming diagnoses.
 
-## 41.12 Relation to Multimodal Agent Data Engineering
+### Case B.12: Relation to Multimodal Agent Data Engineering
 
 MedImage-ToolVQA is not only a medical case. It provides a general pattern: when a model needs tools to obtain new evidence, training data should record the **action-observation-update** loop. The same idea applies to multimodal RAG, document understanding, table QA, chart reasoning, and robotic perception.
 
@@ -473,17 +682,17 @@ The basic principles are:
 - evaluate behavior, not only final answers
 - add safety boundaries and human review in high-risk domains
 
-### 41.12.1 Migrating the Pattern
+#### Case B.12.1 Migrating the Pattern
 
 The same structure can be migrated to document QA with page-region zoom, chart QA with subchart localization, remote sensing with region retrieval, or industrial inspection with defect zoom. What changes is the evidence object and tool boundary. Medical data uses ROI, mask, and bbox; document data may use page regions, table cells, and OCR coordinates; chart data may use axes, legends, and curve segments.
 
 The core remains stable: define evidence objects, define tool actions, and write returned observations into multi-turn samples.
 
-### 41.12.2 Connection with Other Chapters
+#### Case B.12.2 Connection with Other Chapters
 
 This chapter connects Part 3's multimodal cleaning and grounding, Part 6's Tool-Use and Agent data, Part 10's discussion of data engineering agents, Part 11's privacy and compliance boundary, and Part 13/14's training recipes and project practice. Its real topic is not only medical images, but how data engineering should record evidence, action, feedback, and risk when models actively gather visual evidence.
 
-## 41.13 Summary
+### Case B: Summary
 
 MedImage-ToolVQA extends medical image VQA from single-step answer supervision to multi-turn supervision containing local visual evidence and tool-use behavior. It organizes ROI, mask, bbox, target description, tool observations, and multiple-choice answers into one evidence chain, so models learn not only what to answer, but how to obtain and use visual evidence.
 
@@ -491,13 +700,29 @@ The advantage is stronger interpretability and auditability: tool parameters, ob
 
 ## Chapter Summary
 
-This chapter reviewed MedImage-ToolVQA as a specialized dataset case in large-model data engineering. Its main contribution is to place concepts, data objects, quality signals, and engineering deliverables into one narrative, so readers can distinguish which process signals need explicit recording and which outputs require sampling, evaluation, or audit.
+This chapter placed multi-chart infographic reasoning and medical-image tool calling in the same line of visual reasoning data engineering. Multi-chart infographic tasks emphasize cross-chart evidence aggregation, multi-step calculation, and question-structure control. Medical-image tool-calling tasks emphasize local evidence, tool behavior, derived observations, and audit boundaries in high-risk settings. Both cases show that the key to a visual reasoning dataset is not merely having images, questions, and answers, but organizing evidence sources, reasoning steps, tool actions, and quality controls explicitly.
 
-The method should be applied with attention to data source, business goal, model capability, cost budget, and compliance requirements. For scenarios involving sensitive information, cross-system calls, automated decisions, or public release, human review, version freezing, permission control, and exception rollback should remain part of the workflow rather than optional additions.
-
-Within the structure of this book, this chapter sits at the specialized-dataset validation layer. It connects earlier concepts to later open-model data recipes and project case studies. Readers can use its framework together with figures, references, and appendix checklists to turn the method into a reproducible, inspectable, and deliverable engineering process.
+The main method in this chapter is to decompose visual reasoning tasks into annotatable, trainable, and evaluable data interfaces. Chart-based scenarios require controlled question types, evidence chains, and calculation paths; medical scenarios require controlled regions of interest, tool parameters, observation results, and compliance review. Such structured design helps models move from passive recognition toward active evidence gathering, and it provides reusable engineering templates for VLM instruction data, agent data, and multimodal reinforcement-learning data.
 
 ## References
+
+Masry, A., Long, D. X., Tan, J. Q., Joty, S., & Hoque, E. (2022). ChartQA: A Benchmark for Question Answering about Charts with Visual and Logical Reasoning. ACL 2022.
+
+Methani, N., Ganguly, P., Khapra, M. M., & Kumar, P. (2020). PlotQA: Reasoning over Scientific Plots. WACV 2020.
+
+Kahou, S. E., Michalski, V., Atkinson, A., Kádár, Á., Trischler, A., & Bengio, Y. (2017). FigureQA: An Annotated Figure Dataset for Visual Reasoning. arXiv:1710.07300.
+
+Kafle, K., Price, B., Cohen, S., & Kanan, C. (2018). DVQA: Understanding Data Visualizations via Question Answering. CVPR 2018.
+
+Mathew, M., Karatzas, D., & Jawahar, C. V. (2021). DocVQA: A Dataset for VQA on Document Images. WACV 2021.
+
+Masry, A., Islam, M. S., Ahmed, M., Bajaj, A., Kabir, F., Kartha, A., ... & Joty, S. (2025, July). Chartqapro: A more diverse and challenging benchmark for chart question answering. In Findings of the Association for Computational Linguistics: ACL 2025 (pp. 19123-19151).
+
+Xie, T., Lin, M., Liu, M., Ye, Y., Chen, C., & Liu, S. (2026). Infochartqa: A benchmark for multimodal question answering on infographic charts. Advances in Neural Information Processing Systems, 38.
+
+Foroutan, N., Romanou, A., Ansaripour, M., Eisenschlos, J. M., Aberer, K., & Lebret, R. (2025, July). Wikimixqa: a multimodal benchmark for question answering over tables and charts. In Findings of the Association for Computational Linguistics: ACL 2025 (pp. 24941-24958).
+
+Zhu, Z., Jia, M., Zhang, Z., Li, L., & Jiang, M. (2025, April). MultiChartQA: Benchmarking vision-language models on multi-chart problems. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers) (pp. 11341-11359).
 
 Antol, S., Agrawal, A., Lu, J., Mitchell, M., Batra, D., Zitnick, C. L., & Parikh, D. (2015). VQA: Visual Question Answering. Proceedings of the IEEE International Conference on Computer Vision, 2425-2433. https://doi.org/10.1109/ICCV.2015.279
 

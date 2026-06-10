@@ -1,4 +1,4 @@
-# Chapter 44: FineWeb Pre-training Corpus Data Engineering
+# Chapter 41: FineWeb Pre-training Corpus Data Engineering
 
 ## Abstract
 
@@ -10,7 +10,7 @@ The central thread of this chapter is the "refining process" of Web pre-training
 
 FineWeb; Common Crawl; DataTrove; WARC; Trafilatura; FastText; MinHash; quality filtering; pre-training corpus; data ablation
 
-## 44.0 Learning Objectives
+## 41.0 Learning Objectives
 
 After completing this chapter, readers should be able to:
 
@@ -29,11 +29,11 @@ First, the model does not improve stably on several commonsense tasks as trainin
 
 These three problems show that Common Crawl is a Web snapshot, not a training set. The real data-engineering task is not to "download more Web pages," but to transform each Web sample into a traceable, filterable, deduplicable, evaluable, and removable training record. FineWeb is a public case study built around exactly this problem.
 
-## 44.1 Common Crawl Is a Web Snapshot, Not a Training Corpus
+## 41.1 Common Crawl Is a Web Snapshot, Not a Training Corpus
 
 Common Crawl WARC files preserve the original responses captured during Web crawling, including HTML, request metadata, and page structure. WET files are Common Crawl's extracted text version. For pre-training data engineering, WET is attractive: it avoids HTML parsing cost and has a size closer to the text needed for model training. However, FineWeb's experiments found that directly using WET leaves too much boilerplate, menu text, and page noise, so FineWeb re-extracts main text from WARC.
 
-### 44.1.1 Processing Layers from Web Snapshot to Training Text
+### 41.1.1 Processing Layers from Web Snapshot to Training Text
 
 At least five transformation layers separate Web snapshots from training text.
 
@@ -49,7 +49,7 @@ The fifth layer is deduplication and privacy processing. FineWeb performs MinHas
 
 Together, these steps are not merely a collection of cleaning scripts, but a set of pre-training data contracts. Each step should have inputs, outputs, failure records, and reviewable parameters.
 
-### 44.1.2 Filtering Strength Determines the Training Signal
+### 41.1.2 Filtering Strength Determines the Training Signal
 
 Web-corpus cleaning most easily produces two opposite errors.
 
@@ -63,7 +63,7 @@ $$
 
 Here, $F$ denotes the filtering strategy, $D_F$ is the filtered dataset, $S_{eval}$ is the model score under a fixed evaluation protocol, $R_{risk}$ is privacy, copyright, toxicity, and contamination risk, $T_F$ is the retained token count, and $T_{target}$ is the lower token bound required by the training budget. This is not an original formula from the FineWeb paper; it is an engineering abstraction of the FineWeb experimental logic: when selecting filters, one cannot look only at whether samples appear "clean"; one must also evaluate whether the model improves under a fixed training budget and whether risk decreases.
 
-## 44.2 FineWeb Data Definition and Public Form
+## 41.2 FineWeb Data Definition and Public Form
 
 FineWeb is publicly available as a full dataset, configurations split by Common Crawl dump, and smaller sample versions. The official dataset card states that users can load the full dataset or specify a particular crawl/dump; dump names follow the `CC-MAIN-(year)-(week number)` format. Sample versions include random subsets of approximately 350B, 100B, and 10B GPT-2 tokens, enabling researchers to reproduce experiments or debug processing code at lower cost.
 
@@ -79,7 +79,7 @@ FineWeb is publicly available as a full dataset, configurations split by Common 
 
 Sources: Hugging Face FineWeb dataset card download configurations, sample-version descriptions, and dump naming convention; initial scale reported by the FineWeb paper.
 
-### 44.2.1 Task Definition
+### 41.2.1 Task Definition
 
 FineWeb's task is not to annotate supervised-learning labels, but to build a pre-training token stream for autoregressive language models. Given a collection of Common Crawl Web snapshots $C=\{c_i\}$, the goal is to learn a data-processing function:
 
@@ -107,7 +107,7 @@ The second concerns deduplication granularity. Global deduplication appears more
 
 The third concerns filter validation. FineWeb does not choose filters solely from manual rules. Instead, it trains multiple data-ablation models and compares scores on fixed evaluation sets. Filter thresholds, C4-rule choices, and custom heuristics are determined through training validation.
 
-## 44.3 Key Fields in FineWeb Document Records
+## 41.3 Key Fields in FineWeb Document Records
 
 The official FineWeb dataset card states that samples include `language`, `language_score`, and `token_count` annotations, derived respectively from the language filter and GPT-2 tokenizer statistics. When reproducing a FineWeb-like pipeline inside an enterprise, processing status, provenance, deduplication, and risk fields should also be retained. Otherwise, when training results become abnormal, it is impossible to determine whether the issue came from extraction, filtering, deduplication, or sampling.
 
@@ -125,7 +125,7 @@ The official FineWeb dataset card states that samples include `language`, `langu
 
 Fields such as `gopher_flags`, `c4_flags`, and `fineweb_flags` are field groups added by the author to explain the engineering structure; they do not imply that the official FineWeb dataset card publishes each of these columns. The official annotations explicitly published by FineWeb include `language`, `language_score`, and `token_count`.
 
-### 44.3.1 A Sample Cannot Store Only `text`
+### 41.3.1 A Sample Cannot Store Only `text`
 
 The following is an abstract FineWeb-like document record. It is not an original FineWeb sample; it is an engineering example organized from the FineWeb dataset card and the DataTrove pipeline.
 
@@ -162,7 +162,7 @@ The following is an abstract FineWeb-like document record. It is not an original
 
 This example illustrates the basic idea of a FineWeb-like corpus: `text` is the training entry point, but by itself it cannot explain sample quality. What supports review is the combination of provenance, language score, filtering status, deduplication scope, and privacy-processing records.
 
-### 44.3.2 Relationship Between Schema and Training Evaluation
+### 41.3.2 Relationship Between Schema and Training Evaluation
 
 FineWeb does not evaluate individual samples directly; it evaluates data versions generated by processing strategies. Let a processing version $v$ correspond to dataset $D_v$, which is used to train model $M_v$. If the evaluation suite is $B=\{b_1,\ldots,b_k\}$ and each task score is $s(M_v,b_i)$, an aggregate score can be defined as:
 
@@ -178,11 +178,11 @@ $$
 
 Without this manifest, even if the evaluation script is reproduced, one cannot reproduce "which exact data version was trained."
 
-## 44.4 FineWeb's Code-based Processing Flow
+## 41.4 FineWeb's Code-based Processing Flow
 
 One important feature of FineWeb is that its processing pipeline has a public script. `examples/fineweb.py` in the DataTrove repository states that it is used to process and create the FineWeb dataset. The script has two major parts: first, it performs the main processing for each dump; then it applies MinHash deduplication and PII formatting to the processed output.
 
-### 44.4.1 Main Processing Pipeline
+### 41.4.1 Main Processing Pipeline
 
 The main processing pipeline can be abstracted in the following order. Class names come from the DataTrove FineWeb example script; explanations are organized by this chapter.
 
@@ -220,7 +220,7 @@ pipeline = [
 
 This is conceptual pseudocode used to explain the module order in the FineWeb example script. Real parameters, log directories, S3 paths, task counts, and Slurm resource configurations should follow the DataTrove repository script.
 
-### 44.4.2 Deduplication and Privacy-processing Pipeline
+### 41.4.2 Deduplication and Privacy-processing Pipeline
 
 FineWeb uses MinHash for approximate deduplication. The goal of MinHash is to estimate the Jaccard similarity between two documents. If documents $A$ and $B$ are represented as sets of 5-grams, their similarity is:
 
@@ -241,9 +241,9 @@ flowchart TD
   G --> H["deduped_output<br>Pre-release data shards"]
 ```
 
-*Figure 44-1 FineWeb MinHash deduplication and PII-processing flow. Source: original illustration based on Hugging Face DataTrove `examples/fineweb.py` and the FineWeb dataset card.*
+*Figure 41-1 FineWeb MinHash deduplication and PII-processing flow. Source: original illustration based on Hugging Face DataTrove `examples/fineweb.py` and the FineWeb dataset card.*
 
-### 44.4.3 FineWeb's Per-crawl Deduplication Judgment
+### 41.4.3 FineWeb's Per-crawl Deduplication Judgment
 
 Intuitively, global deduplication seems more thorough: put all 96 crawls together and remove all near-duplicate documents. FineWeb's ablation experiments, however, produce the opposite signal. The paper describes a key phenomenon: when global deduplication is performed from the newest crawls toward older crawls, older crawls are heavily removed; in one older snapshot, the retained 10% of the data is actually worse than the removed 90%, containing more advertisements, keyword lists, and abnormally formatted text. FineWeb ultimately chooses to run MinHash deduplication independently for each crawl.
 
@@ -260,13 +260,13 @@ flowchart LR
   G --> A
 ```
 
-*Figure 44-2 FineWeb data-processing-choice ablation loop. Source: original illustration based on FineWeb paper Section 3.1.*
+*Figure 41-2 FineWeb data-processing-choice ablation loop. Source: original illustration based on FineWeb paper Section 3.1.*
 
-## 44.5 Evaluating FineWeb Data-processing Choices
+## 41.5 Evaluating FineWeb Data-processing Choices
 
 FineWeb's evaluation method differs from a typical dataset introduction. It treats data-processing steps as experimental variables and trains ablation models to compare different data versions. The paper states that ablation models keep model parameters, architecture hyperparameters, training token count, and training steps consistent. To reduce random-sampling effects, each data version is used to train two models with different random subsets and different initialization seeds, and their average scores are compared.
 
-### 44.5.1 Fixed Variables
+### 41.5.1 Fixed Variables
 
 FineWeb's evaluation protocol can be summarized in Table 44-4.
 
@@ -300,7 +300,7 @@ Second, compare existing rules. When studying C4 rules, FineWeb finds that the t
 
 Third, design custom filters. FineWeb collects more than 50 document-level and cross-document statistical indicators, compares distributions between "higher-quality" and "lower-quality" data, chooses thresholds that distinguish the two, and validates them with 28B-token ablation runs. The adopted custom filters focus on three issues: low ratio of lines ending in punctuation, high ratio of repeated-line characters, and abnormal ratio of short lines.
 
-### 44.5.3 Common Failures and Repair Actions
+### 41.5.3 Common Failures and Repair Actions
 
 FineWeb's experience can be converted into an error-attribution table for Web pre-training corpora. This is not an official FineWeb table, but an engineering retrospective organized by this chapter from the FineWeb paper and dataset card.
 
@@ -315,7 +315,7 @@ FineWeb's experience can be converted into an error-attribution table for Web pr
 | Overly strict filters | Token scale drops and long-tail knowledge is removed | A single rule removes too many tokens | Record token-removal rate per filter and decide thresholds through ablation |
 | Residual privacy samples | Emails, public IPs, or other identifiable information enter release data | Missing PII processing or false negatives | Use `PIIFormatter` or similar rules and record replacement strategy and boundaries |
 
-## 44.6 Usage Boundaries of Public Web Corpora
+## 41.6 Usage Boundaries of Public Web Corpora
 
 FineWeb is a strong public case for open Web pre-training corpus engineering, but it should not be understood simply as "all Web text that can be used directly for commercial training." Public datasets, open code, and the ODC-By license reduce the barrier to research reproduction, but they do not automatically remove copyright, privacy, safety, or removal responsibilities in the user's jurisdiction, business scenario, or downstream model release.
 

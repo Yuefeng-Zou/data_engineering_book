@@ -138,12 +138,12 @@ This part focuses on compliance frameworks, privacy protection, federated learni
 This part uses representative specialized datasets to show how data engineering methods are organized around task definitions, schemas, build pipelines, quality control, evaluation protocols, and compliance risks.
 
 - [Part Contents](part12/index.md)
-- [Chapter 38: StructBill-CN Bill Document Understanding Data Engineering](part12/ch38_structbill_cn_dataset.md)
-- [Chapter 39: SparseTable-Bench Table-Structure Robustness Data Engineering](part12/ch39_sparse_table_bench_dataset.md)
-- [Chapter 40: Multi-Chart Infographic Reasoning Data Engineering](part12/ch40_multi_chart_infographic_reasoning_dataset.md)
-- [Chapter 41: MedImage-ToolVQA Medical Image Tool-Use VQA Data Engineering](part12/ch41_medimage_tool_vqa_dataset.md)
-- [Chapter 42: VoiceStyleControl Controllable Voice Interaction Data Engineering](part12/ch42_voice_style_control_dataset.md)
-- [Chapter 43: Latent-Switch-69K Implicit/Explicit Reasoning Data Engineering](part12/ch43_latent_switch_69k.md)
+- [Chapter 38: Visual Document and Structured Table Data Engineering](part12/ch38_visual_document_table_data_engineering.md)
+- [Chapter 39: Visual Reasoning and Tool-Calling Data Engineering](part12/ch39_visual_reasoning_tool_data_engineering.md)
+- [Chapter 40: Interaction Control and Reasoning Trace Data Engineering](part12/ch40_interaction_reasoning_trace_data_engineering.md)
+- [Chapter 41: FineWeb Pre-training Corpus Data Engineering](part12/ch41_fineweb_redpajama_dclm.md)
+- [Chapter 42: Dolma Pre-training Corpus Transparent Ledger](part12/ch42_dolma_olmo_transparent_corpus.md)
+- [Chapter 43: LAION-5B Image-Text Candidate Pool and Filtering Channels](part12/ch43_laion_datacomp_image_text.md)
 
 ## Part 13: Open-Source Large-Model Data Engineering Recipes and Paradigms
 

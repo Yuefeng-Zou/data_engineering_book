@@ -132,26 +132,23 @@
 第十二篇以若干具有代表性的专项数据集为线索，讨论数据工程方法在真实任务中的组织方式。各章围绕任务定义、样本 schema、构建流水线、质量控制、评测协议和合规风险展开，并向后连接项目案例研究与开源模型数据配方。
 
 - [本篇目录](part12/index.md)
-- [第38章：StructBill-CN 票据文档理解数据工程](part12/ch38_structbill_cn_dataset.md)
-- [第39章：SparseTable-Bench 表格结构鲁棒性数据工程](part12/ch39_sparse_table_bench_dataset.md)
-- [第40章：多图表信息图推理数据工程](part12/ch40_multi_chart_infographic_reasoning_dataset.md)
-- [第41章：MedImage-ToolVQA 医学图像工具调用数据工程](part12/ch41_medimage_tool_vqa_dataset.md)
-- [第42章：VoiceStyleControl 可控语音交互数据工程](part12/ch42_voice_style_control_dataset.md)
-- [第43章：Latent-Switch-69K 隐式/显式推理数据工程](part12/ch43_latent_switch_69k.md)
-- [第44章：FineWeb 预训练语料数据工程](part12/ch44_fineweb_redpajama_dclm.md)
-- [第45章：Dolma 预训练语料透明账本](part12/ch45_dolma_olmo_transparent_corpus.md)
-- [第46章：LAION-5B 图文候选池与筛选通道](part12/ch46_laion_datacomp_image_text.md)
+- [第38章：视觉文档与结构化表格数据工程](part12/ch38_visual_document_table_data_engineering.md)
+- [第39章：视觉推理与工具调用数据工程](part12/ch39_visual_reasoning_tool_data_engineering.md)
+- [第40章：交互控制与推理轨迹数据工程](part12/ch40_interaction_reasoning_trace_data_engineering.md)
+- [第41章：FineWeb 预训练语料数据工程](part12/ch41_fineweb_redpajama_dclm.md)
+- [第42章：Dolma 预训练语料透明账本](part12/ch42_dolma_olmo_transparent_corpus.md)
+- [第43章：LAION-5B 图文候选池与筛选通道](part12/ch43_laion_datacomp_image_text.md)
 
 ## 第十三篇：开源大模型数据工程配方与范式
 
 第十三篇聚焦开源大模型的数据配方、训练范式与工程化组织方式，覆盖预训练、后训练、推理强化学习、VLM、T2I/T2V 等关键方向。
 
 - [本篇目录](part13/index.md)
-- [第47章：LLM 预训练数据工程实战：从配方到落地](part13/ch47_pretrain_recipes.md)
-- [第48章：LLM 后训练数据工程实战：SFT 与偏好对齐](part13/ch48_posttrain_recipes.md)
-- [第49章：推理模型与 RL 数据工程：R1 / QwQ 范式](part13/ch49_rl_reasoning_data.md)
-- [第50章：多模态大模型（VLM）数据配方：从预训练到视觉对齐](part13/ch50_vlm_data_recipes.md)
-- [第51章：多模态生成模型数据工程：T2I 与 T2V 数据流水线](part13/ch51_t2i_t2v.md)
+- [第44章：LLM 预训练数据工程实战：从配方到落地](part13/ch44_pretrain_recipes.md)
+- [第45章：LLM 后训练数据工程实战：SFT 与偏好对齐](part13/ch45_posttrain_recipes.md)
+- [第46章：推理模型与 RL 数据工程：R1 / QwQ 范式](part13/ch46_rl_reasoning_data.md)
+- [第47章：多模态大模型（VLM）数据配方：从预训练到视觉对齐](part13/ch47_vlm_data_recipes.md)
+- [第48章：多模态生成模型数据工程：T2I 与 T2V 数据流水线](part13/ch48_t2i_t2v.md)
 
 ## 第十四篇：项目案例研究
 

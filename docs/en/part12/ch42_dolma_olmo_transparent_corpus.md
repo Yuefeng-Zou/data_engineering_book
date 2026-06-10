@@ -1,4 +1,4 @@
-# Chapter 45: Dolma Pre-training Corpus Transparent Ledger
+# Chapter 42: Dolma Pre-training Corpus Transparent Ledger
 
 ## Abstract
 
@@ -10,7 +10,7 @@ Dolma is a three-trillion-token-scale English pre-training corpus released by th
 
 Dolma; transparent pre-training corpus; OLMo; source mix; token accounting; source card; manifest; Dolma Toolkit; ODC-BY; data audit
 
-## 45.0 Learning Objectives
+## 42.0 Learning Objectives
 
 After completing this chapter, readers should be able to:
 
@@ -21,7 +21,7 @@ After completing this chapter, readers should be able to:
 - Understand the evidence chain of transparent corpora through the four Dolma Toolkit actions: tag, dedup, mix, and tokenize.
 - Design source ledgers, removal ledgers, contamination checks, and version-freezing mechanisms for internal enterprise pre-training corpora.
 
-## 45.1 Problem Scenario: Open Weights Still Cannot Explain the Model
+## 42.1 Problem Scenario: Open Weights Still Cannot Explain the Model
 
 Two teams obtain the same 7B open-model weights. The first team wants to continue pre-training the model to improve code and scientific-question-answering capabilities. The second team wants to analyze why the model gives outdated answers on several factual questions. The weights, inference code, and part of the evaluation scripts are downloadable, but they quickly encounter the same problem: no one can answer what data the model actually saw.
 
@@ -29,7 +29,7 @@ The continued-pretraining team needs to know how much code, papers, encyclopedic
 
 Dolma is designed to solve exactly this problem. It turns an English pre-training corpus from an invisible data recipe into a set of downloadable, measurable, processable, removable, and auditable sources. OLMo is not a parallel protagonist in this chapter, but a downstream example of Dolma being consumed by a transparent training chain. It reminds us that open model research should not only open weights; it should open training data, processing tools, and evaluation code as far as possible.
 
-### 45.1.1 Open-model Research Needs Data Evidence
+### 42.1.1 Open-model Research Needs Data Evidence
 
 "Open" has different levels. Releasing only weights allows users to run a model, but does not allow researchers to explain it. Releasing training code allows users to reproduce the training framework, but still does not explain what the model actually saw. Data transparency that supports scientific research must answer at least six classes of questions.
 
@@ -48,7 +48,7 @@ The first is the source ledger, recording where each data type comes from, how l
 
 If these three ledgers are disconnected, transparency degrades into "downloadability." The data can be downloaded, but cannot explain the model; the model can be trained, but cannot be audited; versions can be updated, but cannot be compared.
 
-## 45.2 Dataset Overview: Versions, Scale, and Source Structure
+## 42.2 Dataset Overview: Versions, Scale, and Source Structure
 
 Dolma is not a single static file, but a corpus asset with version evolution. The Hugging Face dataset card lists versions such as `v1`, `v1_5`, `v1_5-sample`, `v1_6`, `v1_6-sample`, and `v1_7`. Among them, `v1_7` is used to train OLMo 7B-v1.7 and introduces new sources, more quality filtering, and fuzzy deduplication.
 
@@ -65,7 +65,7 @@ Dolma is not a single static file, but a corpus asset with version evolution. Th
 
 Source: Versions section of the Hugging Face `allenai/dolma` dataset card.
 
-### 45.2.1 v1.6 Source Structure
+### 42.2.1 v1.6 Source Structure
 
 Dolma covers Web, code, papers, social media, books, and encyclopedic sources. To avoid mixing versions, Table 45-2 uses the coarse-grained statistics from the dataset card's v1.6 summary statistics. The v1.7 sources are more fine-grained, adding Refined Web, StarCoder, arXiv, StackExchange, Flan, OpenWebMath, Algebraic Stack, MegaWika, and other sources. Subsequent writing or experiments should explicitly state which version is used.
 
@@ -92,11 +92,11 @@ Second, different statistical conventions serve different questions. UTF-8 bytes
 
 Third, versions cannot be directly compared without care. v1.6 and v1.7 differ in source decomposition, filtering rules, and sample proportions. If a model is trained with v1.7, one cannot explain its training behavior using only the v1.6 coarse table.
 
-## 45.3 Decomposing a Transparent Chain Through the Source Ledger
+## 42.3 Decomposing a Transparent Chain Through the Source Ledger
 
 This section does not begin from an individual text, but from Dolma's source ledger to decompose the chain of a transparent pre-training corpus. The "sample" here is not an image or a question, but an evidence path from source to document and then to the training manifest.
 
-### 45.3.1 From Source to Document
+### 42.3.1 From Source to Document
 
 Dolma's task is not to annotate supervised labels for each text, but to make records consumed by training reconstructable. Let the source set be $S=\{s_1,\ldots,s_m\}$. Each source is processed by a function $P_s$ into a document set $D_s$:
 
@@ -112,7 +112,7 @@ $$
 
 Dolma's transparency lies in recording $S$, $R_s$, $C_s$, $r_s$, and version information as publicly as possible. Model training is no longer just "used three trillion tokens"; it can be traced to which sources contributed how much, how they were processed, and how they were sampled.
 
-### 45.3.2 Token Accounting Should Track Actual Training Consumption
+### 42.3.2 Token Accounting Should Track Actual Training Consumption
 
 The easiest part of a multi-source corpus to misread is token scale. A source with many raw tokens does not necessarily contribute the same proportion during training; filtering, deduplication, sample proportion, and multiple epochs all change the final seen tokens.
 
@@ -130,7 +130,7 @@ $$
 
 The Dolma v1.7 dataset card lists both source token counts and sample proportions precisely so that users can distinguish "what is in the dataset" from "how much the model actually saw."
 
-### 45.3.3 Three Ways to Read a Document
+### 42.3.3 Three Ways to Read a Document
 
 Transparent corpora do not end with packaging and uploading `text`. At least three layers of records are needed: an individual document record, a source card, and a training-version manifest. The document record supports training and location; the source card explains data origin and processing rules; the training manifest reproduces the data actually consumed by a model run.
 
@@ -177,11 +177,11 @@ The following is an abstract Dolma-like document record showing how a transparen
 
 This record cannot be read at only one layer. In Dolma, the document layer, source layer, and training layer must point back to one another. If a document has a `source` but no source card, it can locate a sample but cannot explain the origin. If a source card has statistics but no training manifest, it can explain what is in the dataset but not what the model actually saw. If a manifest has sampling proportions but no document hash, removal and contamination checks break.
 
-## 45.4 Dolma Toolkit Makes the Evidence Chain Executable
+## 42.4 Dolma Toolkit Makes the Evidence Chain Executable
 
 The Dolma GitHub repository states that Dolma is both a dataset and a toolkit. Dolma Toolkit supports single-machine, cluster, and cloud environments. It includes language detection, toxicity detection, perplexity scoring, and common filtering recipes such as Gopher, C4, and OpenWebText; its deduplication component uses a Rust Bloom filter for acceleration.
 
-### 45.4.1 Four Actions Correspond to Four Kinds of Evidence
+### 42.4.1 Four Actions Correspond to Four Kinds of Evidence
 
 Dolma Toolkit documentation summarizes data organization as four actions: tag, dedup, mix, and tokenize. They are not isolated scripts, but evidence-chain generators: tag records document attributes, dedup records what is retained and removed, mix records sampling proportions, and tokenize records the token convention that enters training.
 
@@ -205,17 +205,17 @@ flowchart LR
   E --> F["Training manifest<br>run-level evidence"]
 ```
 
-*Figure 45-1 Dolma transparent-corpus evidence chain. Source: original illustration based on AllenAI Dolma Toolkit documentation.*
+*Figure 42-1 Dolma transparent-corpus evidence chain. Source: original illustration based on AllenAI Dolma Toolkit documentation.*
 
 The boundary between toolchains and manual audits matters. A toolchain can stably generate statistics, tags, hashes, and manifests, but it cannot replace all audits. License boundaries, PII removal, evaluation contamination, and source representativeness still require human rules, sample review, or dedicated detection tasks.
 
 This is also the difference between a Dolma-like transparent corpus and an ordinary "collection of cleaning scripts." Ordinary scripts only answer "what did I delete"; a transparent toolchain must also answer "why was it deleted, how did the post-deletion distribution change, did training actually benefit, and can it be removed later." If a processing action cannot leave interpretable evidence, it is hard for it to support transparent training.
 
-## 45.5 Evaluation Shifts from Highest Score to Attribution
+## 42.5 Evaluation Shifts from Highest Score to Attribution
 
 The evaluation focus of transparent corpora is not the "highest score," but whether score changes can be explained. Dolma-like source-level corpora let model evaluation move beyond leaderboards and trace training logs back to sources, versions, and sampling proportions.
 
-### 45.5.1 Source Ablation Locates Capability Sources
+### 42.5.1 Source Ablation Locates Capability Sources
 
 To judge whether a source affects model capability, one can run source ablation. Let full training produce model $M_{all}$, and training with source $s$ removed produce model $M_{-s}$. The average difference over task set $B$ is:
 
@@ -235,9 +235,9 @@ flowchart TD
   F --> B
 ```
 
-*Figure 45-2 Dolma source mix and training-diagnosis loop. Source: original illustration based on the Dolma dataset card and OLMo training use.*
+*Figure 42-2 Dolma source mix and training-diagnosis loop. Source: original illustration based on the Dolma dataset card and OLMo training use.*
 
-### 45.5.2 Diagnosis Checklist
+### 42.5.2 Diagnosis Checklist
 
 *Table 45-5 Dolma-like Transparent Corpus Evaluation and Diagnosis Table*
 
@@ -249,7 +249,7 @@ flowchart TD
 | Social-media risk increases | Toxicity tag, PII tag, source card | Risk-tag rate, manual sample review | Tighten filtering or reduce sampling proportion |
 | Versions are incomparable | `dolma_version`, `filter_config`, `dedup_policy` | Manifest diff | Freeze version or rerun controlled experiments |
 
-### 45.5.3 Common Failure Modes
+### 42.5.3 Common Failure Modes
 
 *Table 45-6 Common Failures and Repair Actions for Dolma-like Transparent Corpora*
 
@@ -264,7 +264,7 @@ flowchart TD
 
 These failure modes show that transparent-corpus quality is not only about whether text is clean. A transparent training sample must pass three kinds of checks simultaneously: whether the source is explainable, whether the processing actions are reproducible, and whether training consumption is traceable. Missing any one of these checks can turn data into a corpus that is public but not auditable.
 
-## 45.6 Reuse Boundaries of Transparent Corpora
+## 42.6 Reuse Boundaries of Transparent Corpora
 
 Dolma is suitable for open language-model pre-training research, source-mix experiments, transparent data-governance teaching, training-data audit method validation, and internal enterprise manifest design. It is especially suitable for research questions such as "how does training data affect model capabilities and limitations," because it opens data, dataset cards, and processing tools together.
 
