@@ -1,20 +1,21 @@
 {
-  "generated_at_utc": "2026-06-12T18:12:53.161406+00:00",
+  "generated_at_utc": "2026-06-13T07:22:04.163282+00:00",
   "scope_roots": [
     "docs/zh"
   ],
   "summary": {
     "files": 70,
-    "references": 960,
-    "body_author_year_citations": 1320,
+    "references": 969,
+    "body_author_year_citations": 1332,
     "missing_same_chapter_references": 0,
-    "uncited_references": 217,
+    "uncited_references": 221,
     "duplicate_reference_groups": 0,
     "external_status_counts": {
-      "not-checked": 960
+      "not-checked": 969
     },
     "format_issue_counts": {
-      "missing-doi-arxiv-url": 608
+      "missing-doi-arxiv-url": 612,
+      "title-not-parsed": 13
     }
   },
   "references": [
@@ -6126,23 +6127,6 @@
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
       "line": 403,
       "entry_no": 1,
-      "entry": "Betker J, Goh G, Jing L, Brooks T, Wang J, Li L, Ouyang L, Zhuang J, Lee J, Guo Y, others (2023) Improving Image Generation with Better Captions (DALL·E 3). OpenAI Technical Report.",
-      "first_author": "Betker",
-      "year": "2023",
-      "title": "Improving Image Generation with Better Captions (DALL·E 3)",
-      "doi": "",
-      "arxiv": "",
-      "url": "",
-      "key": "betker:2023",
-      "fingerprint": "improving image generation with better captions dall e 3",
-      "format_issues": [
-        "missing-doi-arxiv-url"
-      ]
-    },
-    {
-      "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 405,
-      "entry_no": 2,
       "entry": "PySceneDetect Contributors (2026) PySceneDetect Documentation. Available at: https://www.scenedetect.com/docs/latest/.",
       "first_author": "PySceneDetect",
       "year": "2026",
@@ -6156,23 +6140,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 407,
-      "entry_no": 3,
-      "entry": "Esser P, Kulal S, Blattmann A, Entezari R, Müller J, Saini H, Levi Y, Lorenz D, Sauer A, Boesel F, others (2024) Scaling Rectified Flow Transformers for High-Resolution Image Synthesis (Stable Diffusion 3). arXiv preprint arXiv:2403.03206.",
-      "first_author": "Esser",
-      "year": "2024",
-      "title": "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis (Stable Diffusion 3)",
-      "doi": "",
-      "arxiv": "2403.03206",
-      "url": "",
-      "key": "esser:2024",
-      "fingerprint": "scaling rectified flow transformers for high resolution image synthesis stable diffusion 3",
-      "format_issues": []
-    },
-    {
-      "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 409,
-      "entry_no": 4,
+      "line": 405,
+      "entry_no": 2,
       "entry": "Gadre S Y, Ilharco G, Fang A, Hayase J, Ilharco G, Marten T, Wortsman M, Goyal S, Guha E, Jain H, others (2023) DataComp: In Search of the Next Generation of Multimodal Datasets. In: Advances in Neural Information Processing Systems 36.",
       "first_author": "Gadre",
       "year": "2023",
@@ -6188,8 +6157,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 411,
-      "entry_no": 5,
+      "line": 407,
+      "entry_no": 3,
       "entry": "Ghosh S, Bhatt U, Bhattacharya R, Parmar P, Patel S, Islam M, Reddy K K, others (2023) GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment. In: Advances in Neural Information Processing Systems 36.",
       "first_author": "Ghosh",
       "year": "2023",
@@ -6205,8 +6174,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 413,
-      "entry_no": 6,
+      "line": 409,
+      "entry_no": 4,
       "entry": "Kirstain Y, Polyak A, Singer U, Matiana S, Penna J, Levy O (2023) Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation (PickScore). In: Advances in Neural Information Processing Systems 36.",
       "first_author": "Kirstain",
       "year": "2023",
@@ -6222,23 +6191,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 415,
-      "entry_no": 7,
-      "entry": "Kong X, Tian Y, Zhang J, Min R, Dai X, Deng X, Chen Q, Liu L, Ni M, others (2024) HunyuanVideo: A Systematic Framework for Large Video Generation Models. arXiv preprint arXiv:2412.03603.",
-      "first_author": "Kong",
-      "year": "2024",
-      "title": "HunyuanVideo: A Systematic Framework for Large Video Generation Models",
-      "doi": "",
-      "arxiv": "2412.03603",
-      "url": "",
-      "key": "kong:2024",
-      "fingerprint": "hunyuanvideo a systematic framework for large video generation models",
-      "format_issues": []
-    },
-    {
-      "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 417,
-      "entry_no": 8,
+      "line": 411,
+      "entry_no": 5,
       "entry": "Open-Sora Team (2024) Open-Sora: Democratizing Efficient Video Production for All. arXiv preprint arXiv:2412.20404.",
       "first_author": "Open-Sora Team",
       "year": "2024",
@@ -6252,8 +6206,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 419,
-      "entry_no": 9,
+      "line": 413,
+      "entry_no": 6,
       "entry": "Schuhmann C, Beaumont R, Vencu R, Gordon C, Wightman R, Cherti M, Coombes T, Katta A, Mullis C, Wortsman M, others (2022) LAION-5B: An Open Large-Scale Dataset for Training Next Generation Image-Text Models. In: Advances in Neural Information Processing Systems 35:25278-25294.",
       "first_author": "Schuhmann",
       "year": "2022",
@@ -6269,23 +6223,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 421,
-      "entry_no": 10,
-      "entry": "Wan Team (2025) Wan: Open and Advanced Large-Scale Video Generative Models. arXiv preprint arXiv:2503.20314.",
-      "first_author": "Wan Team",
-      "year": "2025",
-      "title": "Wan: Open and Advanced Large-Scale Video Generative Models",
-      "doi": "",
-      "arxiv": "2503.20314",
-      "url": "",
-      "key": "wanteam:2025",
-      "fingerprint": "wan open and advanced large scale video generative models",
-      "format_issues": []
-    },
-    {
-      "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 423,
-      "entry_no": 11,
+      "line": 415,
+      "entry_no": 7,
       "entry": "Wang W, Lv Q, Yu W, Hong W, Qi J, Wang Y, Ji J, Yang Z, Zhao L, Song X, others (2023) CogVLM: Visual Expert for Pretrained Language Models. In: Advances in Neural Information Processing Systems 36.",
       "first_author": "Wang",
       "year": "2023",
@@ -6301,8 +6240,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 425,
-      "entry_no": 12,
+      "line": 417,
+      "entry_no": 8,
       "entry": "Wu X, Sun K, Zhu F, Zhao R, Li H (2023) Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis (HPSv2). arXiv preprint arXiv:2306.09341.",
       "first_author": "Wu",
       "year": "2023",
@@ -6313,6 +6252,232 @@
       "key": "wu:2023",
       "fingerprint": "human preference score v2 a solid benchmark for evaluating human preferences of text to image synthesis hpsv2",
       "format_issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 419,
+      "entry_no": 9,
+      "entry": "Betker, J., Goh, G., Jing, L., Brooks, T., Wang, J., Li, L., Ouyang, L., Zhuang, J., Lee, J., Guo, Y., Manassra, W., Dhariwal, P., Chu, C., Jiao, Y., Ramesh, A.: Improving Image Generation with Better Captions. OpenAI technical report (2023).",
+      "first_author": "Betker",
+      "year": "2023",
+      "title": "",
+      "doi": "",
+      "arxiv": "",
+      "url": "",
+      "key": "betker:2023",
+      "fingerprint": "betker j goh g jing l brooks t wang j li l ouyang l zhuang j lee j guo y manassra w dhariwal p chu c jiao y ramesh a improving image generation with better capt",
+      "format_issues": [
+        "title-not-parsed",
+        "missing-doi-arxiv-url"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 421,
+      "entry_no": 10,
+      "entry": "OpenAI: DALL·E 3 System Card. OpenAI system card (2023).",
+      "first_author": "OpenAI",
+      "year": "2023",
+      "title": "",
+      "doi": "",
+      "arxiv": "",
+      "url": "",
+      "key": "openai:2023",
+      "fingerprint": "openai dall e 3 system card openai system card 2023",
+      "format_issues": [
+        "title-not-parsed",
+        "missing-doi-arxiv-url"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 423,
+      "entry_no": 11,
+      "entry": "Esser, P., Kulal, S., Blattmann, A., Entezari, R., Müller, J., Saini, H., Levi, Y., Lorenz, D., Sauer, A., Boesel, F., Podell, D., Dockhorn, T., English, Z., Lacey, K., Goodwin, A., Marek, Y., Rombach, R.: Scaling Rectified Flow Transformers for High-Resolution Image Synthesis. In: Proceedings of the 41st International Conference on Machine Learning, ICML 2024. arXiv:2403.03206 (2024).",
+      "first_author": "Esser",
+      "year": "2024",
+      "title": "",
+      "doi": "",
+      "arxiv": "2403.03206",
+      "url": "",
+      "key": "esser:2024",
+      "fingerprint": "esser p kulal s blattmann a entezari r muller j saini h levi y lorenz d sauer a boesel f podell d dockhorn t english z lacey k goodwin a marek y rombach r scali",
+      "format_issues": [
+        "title-not-parsed"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 425,
+      "entry_no": 12,
+      "entry": "Black Forest Labs: FLUX.1 Kontext [dev] Model Card. Hugging Face model card (2025a).",
+      "first_author": "Black",
+      "year": "2025",
+      "title": "",
+      "doi": "",
+      "arxiv": "",
+      "url": "",
+      "key": "black:2025",
+      "fingerprint": "black forest labs flux 1 kontext dev model card hugging face model card 2025a",
+      "format_issues": [
+        "title-not-parsed",
+        "missing-doi-arxiv-url"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 427,
+      "entry_no": 13,
+      "entry": "Black Forest Labs, Batifol, S., Blattmann, A., Boesel, F., Consul, S., Diagne, C., Dockhorn, T., English, J., English, Z., Esser, P., Kulal, S., Lacey, K., Levi, Y., Li, C., Lorenz, D., Müller, J., Podell, D., Rombach, R., Saini, H., Sauer, A., Smith, L.: FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space. arXiv:2506.15742 (2025b).",
+      "first_author": "Black",
+      "year": "2025",
+      "title": "",
+      "doi": "",
+      "arxiv": "2506.15742",
+      "url": "",
+      "key": "black:2025",
+      "fingerprint": "black forest labs batifol s blattmann a boesel f consul s diagne c dockhorn t english j english z esser p kulal s lacey k levi y li c lorenz d muller j podell d",
+      "format_issues": [
+        "title-not-parsed"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 429,
+      "entry_no": 14,
+      "entry": "Kong, W., Tian, Q., Zhang, Z., Min, R., Dai, Z., Zhou, J., Xiong, J., Li, X., Wu, B., Zhang, J., et al.: HunyuanVideo: A Systematic Framework for Large Video Generative Models. arXiv:2412.03603 (2024).",
+      "first_author": "Kong",
+      "year": "2024",
+      "title": "",
+      "doi": "",
+      "arxiv": "2412.03603",
+      "url": "",
+      "key": "kong:2024",
+      "fingerprint": "kong w tian q zhang z min r dai z zhou j xiong j li x wu b zhang j et al hunyuanvideo a systematic framework for large video generative models 03603 2024",
+      "format_issues": [
+        "title-not-parsed"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 431,
+      "entry_no": 15,
+      "entry": "Wan Team, Wang, A., Ai, B., Wen, B., Mao, C., Xie, C.-W., Chen, D., Yu, F., Zhao, H., Yang, J., et al.: Wan: Open and Advanced Large-Scale Video Generative Models. arXiv:2503.20314 (2025).",
+      "first_author": "Wan Team",
+      "year": "2025",
+      "title": "",
+      "doi": "",
+      "arxiv": "2503.20314",
+      "url": "",
+      "key": "wanteam:2025",
+      "fingerprint": "wan team wang a ai b wen b mao c xie c w chen d yu f zhao h yang j et al wan open and advanced large scale video generative models 20314 2025",
+      "format_issues": [
+        "title-not-parsed"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 433,
+      "entry_no": 16,
+      "entry": "Wan-Video Team: Wan2.2: Wan: Open and Advanced Large-Scale Video Generative Models. GitHub repository and model documentation (2025).",
+      "first_author": "Wan-Video",
+      "year": "2025",
+      "title": "",
+      "doi": "",
+      "arxiv": "",
+      "url": "",
+      "key": "wanvideo:2025",
+      "fingerprint": "wan video team wan2 2 wan open and advanced large scale video generative models github repository and model documentation 2025",
+      "format_issues": [
+        "title-not-parsed",
+        "missing-doi-arxiv-url"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 435,
+      "entry_no": 17,
+      "entry": "Peng, X., Zheng, Z., Shen, C., Young, T., Guo, X., Wang, B., Xu, H., Liu, H., Jiang, M., Li, W., et al.: Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k. arXiv:2503.09642 (2025).",
+      "first_author": "Peng",
+      "year": "2025",
+      "title": "",
+      "doi": "",
+      "arxiv": "2503.09642",
+      "url": "",
+      "key": "peng:2025",
+      "fingerprint": "peng x zheng z shen c young t guo x wang b xu h liu h jiang m li w et al open sora 2 0 training a commercial level video generation model in 200k 09642 2025",
+      "format_issues": [
+        "title-not-parsed"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 437,
+      "entry_no": 18,
+      "entry": "Lin, B., Ge, Y., Cheng, X., Li, Z., Zhu, B., Wang, S., He, X., Ye, Y., Yuan, S., Chen, L., et al.: Open-Sora Plan: Open-Source Large Video Generation Model. arXiv:2412.00131 (2024).",
+      "first_author": "Lin",
+      "year": "2024",
+      "title": "",
+      "doi": "",
+      "arxiv": "2412.00131",
+      "url": "",
+      "key": "lin:2024",
+      "fingerprint": "lin b ge y cheng x li z zhu b wang s he x ye y yuan s chen l et al open sora plan open source large video generation model 00131 2024",
+      "format_issues": [
+        "title-not-parsed"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 439,
+      "entry_no": 19,
+      "entry": "Yang, Z., Teng, J., Zheng, W., Ding, M., Huang, S., Xu, J., Yang, Y., Hong, W., Zhang, X., Feng, G., et al.: CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer. arXiv:2408.06072 (2024).",
+      "first_author": "Yang",
+      "year": "2024",
+      "title": "",
+      "doi": "",
+      "arxiv": "2408.06072",
+      "url": "",
+      "key": "yang:2024",
+      "fingerprint": "yang z teng j zheng w ding m huang s xu j yang y hong w zhang x feng g et al cogvideox text to video diffusion models with an expert transformer 06072 2024",
+      "format_issues": [
+        "title-not-parsed"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 441,
+      "entry_no": 20,
+      "entry": "THUDM: CogVLM2-Caption for CogVideoX Training Data Captioning. CogVideo official tool documentation (2024).",
+      "first_author": "THUDM",
+      "year": "2024",
+      "title": "",
+      "doi": "",
+      "arxiv": "",
+      "url": "",
+      "key": "thudm:2024",
+      "fingerprint": "thudm cogvlm2 caption for cogvideox training data captioning cogvideo official tool documentation 2024",
+      "format_issues": [
+        "title-not-parsed",
+        "missing-doi-arxiv-url"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 443,
+      "entry_no": 21,
+      "entry": "Hong, W., Wang, W., Ding, M., Yu, W., Lv, Q., Wang, Y., Cheng, Y., Huang, S., Ji, J., Xue, Z., et al.: CogVLM2: Visual Language Models for Image and Video Understanding. arXiv:2408.16500 (2024).",
+      "first_author": "Hong",
+      "year": "2024",
+      "title": "",
+      "doi": "",
+      "arxiv": "2408.16500",
+      "url": "",
+      "key": "hong:2024",
+      "fingerprint": "hong w wang w ding m yu w lv q wang y cheng y huang s ji j xue z et al cogvlm2 visual language models for image and video understanding 16500 2024",
+      "format_issues": [
+        "title-not-parsed"
+      ]
     },
     {
       "file": "docs/zh/part14/p01_mini_c4.md",
@@ -9140,7 +9305,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 680,
+      "line": 681,
       "entry_no": 1,
       "entry": "Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., et al. (2020). *Language Models are Few-Shot Learners*. Advances in Neural Information Processing Systems, 33, 1877–1901. arXiv:2005.14165.",
       "first_author": "Brown",
@@ -9155,7 +9320,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 682,
+      "line": 683,
       "entry_no": 2,
       "entry": "Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C. L., Mishkin, P., et al. (2022). *Training Language Models to Follow Instructions with Human Feedback*. Advances in Neural Information Processing Systems, 35, 27730–27744. arXiv:2203.02155.",
       "first_author": "Ouyang",
@@ -9170,7 +9335,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 684,
+      "line": 685,
       "entry_no": 3,
       "entry": "Wei, J., Bosma, M., Zhao, V. Y., Guu, K., Yu, A. W., Lester, B., Du, N., Dai, A. M., & Le, Q. V. (2022). *Finetuned Language Models Are Zero-Shot Learners*. International Conference on Learning Representations. arXiv:2109.01652.",
       "first_author": "Wei",
@@ -9185,7 +9350,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 686,
+      "line": 687,
       "entry_no": 4,
       "entry": "Chung, H. W., Hou, L., Longpre, S., Zoph, B., Tay, Y., Fedus, W., et al. (2024). *Scaling Instruction-Finetuned Language Models*. Journal of Machine Learning Research, 25(70), 1–53. arXiv:2210.11416.",
       "first_author": "Chung",
@@ -9200,7 +9365,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 688,
+      "line": 689,
       "entry_no": 5,
       "entry": "Zhou, C., Liu, P., Xu, P., Iyer, S., Sun, J., Mao, Y., et al. (2023). *LIMA: Less Is More for Alignment*. Advances in Neural Information Processing Systems, 36. arXiv:2305.11206.",
       "first_author": "Zhou",
@@ -9215,7 +9380,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 690,
+      "line": 691,
       "entry_no": 6,
       "entry": "Wang, Y., Kordi, Y., Mishra, S., Liu, A., Smith, N. A., Khashabi, D., & Hajishirzi, H. (2023). *Self-Instruct: Aligning Language Models with Self-Generated Instructions*. Proceedings of ACL 2023, 13484–13508. arXiv:2212.10560.",
       "first_author": "Wang",
@@ -9230,7 +9395,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 692,
+      "line": 693,
       "entry_no": 7,
       "entry": "Wang, Y., Mishra, S., Alipoormolabashi, P., Kordi, Y., Mirzaei, A., Naik, A., et al. (2022). *Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks*. Proceedings of EMNLP 2022, 5085–5109. arXiv:2204.07705.",
       "first_author": "Wang",
@@ -9245,7 +9410,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 694,
+      "line": 695,
       "entry_no": 8,
       "entry": "Christiano, P. F., Leike, J., Brown, T. B., Martic, M., Legg, S., & Amodei, D. (2017). *Deep Reinforcement Learning from Human Preferences*. Advances in Neural Information Processing Systems, 30. arXiv:1706.03741.",
       "first_author": "Christiano",
@@ -9260,7 +9425,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 696,
+      "line": 697,
       "entry_no": 9,
       "entry": "Stiennon, N., Ouyang, L., Wu, J., Ziegler, D., Lowe, R., Voss, C., et al. (2020). *Learning to Summarize from Human Feedback*. Advances in Neural Information Processing Systems, 33, 3008–3021. arXiv:2009.01325.",
       "first_author": "Stiennon",
@@ -9275,7 +9440,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 698,
+      "line": 699,
       "entry_no": 10,
       "entry": "Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning, C. D., & Finn, C. (2023). *Direct Preference Optimization: Your Language Model is Secretly a Reward Model*. Advances in Neural Information Processing Systems, 36. arXiv:2305.18290.",
       "first_author": "Rafailov",
@@ -9290,7 +9455,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 700,
+      "line": 701,
       "entry_no": 11,
       "entry": "Bai, Y., Kadavath, S., Kundu, S., Askell, A., Kernion, J., Jones, A., et al. (2022). *Constitutional AI: Harmlessness from AI Feedback*. arXiv:2212.08073.",
       "first_author": "Bai",
@@ -9305,7 +9470,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 702,
+      "line": 703,
       "entry_no": 12,
       "entry": "Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). *Toolformer: Language Models Can Teach Themselves to Use Tools*. Advances in Neural Information Processing Systems, 36 (NeurIPS 2023 Oral). arXiv:2302.04761.",
       "first_author": "Schick",
@@ -9320,7 +9485,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 704,
+      "line": 705,
       "entry_no": 13,
       "entry": "Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2023). *ReAct: Synergizing Reasoning and Acting in Language Models*. International Conference on Learning Representations. arXiv:2210.03629.",
       "first_author": "Yao",
@@ -9335,7 +9500,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 706,
+      "line": 707,
       "entry_no": 14,
       "entry": "Askell, A., Bai, Y., Chen, A., Drain, D., Ganguli, D., Henighan, T., et al. (2021). A General Language Assistant as a Laboratory for Alignment. arXiv:2112.00861.",
       "first_author": "Askell",
@@ -9350,7 +9515,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 708,
+      "line": 709,
       "entry_no": 15,
       "entry": "OpenAI. (2024). *Introducing Structured Outputs in the API*. OpenAI Blog, August 6, 2024; OpenAI API Documentation: *Structured Model Outputs*. Accessed May 14, 2026.",
       "first_author": "OpenAI",
@@ -9367,7 +9532,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 710,
+      "line": 711,
       "entry_no": 16,
       "entry": "Singhal, K., Azizi, S., Tu, T., Mahdavi, S. S., Wei, J., Chung, H. W., et al. (2023). Large Language Models Encode Clinical Knowledge. Nature.",
       "first_author": "Singhal",
@@ -9384,7 +9549,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 712,
+      "line": 713,
       "entry_no": 17,
       "entry": "Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., & Crawford, K. (2021). *Datasheets for Datasets*. Communications of the ACM, 64(12), 86–92.",
       "first_author": "Gebru",
@@ -9401,7 +9566,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 714,
+      "line": 715,
       "entry_no": 18,
       "entry": "Pushkarna, M., Zaldivar, A., & Kjartansson, O. (2022). *Data Cards: Purposeful and Transparent Dataset Documentation for Responsible AI*. Proceedings of the ACM Conference on Fairness, Accountability, and Transparency, 1776–1826.",
       "first_author": "Pushkarna",
@@ -9418,7 +9583,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 716,
+      "line": 717,
       "entry_no": 19,
       "entry": "Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., et al. (2019). *Model Cards for Model Reporting*. Proceedings of the Conference on Fairness, Accountability, and Transparency, 220–229.",
       "first_author": "Mitchell",
@@ -9435,7 +9600,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 718,
+      "line": 719,
       "entry_no": 20,
       "entry": "Liang, P., Bommasani, R., Lee, T., Tsipras, D., Soylu, D., Yasunaga, M., et al. (2022). *Holistic Evaluation of Language Models*. arXiv:2211.09110.",
       "first_author": "Liang",
@@ -9450,7 +9615,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 720,
+      "line": 721,
       "entry_no": 21,
       "entry": "Ganguli, D., Lovitt, L., Kernion, J., Askell, A., Bai, Y., Kadavath, S., et al. (2022). *Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned*. arXiv:2209.07858.",
       "first_author": "Ganguli",
@@ -9465,7 +9630,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 722,
+      "line": 723,
       "entry_no": 22,
       "entry": "Perez, E., Huang, S., Song, F., Cai, T., Ring, R., Aslanides, J., Glaese, A., McAleese, N., & Irving, G. (2022). *Red Teaming Language Models with Language Models*. Proceedings of EMNLP 2022, 3419–3448. arXiv:2202.03286.",
       "first_author": "Perez",
@@ -9480,7 +9645,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 724,
+      "line": 725,
       "entry_no": 23,
       "entry": "National Institute of Standards and Technology. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1. U.S. Department of Commerce.",
       "first_author": "NIST",
@@ -9497,7 +9662,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 726,
+      "line": 727,
       "entry_no": 24,
       "entry": "Moffatt v. Air Canada. 2024. *Civil Resolution Tribunal of British Columbia*, 2024 BCCRT 149.",
       "first_author": "Moffatt",
@@ -9514,7 +9679,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 728,
+      "line": 729,
       "entry_no": 25,
       "entry": "Lifshitz, L. R., & Hung, R. 2024. BC Tribunal Confirms Companies Remain Liable for Information Provided by AI Chatbot. *ABA Business Law Today*.",
       "first_author": "Lifshitz",
@@ -18725,6 +18890,78 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 100,
+      "author": "Betker",
+      "year": "2023",
+      "text": "Betker et al. 2023",
+      "key": "betker:2023",
+      "context": "| DALL·E 3 (Betker et al. 2023; OpenAI 2023) | T2I | 数据池未完整披露，公开材料强调高质量图文监督 | 安全过滤、个人信息减少、推理侧 prompt 改写 | 使用高度描述性 caption，推理时扩写用户 prompt | 证明高描述性 caption 对 prompt following 极其关键 |"
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 100,
+      "author": "OpenAI",
+      "year": "2023",
+      "text": "OpenAI 2023)",
+      "key": "openai:2023",
+      "context": "| DALL·E 3 (Betker et al. 2023; OpenAI 2023) | T2I | 数据池未完整披露，公开材料强调高质量图文监督 | 安全过滤、个人信息减少、推理侧 prompt 改写 | 使用高度描述性 caption，推理时扩写用户 prompt | 证明高描述性 caption 对 prompt following 极其关键 |"
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 101,
+      "author": "Esser",
+      "year": "2024",
+      "text": "Esser et al. 2024)",
+      "key": "esser:2024",
+      "context": "| Stable Diffusion 3 (Esser et al. 2024) | T2I | 大规模图文数据，来源未逐项展开 | 论文重点在模型训练与 caption 消融，过滤链披露较少 | CogVLM 合成 caption；原始 caption 与合成 caption 混合训练 | 提供了 recaption 提升生成跟随能力的定量证据 |"
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 103,
+      "author": "Kong",
+      "year": "2024",
+      "text": "Kong et al. 2024)",
+      "key": "kong:2024",
+      "context": "| HunyuanVideo (Kong et al. 2024) | T2V + T2I 预训练 | internet-scale 图像与视频数据，论文和 pipeline 披露较细 | 去重、概念重采样、DOVER、清晰度、光流、OCR、水印、logo、border | 结构化 JSON caption，包含短描述、稠密描述、背景、风格、景别、光照、氛围和相机运动 | 公开视频生成数据工程中最适合作为核心拆解案例 |"
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 104,
+      "author": "Wan Team",
+      "year": "2025",
+      "text": "Wan Team 2025",
+      "key": "wanteam:2025",
+      "context": "| Wan2.2 (Wan Team 2025; Wan-Video Team 2025) | T2V / I2V / TI2V | 在 Wan 系列基础上扩充图像和视频数据，公开材料偏方向性描述 | 强调高质量数据、美学数据和电影感标签 | 引入细粒度美学与创作提示体系 | 体现 T2V 数据从通用可用走向电影感和创作可控 |"
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 105,
+      "author": "Peng",
+      "year": "2025",
+      "text": "Peng et al. 2025)",
+      "key": "peng:2025",
+      "context": "| Open-Sora 2.0 (Peng et al. 2025) | T2V / I2V | 大规模视频候选池，项目文档与论文披露较多 | bpp、fps、时长、比例预筛；aesthetic、motion、blur、OCR、jitter 多级过滤 | 低分辨率阶段用 LLaVA-Video，高分辨率阶段用 Qwen 2.5 Max；motion score 进入 caption | 展示了开源 T2V 分层过滤和分阶段 cap..."
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 106,
+      "author": "Lin",
+      "year": "2024",
+      "text": "Lin et al. 2024)",
+      "key": "lin:2024",
+      "context": "| Open-Sora-Plan (Lin et al. 2024) | T2V | Mixkit、Pexels、Pixabay 等 CC0 视频源，复现路径更清楚 | 从低版权风险素材起步，先构建可控小数据池 | ShareGPT4V-Captioner-7B 与 LLaVA-1.6-34B 生成 dense caption | 适合资源有限团队搭建小规模可复现 T2V 数据链 |"
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 107,
+      "author": "Yang",
+      "year": "2024",
+      "text": "Yang et al. 2024",
+      "key": "yang:2024",
+      "context": "| CogVideoX (Yang et al. 2024; THUDM 2024) | T2V / I2V / V2V | 完整训练数据池未完全公开 | 公开更多在组件与工具链层面 | CogVLM2-Caption 用于视频转文本，提供 prompt 改写工具 | caption 组件复用价值高，可接入自建视频流水线 |"
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
       "line": 119,
       "author": "Schuhmann",
       "year": "2022",
@@ -18740,6 +18977,42 @@
       "text": "Gadre et al. 2023)",
       "key": "gadre:2023",
       "context": "DataComp (Gadre et al. 2023) 的意义稍有不同。它把数据设计本身变成评测对象：模型固定，参赛者或研究者改变数据来源和过滤策略，再比较训练出来的 CLIP 效果。这对生成模型同样有启发。大池子本身不等于好数据，真正影响训练效果的是过滤策略、重采样策略和样本权重。"
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 147,
+      "author": "Betker",
+      "year": "2023",
+      "text": "Betker et al. 2023)",
+      "key": "betker:2023",
+      "context": "| DALL·E 3 (Betker et al. 2023) | 专门训练的高描述性 captioner | 公开资料未完整披露 | 高密度自然语言 caption | 是，使用 GPT-4 扩写用户 prompt | prompt following 提升明显，短 prompt 也能转成可执行描述 | 系统封闭，captioner 训练细节和数据阈值不可复现 |"
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 148,
+      "author": "Esser",
+      "year": "2024",
+      "text": "Esser et al. 2024)",
+      "key": "esser:2024",
+      "context": "| Stable Diffusion 3 (Esser et al. 2024) | CogVLM 生成合成 caption | 明确采用 50% 原始 caption + 50% 合成 caption | 原始 caption 与合成 caption 混合训练 | 论文未把推理侧重写作为主线 | 公开了清晰的消融收益，复现价值高 | 合成 caption 受 VLM 偏差影响，可能引入幻觉 |"
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 149,
+      "author": "Yang",
+      "year": "2024",
+      "text": "Yang et al. 2024",
+      "key": "yang:2024",
+      "context": "| CogVLM2 蒸馏式重写 (Yang et al. 2024; Hong et al. 2024; THUDM 2024) | CogVLM2 / CogVLM2-Caption 生成 dense caption，再由模板或 LLM 蒸馏成受控文本 | 可保留一部分原始 caption，也可做随机长度混合 | dense caption、结构化 caption、随机长度 caption | 可选，常与长 prompt 扩写配..."
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 149,
+      "author": "Hong",
+      "year": "2024",
+      "text": "Hong et al. 2024",
+      "key": "hong:2024",
+      "context": "| CogVLM2 蒸馏式重写 (Yang et al. 2024; Hong et al. 2024; THUDM 2024) | CogVLM2 / CogVLM2-Caption 生成 dense caption，再由模板或 LLM 蒸馏成受控文本 | 可保留一部分原始 caption，也可做随机长度混合 | dense caption、结构化 caption、随机长度 caption | 可选，常与长 prompt 扩写配..."
     },
     {
       "file": "docs/zh/part14/p01_mini_c4.md",
@@ -20462,7 +20735,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 606,
+      "line": 607,
       "author": "National Institute of Standards and Technology",
       "year": "2023",
       "text": "National Institute of Standards and Technology 2023)",
@@ -20471,7 +20744,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 648,
+      "line": 649,
       "author": "Ouyang",
       "year": "2022",
       "text": "Ouyang et al. 2022",
@@ -20480,7 +20753,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 648,
+      "line": 649,
       "author": "Christiano",
       "year": "2017",
       "text": "Christiano et al. 2017",
@@ -20489,7 +20762,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 648,
+      "line": 649,
       "author": "Stiennon",
       "year": "2020",
       "text": "Stiennon et al. 2020",
@@ -20498,7 +20771,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 648,
+      "line": 649,
       "author": "Rafailov",
       "year": "2023",
       "text": "Rafailov et al. 2023",
@@ -20507,7 +20780,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 648,
+      "line": 649,
       "author": "Bai",
       "year": "2022",
       "text": "Bai et al. 2022",
@@ -20516,7 +20789,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 648,
+      "line": 649,
       "author": "Schick",
       "year": "2023",
       "text": "Schick et al. 2023",
@@ -20525,7 +20798,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 648,
+      "line": 649,
       "author": "Yao",
       "year": "2023",
       "text": "Yao et al. 2023",
@@ -20534,7 +20807,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 648,
+      "line": 649,
       "author": "Askell",
       "year": "2021",
       "text": "Askell et al. 2021",
@@ -20543,7 +20816,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 648,
+      "line": 649,
       "author": "OpenAI",
       "year": "2024",
       "text": "OpenAI 2024)",
@@ -20552,7 +20825,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 650,
+      "line": 651,
       "author": "Christiano",
       "year": "2017",
       "text": "Christiano et al. 2017",
@@ -20561,7 +20834,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 650,
+      "line": 651,
       "author": "Stiennon",
       "year": "2020",
       "text": "Stiennon et al. 2020",
@@ -20570,7 +20843,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 650,
+      "line": 651,
       "author": "Rafailov",
       "year": "2023",
       "text": "Rafailov et al. 2023)",
@@ -20579,7 +20852,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 652,
+      "line": 653,
       "author": "Schick",
       "year": "2023",
       "text": "Schick et al. 2023)",
@@ -29644,8 +29917,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 405,
-      "entry_no": 2,
+      "line": 403,
+      "entry_no": 1,
       "entry": "PySceneDetect Contributors (2026) PySceneDetect Documentation. Available at: https://www.scenedetect.com/docs/latest/.",
       "first_author": "PySceneDetect",
       "year": "2026",
@@ -29656,6 +29929,77 @@
       "key": "pyscenedetect:2026",
       "fingerprint": "pyscenedetect documentation",
       "format_issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 425,
+      "entry_no": 12,
+      "entry": "Black Forest Labs: FLUX.1 Kontext [dev] Model Card. Hugging Face model card (2025a).",
+      "first_author": "Black",
+      "year": "2025",
+      "title": "",
+      "doi": "",
+      "arxiv": "",
+      "url": "",
+      "key": "black:2025",
+      "fingerprint": "black forest labs flux 1 kontext dev model card hugging face model card 2025a",
+      "format_issues": [
+        "title-not-parsed",
+        "missing-doi-arxiv-url"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 427,
+      "entry_no": 13,
+      "entry": "Black Forest Labs, Batifol, S., Blattmann, A., Boesel, F., Consul, S., Diagne, C., Dockhorn, T., English, J., English, Z., Esser, P., Kulal, S., Lacey, K., Levi, Y., Li, C., Lorenz, D., Müller, J., Podell, D., Rombach, R., Saini, H., Sauer, A., Smith, L.: FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space. arXiv:2506.15742 (2025b).",
+      "first_author": "Black",
+      "year": "2025",
+      "title": "",
+      "doi": "",
+      "arxiv": "2506.15742",
+      "url": "",
+      "key": "black:2025",
+      "fingerprint": "black forest labs batifol s blattmann a boesel f consul s diagne c dockhorn t english j english z esser p kulal s lacey k levi y li c lorenz d muller j podell d",
+      "format_issues": [
+        "title-not-parsed"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 433,
+      "entry_no": 16,
+      "entry": "Wan-Video Team: Wan2.2: Wan: Open and Advanced Large-Scale Video Generative Models. GitHub repository and model documentation (2025).",
+      "first_author": "Wan-Video",
+      "year": "2025",
+      "title": "",
+      "doi": "",
+      "arxiv": "",
+      "url": "",
+      "key": "wanvideo:2025",
+      "fingerprint": "wan video team wan2 2 wan open and advanced large scale video generative models github repository and model documentation 2025",
+      "format_issues": [
+        "title-not-parsed",
+        "missing-doi-arxiv-url"
+      ]
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 441,
+      "entry_no": 20,
+      "entry": "THUDM: CogVLM2-Caption for CogVideoX Training Data Captioning. CogVideo official tool documentation (2024).",
+      "first_author": "THUDM",
+      "year": "2024",
+      "title": "",
+      "doi": "",
+      "arxiv": "",
+      "url": "",
+      "key": "thudm:2024",
+      "fingerprint": "thudm cogvlm2 caption for cogvideox training data captioning cogvideo official tool documentation 2024",
+      "format_issues": [
+        "title-not-parsed",
+        "missing-doi-arxiv-url"
+      ]
     },
     {
       "file": "docs/zh/part14/p01_mini_c4.md",
@@ -30298,7 +30642,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 726,
+      "line": 727,
       "entry_no": 24,
       "entry": "Moffatt v. Air Canada. 2024. *Civil Resolution Tribunal of British Columbia*, 2024 BCCRT 149.",
       "first_author": "Moffatt",
@@ -30315,7 +30659,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 728,
+      "line": 729,
       "entry_no": 25,
       "entry": "Lifshitz, L. R., & Hung, R. 2024. BC Tribunal Confirms Companies Remain Liable for Information Provided by AI Chatbot. *ABA Business Law Today*.",
       "first_author": "Lifshitz",
@@ -36673,21 +37017,6 @@
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
       "line": 403,
       "entry_no": 1,
-      "key": "betker:2023",
-      "title": "Improving Image Generation with Better Captions (DALL·E 3)",
-      "status": "not-checked",
-      "source": "",
-      "matched_title": "",
-      "matched_year": "",
-      "score": 0.0,
-      "identifier": "",
-      "url_status": "",
-      "issues": []
-    },
-    {
-      "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 405,
-      "entry_no": 2,
       "key": "pyscenedetect:2026",
       "title": "PySceneDetect Documentation",
       "status": "not-checked",
@@ -36701,23 +37030,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 407,
-      "entry_no": 3,
-      "key": "esser:2024",
-      "title": "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis (Stable Diffusion 3)",
-      "status": "not-checked",
-      "source": "",
-      "matched_title": "",
-      "matched_year": "",
-      "score": 0.0,
-      "identifier": "",
-      "url_status": "",
-      "issues": []
-    },
-    {
-      "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 409,
-      "entry_no": 4,
+      "line": 405,
+      "entry_no": 2,
       "key": "gadre:2023",
       "title": "DataComp: In Search of the Next Generation of Multimodal Datasets",
       "status": "not-checked",
@@ -36731,8 +37045,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 411,
-      "entry_no": 5,
+      "line": 407,
+      "entry_no": 3,
       "key": "ghosh:2023",
       "title": "GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment",
       "status": "not-checked",
@@ -36746,8 +37060,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 413,
-      "entry_no": 6,
+      "line": 409,
+      "entry_no": 4,
       "key": "kirstain:2023",
       "title": "Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation (PickScore)",
       "status": "not-checked",
@@ -36761,23 +37075,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 415,
-      "entry_no": 7,
-      "key": "kong:2024",
-      "title": "HunyuanVideo: A Systematic Framework for Large Video Generation Models",
-      "status": "not-checked",
-      "source": "",
-      "matched_title": "",
-      "matched_year": "",
-      "score": 0.0,
-      "identifier": "",
-      "url_status": "",
-      "issues": []
-    },
-    {
-      "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 417,
-      "entry_no": 8,
+      "line": 411,
+      "entry_no": 5,
       "key": "opensorateam:2024",
       "title": "Open-Sora: Democratizing Efficient Video Production for All",
       "status": "not-checked",
@@ -36791,8 +37090,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 419,
-      "entry_no": 9,
+      "line": 413,
+      "entry_no": 6,
       "key": "schuhmann:2022",
       "title": "LAION-5B: An Open Large-Scale Dataset for Training Next Generation Image-Text Models",
       "status": "not-checked",
@@ -36806,23 +37105,8 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 421,
-      "entry_no": 10,
-      "key": "wanteam:2025",
-      "title": "Wan: Open and Advanced Large-Scale Video Generative Models",
-      "status": "not-checked",
-      "source": "",
-      "matched_title": "",
-      "matched_year": "",
-      "score": 0.0,
-      "identifier": "",
-      "url_status": "",
-      "issues": []
-    },
-    {
-      "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 423,
-      "entry_no": 11,
+      "line": 415,
+      "entry_no": 7,
       "key": "wang:2023",
       "title": "CogVLM: Visual Expert for Pretrained Language Models",
       "status": "not-checked",
@@ -36836,10 +37120,205 @@
     },
     {
       "file": "docs/zh/part13/ch48_t2i_t2v.md",
-      "line": 425,
-      "entry_no": 12,
+      "line": 417,
+      "entry_no": 8,
       "key": "wu:2023",
       "title": "Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis (HPSv2)",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 419,
+      "entry_no": 9,
+      "key": "betker:2023",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 421,
+      "entry_no": 10,
+      "key": "openai:2023",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 423,
+      "entry_no": 11,
+      "key": "esser:2024",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 425,
+      "entry_no": 12,
+      "key": "black:2025",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 427,
+      "entry_no": 13,
+      "key": "black:2025",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 429,
+      "entry_no": 14,
+      "key": "kong:2024",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 431,
+      "entry_no": 15,
+      "key": "wanteam:2025",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 433,
+      "entry_no": 16,
+      "key": "wanvideo:2025",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 435,
+      "entry_no": 17,
+      "key": "peng:2025",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 437,
+      "entry_no": 18,
+      "key": "lin:2024",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 439,
+      "entry_no": 19,
+      "key": "yang:2024",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 441,
+      "entry_no": 20,
+      "key": "thudm:2024",
+      "title": "",
+      "status": "not-checked",
+      "source": "",
+      "matched_title": "",
+      "matched_year": "",
+      "score": 0.0,
+      "identifier": "",
+      "url_status": "",
+      "issues": []
+    },
+    {
+      "file": "docs/zh/part13/ch48_t2i_t2v.md",
+      "line": 443,
+      "entry_no": 21,
+      "key": "hong:2024",
+      "title": "",
       "status": "not-checked",
       "source": "",
       "matched_title": "",
@@ -39491,7 +39970,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 680,
+      "line": 681,
       "entry_no": 1,
       "key": "brown:2020",
       "title": "Language Models are Few-Shot Learners",
@@ -39506,7 +39985,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 682,
+      "line": 683,
       "entry_no": 2,
       "key": "ouyang:2022",
       "title": "Training Language Models to Follow Instructions with Human Feedback",
@@ -39521,7 +40000,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 684,
+      "line": 685,
       "entry_no": 3,
       "key": "wei:2022",
       "title": "Finetuned Language Models Are Zero-Shot Learners",
@@ -39536,7 +40015,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 686,
+      "line": 687,
       "entry_no": 4,
       "key": "chung:2024",
       "title": "Scaling Instruction-Finetuned Language Models",
@@ -39551,7 +40030,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 688,
+      "line": 689,
       "entry_no": 5,
       "key": "zhou:2023",
       "title": "LIMA: Less Is More for Alignment",
@@ -39566,7 +40045,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 690,
+      "line": 691,
       "entry_no": 6,
       "key": "wang:2023",
       "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
@@ -39581,7 +40060,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 692,
+      "line": 693,
       "entry_no": 7,
       "key": "wang:2022",
       "title": "Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks",
@@ -39596,7 +40075,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 694,
+      "line": 695,
       "entry_no": 8,
       "key": "christiano:2017",
       "title": "Deep Reinforcement Learning from Human Preferences",
@@ -39611,7 +40090,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 696,
+      "line": 697,
       "entry_no": 9,
       "key": "stiennon:2020",
       "title": "Learning to Summarize from Human Feedback",
@@ -39626,7 +40105,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 698,
+      "line": 699,
       "entry_no": 10,
       "key": "rafailov:2023",
       "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
@@ -39641,7 +40120,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 700,
+      "line": 701,
       "entry_no": 11,
       "key": "bai:2022",
       "title": "Constitutional AI: Harmlessness from AI Feedback",
@@ -39656,7 +40135,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 702,
+      "line": 703,
       "entry_no": 12,
       "key": "schick:2023",
       "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
@@ -39671,7 +40150,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 704,
+      "line": 705,
       "entry_no": 13,
       "key": "yao:2023",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
@@ -39686,7 +40165,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 706,
+      "line": 707,
       "entry_no": 14,
       "key": "askell:2021",
       "title": "A General Language Assistant as a Laboratory for Alignment",
@@ -39701,7 +40180,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 708,
+      "line": 709,
       "entry_no": 15,
       "key": "openai:2024",
       "title": "Introducing Structured Outputs in the API",
@@ -39716,7 +40195,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 710,
+      "line": 711,
       "entry_no": 16,
       "key": "singhal:2023",
       "title": "Large Language Models Encode Clinical Knowledge",
@@ -39731,7 +40210,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 712,
+      "line": 713,
       "entry_no": 17,
       "key": "gebru:2021",
       "title": "Datasheets for Datasets",
@@ -39746,7 +40225,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 714,
+      "line": 715,
       "entry_no": 18,
       "key": "pushkarna:2022",
       "title": "Data Cards: Purposeful and Transparent Dataset Documentation for Responsible AI",
@@ -39761,7 +40240,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 716,
+      "line": 717,
       "entry_no": 19,
       "key": "mitchell:2019",
       "title": "Model Cards for Model Reporting",
@@ -39776,7 +40255,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 718,
+      "line": 719,
       "entry_no": 20,
       "key": "liang:2022",
       "title": "Holistic Evaluation of Language Models",
@@ -39791,7 +40270,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 720,
+      "line": 721,
       "entry_no": 21,
       "key": "ganguli:2022",
       "title": "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned",
@@ -39806,7 +40285,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 722,
+      "line": 723,
       "entry_no": 22,
       "key": "perez:2022",
       "title": "Red Teaming Language Models with Language Models",
@@ -39821,7 +40300,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 724,
+      "line": 725,
       "entry_no": 23,
       "key": "nist:2023",
       "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
@@ -39836,7 +40315,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 726,
+      "line": 727,
       "entry_no": 24,
       "key": "moffatt:2024",
       "title": "Civil Resolution Tribunal of British Columbia, 2024 BCCRT 149",
@@ -39851,7 +40330,7 @@
     },
     {
       "file": "docs/zh/part4/ch12_sft.md",
-      "line": 728,
+      "line": 729,
       "entry_no": 25,
       "key": "lifshitz:2024",
       "title": "BC Tribunal Confirms Companies Remain Liable for Information Provided by AI Chatbot",

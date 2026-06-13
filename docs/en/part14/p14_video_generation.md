@@ -78,7 +78,7 @@ This section focuses on how to organize a rerunnable, auditable, and extensible 
 
 Figure P14-1 shows the English-annotated architecture diagram for this project. The upper half of the diagram represents data stages; the lower half represents engineering controls. This layout deliberately places "caption generation" in the later stage rather than treating it as the sole core: the quality of a video generation dataset depends on the collective coordination of source, segmentation, motion, aesthetics, captioning, cinematic language, and release gates.
 
-![P14 Video Generation Data Pipeline](../../images/part14/p14_video_generation_pipeline_en.png)
+![P14 Video Generation Data Pipeline](../../images/part14/p14_video_generation_pipeline_en.svg)
 
 *Figure P14-1: English architecture diagram of the video generation data pipeline*
 

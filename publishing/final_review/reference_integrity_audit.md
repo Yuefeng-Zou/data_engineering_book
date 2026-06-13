@@ -1,24 +1,24 @@
 # 全书引用完整性与真实性审计报告
 
-- 生成时间：2026-06-12T18:12:53.198053+00:00
+- 生成时间：2026-06-13T07:22:04.196243+00:00
 - 范围：当前 Springer 中文交付稿 `docs/zh` 中的正文章、项目章和附录。
 - 扫描文件：70
-- 参考文献条目：960
-- 正文 author-year 引用：1320
+- 参考文献条目：969
+- 正文 author-year 引用：1332
 - 正文引用未在同章参考文献解析到：0
-- 章末参考文献未被同章正文引用：217
+- 章末参考文献未被同章正文引用：221
 - 同章疑似重复参考文献组：0
 
 ## 外部核验概览
 
 | 状态 | 数量 | 含义 |
 | --- | ---: | --- |
-| `not-checked` | 960 |  |
+| `not-checked` | 969 |  |
 
 ## 主要结论
 
 - 需要优先人工复核的外部核验问题：0 条。
-- 缺少 DOI / arXiv / URL 的条目：608 条；其中一部分可由 Crossref/OpenAlex 题名检索确认，但 Springer 终稿仍建议补 DOI 或稳定 URL。
+- 缺少 DOI / arXiv / URL 的条目：612 条；其中一部分可由 Crossref/OpenAlex 题名检索确认，但 Springer 终稿仍建议补 DOI 或稳定 URL。
 - `url-reachable` 只能证明网页当前可达，不能证明引文格式、版本日期和题名完全符合出版社要求。
 - 当前报告只确认“同章 author-year 可解析对应关系”；对于一段话是否应该引用更精确来源，仍需人工学术编辑判断。
 
@@ -152,7 +152,7 @@
 | `docs/zh/part13/ch45_posttrain_recipes.md` | 405 | 16 | `zhou:2023` | Don't Make Your LLM an Evaluation Benchmark Cheater | Zhou K, Zhu Y, Chen Z, Chen W, Zhao W X, Chen X, Lin Y, Wen J-R, Han J (2023) Don't Make Your LLM an Evaluation Benchmark Cheater. arXiv preprint arXiv:2311.01964. |
 | `docs/zh/part13/ch45_posttrain_recipes.md` | 409 | 18 | `lightman:2024` | Let's Verify Step by Step | Lightman H, Kosaraju V, Burda Y, Edwards H, Baker B, Lee T, Leike J, Schulman J, Sutskever I, Cobbe K (2024) Let's Verify Step by Step. International Conference on Learning Representations. |
 
-> 其余 97 条见 JSON 明细。
+> 其余 101 条见 JSON 明细。
 
 ## 外部核验问题条目
 
@@ -163,4 +163,5 @@
 
 | 问题 | 数量 |
 | --- | ---: |
-| `missing-doi-arxiv-url` | 608 |
+| `missing-doi-arxiv-url` | 612 |
+| `title-not-parsed` | 13 |
