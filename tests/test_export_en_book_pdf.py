@@ -174,6 +174,40 @@ class ExportEnglishBookPdfTest(unittest.TestCase):
         self.assertNotIn("part10/ch31_agent_architecture.md", front_paths)
         self.assertNotIn("part10/ch31_agent_architecture.md", back_paths)
 
+    def test_toc_entry_for_chapter_includes_author_line(self):
+        exporter = load_exporter()
+        item = exporter.NavItem(
+            title="Chapter 1: The Data Revolution in the Era of Large Models",
+            path="part1/ch01_data_change.md",
+            level=2,
+            group="Part 1",
+            group_slug="part-1",
+        )
+
+        entry = exporter.toc_entry_for_nav_item(item, "1")
+
+        self.assertEqual("Chapter 1: The Data Revolution in the Era of Large Models", entry.title)
+        self.assertEqual(2, entry.level)
+        self.assertEqual("1", entry.page_label)
+        self.assertEqual("Jun Yu; Changwen Chen; Ke Wang", entry.authors)
+
+    def test_toc_entry_for_front_matter_omits_author_line(self):
+        exporter = load_exporter()
+        item = exporter.NavItem(
+            title="Preface",
+            path="preface.md",
+            level=1,
+            group="Front Matter",
+            group_slug="front-matter",
+        )
+
+        entry = exporter.toc_entry_for_nav_item(item, "vii")
+
+        self.assertEqual("Preface", entry.title)
+        self.assertEqual(1, entry.level)
+        self.assertEqual("vii", entry.page_label)
+        self.assertEqual("", entry.authors)
+
     def test_locate_item_pages_stops_after_all_items_are_found(self):
         exporter = load_exporter()
 

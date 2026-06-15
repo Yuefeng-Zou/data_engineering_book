@@ -70,8 +70,8 @@ PDF_FONT_CANDIDATES = {
     ],
 }
 SECTION_AUTHORS = {
-    "part1/ch01_": "Jun Yu; Ke Wang; Changwen Chen",
-    "part1/ch02_": "Jun Yu; Ke Wang; Changwen Chen",
+    "part1/ch01_": "Jun Yu; Changwen Chen; Ke Wang",
+    "part1/ch02_": "Jun Yu; Changwen Chen; Ke Wang",
     "part1/ch03_": "Jun Yu; Ke Wang; Changwen Chen",
     "part2/ch04_": "Jun Yu; Ke Wang; Changwen Chen",
     "part2/ch05_": "Jun Yu; Ke Wang; Changwen Chen",
@@ -604,6 +604,14 @@ class NavItem:
     group_slug: str
 
 
+@dataclass
+class TocEntry:
+    title: str
+    level: int
+    page_label: str
+    authors: str = ""
+
+
 def find_en_nav(config: dict[str, Any]) -> list[Any]:
     for plugin in config.get("plugins", []):
         if isinstance(plugin, dict) and "i18n" in plugin:
@@ -1021,7 +1029,19 @@ def generate_opening_front_pdf(path: Path, stats: dict[str, int]) -> int:
     return page_count
 
 
-def generate_contents_pdf(path: Path, toc_entries: list[tuple[str, int, str]], start_page_number: int) -> int:
+def normalize_toc_entry(entry: TocEntry | tuple[str, int, str]) -> TocEntry:
+    if isinstance(entry, TocEntry):
+        return entry
+    title, level, page_label = entry
+    return TocEntry(title=title, level=level, page_label=page_label)
+
+
+def toc_entry_for_nav_item(item: NavItem, page_label: str) -> TocEntry:
+    authors = author_line_for_path(item.path) if classify_path(item.path) in {"chapter", "project"} else ""
+    return TocEntry(title=item.title, level=item.level, page_label=page_label, authors=authors)
+
+
+def generate_contents_pdf(path: Path, toc_entries: list[TocEntry | tuple[str, int, str]], start_page_number: int) -> int:
     try:
         from reportlab.lib import colors
         from reportlab.lib.pagesizes import mm
@@ -1064,8 +1084,12 @@ def generate_contents_pdf(path: Path, toc_entries: list[tuple[str, int, str]], s
 
     contents_page_no = start_page_number
     y = write_contents_page_header(contents_page_no)
-    min_y = bottom + 7 * mm
-    for title, level, page_label in toc_entries:
+    min_y = bottom + 10 * mm
+    for raw_entry in toc_entries:
+        entry = normalize_toc_entry(raw_entry)
+        title = entry.title
+        level = entry.level
+        page_label = entry.page_label
         if y < min_y:
             footer(to_roman(contents_page_no))
             contents_page_no += 1
@@ -1098,7 +1122,16 @@ def generate_contents_pdf(path: Path, toc_entries: list[tuple[str, int, str]], s
             c.setDash(1, 2)
             c.line(dots_start, y + 1.2, dots_end, y + 1.2)
             c.setDash()
-        y -= 5.0 * mm if level <= 2 else 4.4 * mm
+        if entry.authors:
+            y -= 4.1 * mm
+            c.setFont(regular_font, 8.3)
+            c.setFillColor(colors.HexColor("#4f5967"))
+            author_text = entry.authors.replace(";", ",")
+            author_x = left + indent + (4 * mm if level <= 2 else 0)
+            c.drawString(author_x, y, author_text)
+            y -= 4.2 * mm
+        else:
+            y -= 5.0 * mm if level <= 2 else 4.4 * mm
     footer(to_roman(contents_page_no))
     c.save()
     return page_count
@@ -1106,7 +1139,7 @@ def generate_contents_pdf(path: Path, toc_entries: list[tuple[str, int, str]], s
 
 def generate_book_front_pdf(
     path: Path,
-    toc_entries: list[tuple[str, int, str]],
+    toc_entries: list[TocEntry | tuple[str, int, str]],
     stats: dict[str, int],
 ) -> int:
     """Backward-compatible front matter generator for non-Springer split flows."""
@@ -1450,15 +1483,15 @@ def compute_toc_entries(
     *,
     front_pages: int,
     first_body_page: int,
-) -> list[tuple[str, int, str]]:
+) -> list[TocEntry]:
     from pypdf import PdfReader
 
-    entries: list[tuple[str, int, str]] = []
+    entries: list[TocEntry] = []
     groups = group_items(items)
     content_offset = front_pages
     for (_, title, grouped), part in zip(groups, parts):
         reader = PdfReader(str(part))
-        entries.append((title, 1, build_page_number_label(content_offset + 1, first_body_page)))
+        entries.append(TocEntry(title, 1, build_page_number_label(content_offset + 1, first_body_page)))
         local_pages = locate_item_pages(
             reader,
             grouped,
@@ -1468,7 +1501,7 @@ def compute_toc_entries(
         for item in grouped:
             local_page = local_pages.get(item.path, 0)
             absolute_page = content_offset + local_page + 1
-            entries.append((item.title, item.level, build_page_number_label(absolute_page, first_body_page)))
+            entries.append(toc_entry_for_nav_item(item, build_page_number_label(absolute_page, first_body_page)))
         content_offset += len(reader.pages)
     return entries
 
@@ -1481,16 +1514,16 @@ def compute_formal_toc_entries(
     contents_pages: int,
     first_body_page: int,
     contents_after_group: int,
-) -> list[tuple[str, int, str]]:
+) -> list[TocEntry]:
     from pypdf import PdfReader
 
-    entries: list[tuple[str, int, str]] = []
+    entries: list[TocEntry] = []
     content_offset = opening_pages
     for index, ((_, title, grouped), part) in enumerate(zip(groups, parts)):
         reader = PdfReader(str(part))
         is_artificial_front_group = title in {"Front Matter Before Contents", "Front Matter After Contents"}
         if not is_artificial_front_group:
-            entries.append((title, 1, build_page_number_label(content_offset + 1, first_body_page)))
+            entries.append(TocEntry(title, 1, build_page_number_label(content_offset + 1, first_body_page)))
         local_pages = locate_item_pages(
             reader,
             grouped,
@@ -1501,7 +1534,9 @@ def compute_formal_toc_entries(
             local_page = local_pages.get(item.path, 0)
             absolute_page = content_offset + local_page + 1
             entry_level = item.level if not is_artificial_front_group else 1
-            entries.append((item.title, entry_level, build_page_number_label(absolute_page, first_body_page)))
+            toc_entry = toc_entry_for_nav_item(item, build_page_number_label(absolute_page, first_body_page))
+            toc_entry.level = entry_level
+            entries.append(toc_entry)
         content_offset += len(reader.pages)
         if index == contents_after_group:
             content_offset += contents_pages
