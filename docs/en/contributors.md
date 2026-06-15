@@ -1,7 +1,5 @@
 # Contributors
 
-This page lists the book authors and contributors included in the manuscript front matter. ORCID identifiers, corresponding-author status, final author order, ISBN, DOI, copyright metadata, and publisher imprint details should be confirmed in the Springer metadata package before final submission.
-
 **Jun Yu**
 
 Jun Yu is an associate professor and Ph.D. supervisor in the Department of Automation at the University of Science and Technology of China, Ph.D., Huawei Most Valuable Instructor (MVI), and Huawei/MindSpore dual-certified developer evangelist. His research focuses on multimedia computing and intelligent robotics. He has led 40 research projects, including 5 National Natural Science Foundation of China projects, 1 National Aviation Science Fund project, 3 Chinese Association for Artificial Intelligence-Huawei Academic Fund projects, and 3 Huawei flagship research programs. He has led the development of a series of model suites that have entered Huawei computing product lines. He has published more than 200 academic papers and books, including more than 100 first-author or corresponding-author papers in IEEE/ACM top journals, CCF-A international conferences, and SCI Q1 journals.
@@ -14,7 +12,7 @@ He teaches undergraduate foundational courses including *Data Structures and Alg
 
 **Changwen Chen**
 
-Chang Wen Chen is Chair Professor of Visual Computing and Interim Dean of the Faculty of Computer and Mathematical Sciences at The Hong Kong Polytechnic University. He previously served as Dean of Science and Engineering at The Chinese University of Hong Kong, Shenzhen, and Deputy Director at Peng Cheng Laboratory. Professor Chen has held editorial leadership roles as Editor-in-Chief of IEEE Transactions on Multimedia and IEEE Transactions on Circuits and Systems for Video Technology. His distinguished career has been recognized with the Alexander von Humboldt Award, the SUNY Chancellor's Award for Excellence in Scholarship, and the UIUC ECE Distinguished Alumni Award. He is an IEEE Fellow, SPIE Fellow, and member of Academia Europaea. With decades of experience in visual computing and multimedia systems, Professor Chen brings authoritative insight into the data engineering challenges addressed in this book.
+Changwen Chen is Chair Professor of Visual Computing and Interim Dean of the Faculty of Computer and Mathematical Sciences at The Hong Kong Polytechnic University. He previously served as Dean of Science and Engineering at The Chinese University of Hong Kong, Shenzhen, and Deputy Director at Peng Cheng Laboratory. Professor Chen has held editorial leadership roles as Editor-in-Chief of IEEE Transactions on Multimedia and IEEE Transactions on Circuits and Systems for Video Technology. His distinguished career has been recognized with the Alexander von Humboldt Award, the SUNY Chancellor's Award for Excellence in Scholarship, and the UIUC ECE Distinguished Alumni Award. He is an IEEE Fellow, SPIE Fellow, and member of Academia Europaea. With decades of experience in visual computing and multimedia systems, Professor Chen brings authoritative insight into the data engineering challenges addressed in this book.
 
 **Fan Yu**
 

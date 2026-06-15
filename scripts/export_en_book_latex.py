@@ -789,7 +789,7 @@ def latex_preamble(stats: ExportStats) -> str:
 \sloppy
 
 \title{{Data Engineering for Large Foundation Models\\A Handbook}}
-\author{{Jun Yu, Chang Wen Chen, Fan Yu, Cong Wang, Yang Luo, Ran Zhang, Wenzhuo Du, Xin Xu, Ke Wang, Zhili Wang, Zhongyi Liu, Xuhong Cao, Guanlin Mu, Guanjun Liu, Yuefeng Zou, Lin Xu, Xinyu Chen, Fengxin Chen, Xuan Li, Gongpeng Zhao, Can Wang, Feng Zhao, Ye Yu, Fang Gao, Jiaen Liang, Wei Huang, Shengping Liu, Qingsong Liu, and Jianqing Sun}}
+\author{{Jun Yu, Changwen Chen, Fan Yu, Cong Wang, Yang Luo, Ran Zhang, Wenzhuo Du, Xin Xu, Ke Wang, Zhili Wang, Zhongyi Liu, Xuhong Cao, Guanlin Mu, Guanjun Liu, Yuefeng Zou, Lin Xu, Xinyu Chen, Fengxin Chen, Xuan Li, Gongpeng Zhao, Can Wang, Feng Zhao, Ye Yu, Fang Gao, Jiaen Liang, Wei Huang, Shengping Liu, Qingsong Liu, and Jianqing Sun}}
 \date{{Springer 16K LaTeX review source\\Files: {stats.files}; images: {stats.images}; code blocks: {stats.code_blocks}; tables: {stats.tables}}}
 """
 

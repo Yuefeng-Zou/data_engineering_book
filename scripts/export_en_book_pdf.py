@@ -42,13 +42,17 @@ OPENING_FRONT_PDF = PARTS_DIR / "00a-opening-front-matter.pdf"
 CONTENTS_PDF = PARTS_DIR / "00b-contents.pdf"
 SUBMISSION_PDF_DIR = OUT_DIR / "data_engineering_book_en_16k_compact_submission_pdfs"
 PDF_TEXT_CACHE: dict[str, dict[int, str]] = {}
+CONTENTS_TITLE_AUTHOR_GAP_MM = 4.8
+CONTENTS_AUTHOR_ENTRY_GAP_MM = 5.2
+CONTENTS_ENTRY_GAP_MM = 6.2
+CONTENTS_SUBENTRY_GAP_MM = 5.2
 
 EXCLUDED_FROM_FORMAL_PDF = {"title_page.md", "index.md", "translation-status.md", "front_matter_guide.md"}
 PRE_CONTENTS_FRONT_PATHS = {"preface.md", "acknowledgments.md"}
 POST_CONTENTS_FRONT_PATHS = {"contributors.md", "abbreviations.md"}
 
 BOOK_AUTHORS = (
-    "Jun Yu, Chang Wen Chen, Fan Yu, Cong Wang, Yang Luo, Ran Zhang, Wenzhuo Du, "
+    "Jun Yu, Changwen Chen, Fan Yu, Cong Wang, Yang Luo, Ran Zhang, Wenzhuo Du, "
     "Xin Xu, Ke Wang, Zhili Wang, Zhongyi Liu, Xuhong Cao, Guanlin Mu, Guanjun Liu, "
     "Yuefeng Zou, Lin Xu, Xinyu Chen, Fengxin Chen, Xuan Li, Gongpeng Zhao, Can Wang, "
     "Feng Zhao, Ye Yu, Fang Gao, Jiaen Liang, Wei Huang, Shengping Liu, Qingsong Liu, "
@@ -200,7 +204,7 @@ CSS = r"""
 body {
   font-family:
     "Times New Roman", "Times", "Nimbus Roman", serif;
-  font-size: 11pt;
+  font-size: 11.8pt;
   line-height: 1.45;
   letter-spacing: 0;
   color: var(--ink);
@@ -1123,15 +1127,15 @@ def generate_contents_pdf(path: Path, toc_entries: list[TocEntry | tuple[str, in
             c.line(dots_start, y + 1.2, dots_end, y + 1.2)
             c.setDash()
         if entry.authors:
-            y -= 4.1 * mm
+            y -= CONTENTS_TITLE_AUTHOR_GAP_MM * mm
             c.setFont(regular_font, 8.3)
             c.setFillColor(colors.HexColor("#4f5967"))
             author_text = entry.authors.replace(";", ",")
             author_x = left + indent + (4 * mm if level <= 2 else 0)
             c.drawString(author_x, y, author_text)
-            y -= 4.2 * mm
+            y -= CONTENTS_AUTHOR_ENTRY_GAP_MM * mm
         else:
-            y -= 5.0 * mm if level <= 2 else 4.4 * mm
+            y -= CONTENTS_ENTRY_GAP_MM * mm if level <= 2 else CONTENTS_SUBENTRY_GAP_MM * mm
     footer(to_roman(contents_page_no))
     c.save()
     return page_count

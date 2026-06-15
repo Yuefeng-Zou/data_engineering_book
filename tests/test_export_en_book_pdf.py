@@ -95,6 +95,19 @@ class ExportEnglishBookPdfTest(unittest.TestCase):
         self.assertIn("<title>Data Engineering for Large Foundation Models: A Handbook - 16K PDF</title>", html_doc)
         self.assertEqual(stats["files"], 1)
 
+    def test_english_pdf_body_font_is_slightly_larger_for_submission_review(self):
+        exporter = load_exporter()
+
+        self.assertIn("font-size: 11.8pt;", exporter.CSS)
+
+    def test_formal_contents_spacing_is_relaxed_for_author_lines(self):
+        exporter = load_exporter()
+
+        self.assertEqual(4.8, exporter.CONTENTS_TITLE_AUTHOR_GAP_MM)
+        self.assertEqual(5.2, exporter.CONTENTS_AUTHOR_ENTRY_GAP_MM)
+        self.assertEqual(6.2, exporter.CONTENTS_ENTRY_GAP_MM)
+        self.assertEqual(5.2, exporter.CONTENTS_SUBENTRY_GAP_MM)
+
     def test_section_opening_uses_title_and_author_without_number_block(self):
         exporter = load_exporter()
         html_body = (
