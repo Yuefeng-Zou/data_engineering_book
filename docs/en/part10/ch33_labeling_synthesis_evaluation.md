@@ -1,6 +1,6 @@
 # Chapter 33: Labeling, Synthesis, and Evaluation Agents
 
-<div class="chapter-authors">Zhili Wang</div>
+<div class="chapter-authors">Zhili Wang; Zhongyi Liu; Jun Yu</div>
 
 ## Chapter Abstract
 

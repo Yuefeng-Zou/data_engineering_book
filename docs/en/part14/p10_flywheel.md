@@ -1,6 +1,6 @@
 # Project 10: End-to-End LLM Data Flywheel
 
-<div class="chapter-authors">Xin Xu</div>
+<div class="chapter-authors">Ke Wang; Xin Xu; Guanlin Mu</div>
 
 ## Abstract
 

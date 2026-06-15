@@ -1,6 +1,6 @@
 # Chapter 17: Synthetic Data Quality Control and Model Collapse
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Ran Zhang; Yang Luo; Jun Yu</div>
 
 ## Abstract
 

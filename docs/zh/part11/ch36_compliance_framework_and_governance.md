@@ -1,6 +1,6 @@
 # 第36章：数据合规框架与治理
 
-<div class="chapter-authors">汪志立（Zhili Wang）；徐鑫（Xin Xu）</div>
+<div class="chapter-authors">汪志立（Zhili Wang）；徐鑫（Xin Xu）；於俊（Jun Yu）</div>
 
 ## 章前导读
 

@@ -1,7 +1,6 @@
 # Project 2: Vertical-Domain Expert SFT (Legal)
 
-<div class="chapter-authors">Xin Xu</div>
-
+<div class="chapter-authors">Xin Xu; Ran Zhang; Jun Yu</div>
 
 ## Abstract
 P02 focuses on organizing regulatory texts, institutional documents, and legal task requirements into a trainable, auditable, and scalable vertical-domain SFT data pipeline. The emphasis is not on single-instance question-answer generation, but on the stable transformation process from seed knowledge to supervised assets.

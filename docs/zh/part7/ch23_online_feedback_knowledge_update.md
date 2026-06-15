@@ -1,6 +1,6 @@
 # 第23章：在线反馈闭环与知识更新
 
-<div class="chapter-authors">杜文卓（Wenzhuo Du）</div>
+<div class="chapter-authors">於俊（Jun Yu）；杜文卓（Wenzhuo Du）；Gongpeng Zhao</div>
 
 ## 摘要
 

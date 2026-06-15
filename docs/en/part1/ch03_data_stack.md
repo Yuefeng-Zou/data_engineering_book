@@ -1,6 +1,6 @@
 # Chapter 3: AI-Native Data Stack and Cost Governance
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Jun Yu; Ke Wang; Changwen Chen</div>
 
 ## Abstract
 

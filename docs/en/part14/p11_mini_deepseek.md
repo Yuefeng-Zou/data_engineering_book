@@ -1,6 +1,6 @@
 # Project 11: Mini-DeepSeek Pre-Training Reproduction
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Jun Yu; Ke Wang; Yang Luo</div>
 
 ## Abstract
 

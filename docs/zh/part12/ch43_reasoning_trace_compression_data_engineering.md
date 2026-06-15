@@ -1,5 +1,7 @@
 # 第43章：推理轨迹数据工程：长链压缩、隐式计算与监督掩码
 
+<div class="chapter-authors">穆冠霖（Guanlin Mu）；曹旭宏（Xuhong Cao）；於俊（Jun Yu）</div>
+
 ## 摘要
 
 本章以 Latent-Switch-69K 为案例，讨论推理轨迹数据如何从显式 Long-CoT 转向可压缩、可监督、可迁移的隐式计算记录。章节重点关注 teacher trace、latent budget、student sequence、supervision mask、压缩边界和质量控制，说明推理轨迹不是普通文本字段，而是连接推理模型、后训练、RL 数据工程和推理飞轮的关键数据资产。

@@ -1,6 +1,6 @@
 # Project 13: Qwen-VL Multimodal Instruction Factory
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Jun Yu; Ke Wang; Wenzhuo Du</div>
 
 ## Abstract
 

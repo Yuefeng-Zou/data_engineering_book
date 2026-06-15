@@ -1,5 +1,7 @@
 # Chapter 42: Speech and Audio Data Engineering: Interaction Control, Style Labels, and Safety Boundaries
 
+<div class="chapter-authors">Guanlin Mu; Xuhong Cao; Jun Yu</div>
+
 ## Abstract
 
 This chapter uses VoiceStyleControl as the case study to explain how speech and audio interaction data represents semantic responses, voice style, control labels, and safety boundaries at the same time. Unlike text-only dialogue, speech data engineering must place S2S, TTS, speaker style, emotional strength, authorization status, quality evaluation, and misuse risk in one reviewable chain, so a model can generate appropriate content while respecting voice-use and interaction-control constraints.

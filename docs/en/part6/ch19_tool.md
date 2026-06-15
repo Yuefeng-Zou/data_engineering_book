@@ -1,6 +1,6 @@
 # Chapter 19: Tool-Use and Function Calling Data
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Jun Yu; Ran Zhang; Zhongyi Liu</div>
 
 ## Abstract
 

@@ -1,6 +1,6 @@
 # Chapter 6: Tokenization, Serialization, and Efficient Data Loading
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Ke Wang; Fan Yu; Jun Yu</div>
 
 ## Abstract
 

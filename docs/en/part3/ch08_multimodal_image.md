@@ -1,6 +1,6 @@
 # Chapter 8: Image-Text Pair Data Engineering
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Jun Yu; Ke Wang; Cong Wang</div>
 
 ## Abstract
 

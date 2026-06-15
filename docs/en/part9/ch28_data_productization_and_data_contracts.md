@@ -1,6 +1,6 @@
 # Chapter 28: Data Productization and Data Contracts
 
-<div class="chapter-authors">Wenzhuo Du</div>
+<div class="chapter-authors">Zhongyi Liu; Ye Yu; Wenzhuo Du</div>
 
 ## Chapter Abstract
 

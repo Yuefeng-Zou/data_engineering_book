@@ -1,6 +1,6 @@
 # Chapter 5: Cleaning, Deduplication, and Decontamination
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Jun Yu; Ke Wang; Changwen Chen</div>
 
 ## Abstract
 

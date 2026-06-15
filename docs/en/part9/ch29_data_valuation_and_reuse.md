@@ -1,6 +1,6 @@
 # Chapter 29: Data Valuation and Reuse Mechanisms
 
-<div class="chapter-authors">Wenzhuo Du</div>
+<div class="chapter-authors">Zhongyi Liu; Wenzhuo Du; Jun Yu</div>
 
 ## Chapter Abstract
 

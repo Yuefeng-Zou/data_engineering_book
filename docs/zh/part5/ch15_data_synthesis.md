@@ -1,6 +1,6 @@
 # 第15章：合成数据工厂：从种子到验证
 
-<div class="chapter-authors">张然（Ran Zhang）</div>
+<div class="chapter-authors">王聪（Cong Wang）；张然（Ran Zhang）；於俊（Jun Yu）</div>
 
 ## 章前导读
 

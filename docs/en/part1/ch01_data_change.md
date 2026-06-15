@@ -1,6 +1,6 @@
 # Chapter 1: The Data Revolution in the Era of Large Language Models
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Jun Yu; Ke Wang; Changwen Chen</div>
 
 ## Abstract
 

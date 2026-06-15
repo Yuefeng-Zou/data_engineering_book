@@ -1,6 +1,6 @@
 # Chapter 30: Internal Data Markets and Sharing Governance
 
-<div class="chapter-authors">Wenzhuo Du</div>
+<div class="chapter-authors">Yang Luo; Fang Gao; Wenzhuo Du</div>
 
 ## Chapter Abstract
 

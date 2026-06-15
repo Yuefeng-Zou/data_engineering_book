@@ -1,5 +1,7 @@
 # Chapter 43: Reasoning Trace Data Engineering: Long-Chain Compression, Implicit Computation, and Supervision Masks
 
+<div class="chapter-authors">Guanlin Mu; Xuhong Cao; Jun Yu</div>
+
 ## Abstract
 
 This chapter uses Latent-Switch-69K as the case study to explain how reasoning-trace data moves from explicit long chain-of-thought to compressible, supervisable, and transferable implicit computation records. The chapter focuses on teacher traces, latent budgets, student sequences, supervision masks, compression boundaries, and quality control, showing that reasoning traces are not ordinary text fields but key data assets connecting reasoning models, post-training, RL data engineering, and reasoning flywheels.

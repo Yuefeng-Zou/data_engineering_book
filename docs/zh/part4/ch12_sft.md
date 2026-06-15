@@ -1,6 +1,6 @@
 # 第12章：SFT数据设计与指令体系
 
-<div class="chapter-authors">张然（Ran Zhang）</div>
+<div class="chapter-authors">於俊（Jun Yu）；张然（Ran Zhang）；骆阳（Yang Luo）</div>
 
 ## 章前导读
 

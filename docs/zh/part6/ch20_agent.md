@@ -1,6 +1,6 @@
 # 第20章：Agent记忆与多轮交互数据
 
-<div class="chapter-authors">张然（Ran Zhang）</div>
+<div class="chapter-authors">张然（Ran Zhang）；刘中一（Zhongyi Liu）；於俊（Jun Yu）</div>
 
 ## 摘要
 

@@ -1,6 +1,6 @@
 # Chapter 9: Recaptioning and Document Understanding
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Jun Yu; Ke Wang; Cong Wang</div>
 
 ## Abstract
 

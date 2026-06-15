@@ -1,6 +1,6 @@
 # Chapter 14: Annotation Platforms, Quality Assurance Systems, and Data Operations
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Ran Zhang; Yang Luo; Jun Yu</div>
 
 ## Abstract
 

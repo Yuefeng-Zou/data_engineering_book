@@ -1,6 +1,6 @@
 # 项目十一：Mini-DeepSeek 预训练复现
 
-<div class="chapter-authors">王柯（Ke Wang）</div>
+<div class="chapter-authors">於俊（Jun Yu）；王柯（Ke Wang）；骆阳（Yang Luo）</div>
 
 ## 摘要
 

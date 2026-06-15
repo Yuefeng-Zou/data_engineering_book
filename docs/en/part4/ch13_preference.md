@@ -1,6 +1,6 @@
 # Chapter 13: Preference Data and Reward Signals
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Jun Yu; Ran Zhang; Yang Luo</div>
 
 ## Abstract
 

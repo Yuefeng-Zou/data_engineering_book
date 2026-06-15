@@ -1,6 +1,6 @@
 # 第16章：知识蒸馏与模型协作
 
-<div class="chapter-authors">张然（Ran Zhang）</div>
+<div class="chapter-authors">王聪（Cong Wang）；张然（Ran Zhang）；於俊（Jun Yu）</div>
 
 ## 摘要
 

@@ -1,6 +1,6 @@
 # Chapter 23: Online Feedback Loops and Knowledge Updates
 
-<div class="chapter-authors">Wenzhuo Du</div>
+<div class="chapter-authors">Jun Yu; Wenzhuo Du; Gongpeng Zhao</div>
 
 ## Abstract
 

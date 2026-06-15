@@ -1,6 +1,6 @@
 # 第30章：企业内部数据市场与共享治理
 
-<div class="chapter-authors">杜文卓（Wenzhuo Du）</div>
+<div class="chapter-authors">骆阳（Yang Luo）；Fang Gao；杜文卓（Wenzhuo Du）</div>
 
 ## 摘要
 

@@ -1,6 +1,6 @@
 # Chapter 48: Data Engineering for Multimodal Generative Models: T2I and T2V Data Pipelines
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Ran Zhang; Jianqing Sun; Fan Yu</div>
 
 ## Abstract
 

@@ -1,6 +1,6 @@
 # Chapter 22: Multimodal RAG and Visual Retrieval
 
-<div class="chapter-authors">Wenzhuo Du</div>
+<div class="chapter-authors">Wenzhuo Du; Gongpeng Zhao; Jun Yu</div>
 
 ## Abstract
 

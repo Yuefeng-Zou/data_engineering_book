@@ -1,6 +1,6 @@
 # 第39章：图文数据工程：候选池构建、多模态筛选与 DataComp 评估
 
-<div class="chapter-authors">穆冠霖（Guanlin Mu）</div>
+<div class="chapter-authors">徐霖（Lin Xu）；陈昕宇（Xinyu Chen）；於俊（Jun Yu）</div>
 
 ## 摘要
 

@@ -1,6 +1,6 @@
 # 第45章：LLM 后训练数据工程实战：SFT 与偏好对齐
 
-<div class="chapter-authors">徐鑫（Xin Xu）</div>
+<div class="chapter-authors">王聪（Cong Wang）；徐鑫（Xin Xu）；Wei Huang</div>
 
 ## 摘要
 

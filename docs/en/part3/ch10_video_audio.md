@@ -1,6 +1,6 @@
 # Chapter 10: Video and Audio Data Engineering
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Ke Wang; Cong Wang; Jun Yu</div>
 
 ## Abstract
 

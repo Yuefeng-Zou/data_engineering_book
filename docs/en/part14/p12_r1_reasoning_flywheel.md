@@ -1,6 +1,6 @@
 # Project 12: A Pedagogical R1 Reasoning Data Flywheel
 
-<div class="chapter-authors">Xin Xu</div>
+<div class="chapter-authors">Cong Wang; Xin Xu; Yang Luo</div>
 
 ## Abstract
 

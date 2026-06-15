@@ -1,6 +1,6 @@
 # Project Seven: Agent Tool-Use Data Factory
 
-<div class="chapter-authors">Xin Xu</div>
+<div class="chapter-authors">Jun Yu; Xin Xu; Zhili Wang</div>
 
 ## Abstract
 P07 focuses on organizing Agent tool-use behaviors into trainable, evaluable, and scalable data assets. The chapter emphasis is not on individual function calls, but on the complete data chain spanning tool specifications, execution trajectories, recovery behaviors, safety boundaries, and training encapsulation.

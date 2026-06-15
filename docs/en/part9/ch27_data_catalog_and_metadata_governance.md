@@ -1,6 +1,6 @@
 # Chapter 27: Data Asset Catalog and Metadata Governance
 
-<div class="chapter-authors">Wenzhuo Du</div>
+<div class="chapter-authors">Ran Zhang; Feng Zhao; Wenzhuo Du</div>
 
 ## Abstract
 

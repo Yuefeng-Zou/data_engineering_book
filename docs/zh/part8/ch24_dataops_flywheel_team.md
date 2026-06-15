@@ -1,6 +1,6 @@
 # 第24章：DataOps 飞轮与团队组织
 
-<div class="chapter-authors">杜文卓（Wenzhuo Du）</div>
+<div class="chapter-authors">於俊（Jun Yu）；杜文卓（Wenzhuo Du）；王灿（Can Wang）</div>
 
 ---
 

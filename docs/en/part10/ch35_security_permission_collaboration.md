@@ -1,6 +1,6 @@
 # Chapter 35: Security, Permissions, and Human-AI Collaboration for Data Engineering Agents
 
-<div class="chapter-authors">Zhili Wang</div>
+<div class="chapter-authors">Yang Luo; Zhili Wang; Jun Yu</div>
 
 ## Chapter Abstract
 

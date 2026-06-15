@@ -1,6 +1,6 @@
 # Chapter 4: Data Sources, Acquisition, and Copyright
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Jun Yu; Ke Wang; Changwen Chen</div>
 
 ## Abstract
 

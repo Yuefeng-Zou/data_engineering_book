@@ -76,7 +76,37 @@ Deployment also belongs in the engineering view of Appendix H. When a MindSpore-
 
 Together, these components form an engineering chain: MindData brings data into training, MindInsight makes training observable, MindArmour gives security and robustness evaluation an entry point, ModelArts and MindStudio support environment and collaboration, and deployment toolchains carry models into applications. If data engineering covers only the first step, the project can merely run. If it covers the whole chain, the project has a chance to run stably over time.
 
-## H.5 Example Extension: MindFace and Face Data Engineering
+## H.5 Programming Paradigm and Training Pipeline
+
+The source material for this appendix describes MindSpore not only as a framework in the Ascend software stack, but also as a programming model. For readers of this book, the key point is not to memorize API names, but to understand how the programming model shapes data contracts. A MindSpore program commonly revolves around several concepts: tensors as typed multidimensional data objects, datasets as asynchronous input pipelines, operators as basic computation units, cells as composable network modules, and models as higher-level training or inference containers. These concepts form the handoff surface between data engineering and model engineering.
+
+From a data engineering perspective, the dataset abstraction is especially important. A dataset pipeline prepares tensors that feed the rest of the network, usually through named columns, source dataset operators, shuffling and sharding flags, transformations, batching, iteration, and device transfer. A sample is therefore not just a file path or a JSON object; it becomes a row with fields that the framework can route, transform, batch, and send to computation. If the original corpus has ambiguous field names, inconsistent label types, variable image channel order, unstable tokenization, or implicit missing-value rules, these problems eventually appear as tensor-shape errors, type errors, silent truncation, or difficult-to-debug training behavior.
+
+The source document also emphasizes MindSpore's hybrid programming style. Network construction often keeps an object-oriented form: users define a class derived from `nn.Cell`, instantiate layers in initialization, and implement forward computation in `construct`. Training logic, however, can be organized more functionally: a forward function computes logits and loss, function transformation obtains gradients, and a training-step function applies the optimizer. This blend matters because data engineering artifacts must satisfy both sides. They must be stable enough for module-based network definitions and explicit enough for function-transformation, gradient, optimizer, and checkpoint workflows.
+
+MindSpore's functional automatic differentiation is useful to understand at a conceptual level. Rather than treating backpropagation only as an implicit side effect, the framework can transform a forward function into a gradient function. For data engineering, this means the training step has a clearer input-output contract: data and labels enter the forward computation, loss and logits are produced, gradients are computed with respect to trainable parameters, and the optimizer updates the model. When a training job behaves abnormally, this structure helps separate data problems from loss-definition problems, gradient problems, and optimizer-configuration problems.
+
+The same source material distinguishes dynamic graphs and static graphs. Dynamic execution is convenient for inspection, breakpoints, and quick checks of intermediate values. Static graph execution can expose more global structure to the compiler and support optimization. MindSpore attempts to connect these modes through source-code transformation and JIT mechanisms, allowing parts of a workflow to be debugged in a dynamic style and then accelerated in graph mode. For a data engineering team, the practical lesson is simple: do not wait until graph compilation or distributed training to discover input instability. Before full training, run a small sample through data loading, preprocessing, batching, forward computation, loss computation, and one training step.
+
+The end-to-end handwritten-digit example in the source document can be translated into a general project checklist. First, the dataset is downloaded or imported and loaded through the dataset interface. Second, raw samples are transformed through rescaling, normalization, channel conversion, batching, and iteration. Third, the network is constructed through layers and activation functions. Fourth, the training loop performs forward computation, loss calculation, gradient computation, and parameter update. Fifth, evaluation runs the trained model on held-out data with deterministic settings. Sixth, inference and deployment rely on saved checkpoints, loaded parameters, and consistent preprocessing. Although Appendix H does not reproduce the tutorial code, this sequence is exactly the kind of lifecycle that data engineering must document.
+
+In practical projects, this sequence should become a reproducibility contract. The data team should specify how raw files become tensors, which transformations are part of training only, which transformations must be shared with inference, how random augmentation is controlled, where checkpoints are written, how evaluation datasets are frozen, and which replay samples are used after export. These details look mundane, but they decide whether a MindSpore-based implementation is merely runnable or actually reproducible.
+
+## H.6 Large-Model Parallelism and Ecosystem Extension
+
+The source document also discusses MindSpore in the context of large-model training. This is directly relevant to the book because large foundation models turn data engineering into a distributed-systems problem. As model parameters, context length, training data volume, and cluster size increase, teams encounter memory pressure, communication overhead, distributed-programming complexity, unstable long-running jobs, expensive inference, and difficult strategy tuning. These issues are not isolated from data: sequence length, sample packing, sharding, batching, checkpoint frequency, validation cadence, and failure recovery all interact with the parallel training plan.
+
+MindSpore's distributed-training capabilities are usually described through multiple parallel dimensions. Data parallelism replicates the model while splitting samples. Operator-level or tensor parallelism partitions large operations or tensors across devices. Pipeline parallelism assigns different layers or stages to different devices and uses micro-batches to improve utilization. Optimizer parallelism and ZeRO-style partitioning reduce memory pressure by distributing optimizer states, gradients, and model states. Recomputation trades additional computation for lower activation memory. In large-model projects, data engineering must know which of these strategies are used, because they affect sample order, micro-batch size, gradient accumulation, checkpoint layout, and evaluation comparability.
+
+The source material further notes that automatic parallel strategy search and cost modeling can reduce manual tuning. For data engineering, the implication is not that the data team should design all parallel algorithms. Instead, the data team should preserve the information that makes strategy tuning observable: sequence-length histograms, token or sample counts per shard, batch construction rules, failed-sample logs, throughput records, device utilization, and evaluation-set versions. Without these records, a change in training speed or model quality may be wrongly attributed to the model architecture when the true cause is data distribution or batching.
+
+Communication and memory behavior are another reason to connect data engineering with framework design. Tensor parallelism can introduce communication between devices; pipeline parallelism can create idle bubbles; data parallelism requires gradient aggregation; activation memory can constrain micro-batch size. Techniques such as intra-layer pipelining, interleaved pipeline schedules, recomputation, memory-pool planning, and checkpoint-based recovery are framework-side responses to these pressures. Data-side responses include length bucketing, packed-sample design, shard balancing, stable random seeds, streaming-friendly formats, and recovery-safe manifests. A robust project treats these as one design space rather than two disconnected concerns.
+
+The MindSpore ecosystem described in the source material also includes higher-level toolkits for large-model workflows, parameter-efficient fine-tuning, reinforcement learning from human feedback, generative models, and AI for Science scenarios. The exact toolkit names and current version support should be checked against official documentation at submission time, but the engineering lesson is stable: framework ecosystems increasingly package not only network code, but also training recipes, fine-tuning methods, inference paths, task templates, and deployment assumptions. Reusing such ecosystems requires the data team to verify data format, license boundary, preprocessing assumptions, metric definitions, and export constraints.
+
+Finally, the ecosystem perspective reinforces why this appendix belongs in a data engineering book. MindSpore is not only an import statement, a training API, or an acceleration backend. It is one possible implementation environment in which data contracts meet compiler contracts, distributed-training contracts, observability contracts, and deployment contracts. When a project moves from a small example to a large-model or production setting, these contracts become inseparable.
+
+## H.7 Example Extension: MindFace and Face Data Engineering
 
 MindFace is an open-source face recognition and detection toolkit based on MindSpore. It targets common computer-vision tasks such as face detection and recognition, provides relatively unified application interfaces, and supports multiple backbones, datasets, and loss-function extensions (MindFace Contributors 2026). From a data engineering perspective, the value of MindFace is not merely that it provides model implementations. It shows how a task-specific toolkit connects framework capability, model structure, data preparation, and evaluation protocols.
 
@@ -110,7 +140,7 @@ MindFace can also serve as a small data-flywheel example. Low-confidence boxes, 
 
 MindFace can therefore be understood in three layers. The model layer provides detection and recognition capabilities such as RetinaFace and ArcFace. The engineering layer uses MindSpore for data loading, network construction, training execution, evaluation, and deployment support. The data-asset layer maintains sources, annotation standards, quality rules, split strategies, version records, compliance boundaries, and failure-sample feedback. Only when all three layers hold can a model library become a sustainable engineering project.
 
-## H.6 Migration Path from Examples to Projects
+## H.8 Migration Path from Examples to Projects
 
 Public examples around MindSpore or MindFace usually emphasize "how to run." Engineering projects emphasize "how to run stably, review, migrate, and iterate." When moving from example to project, the most underestimated issues are not model structures, but implicit assumptions between data and environment. An example may assume fixed directories, fixed data formats, fixed devices, fixed batch sizes, and fixed evaluation scripts. In a real project, these assumptions must become explicit.
 
@@ -128,7 +158,7 @@ The sixth step is to establish a regression evaluation set. A regression set is 
 
 Through this path, MindSpore is no longer merely an `import` statement in a training script, and MindFace is no longer merely a model repository. They become part of the complete data engineering lifecycle: data enters the system, is cleaned and annotated, becomes training input, enters training and evaluation, produces models and failure samples, and then returns to data iteration and deployment validation. This is the data engineering loop emphasized throughout the book.
 
-## H.7 Common Implementation Problems and Debugging Clues
+## H.9 Common Implementation Problems and Debugging Clues
 
 MindSpore-oriented data engineering projects often fail at the boundary between data, environment, and training entry point. The first class of problems is inconsistent data format. Offline cleaning scripts output one field structure, while training scripts expect another; image annotations use `x_min, y_min, x_max, y_max`, while the model entry parses `x, y, width, height`; text samples retain empty labels or abnormal line breaks that only surface after tokenization. Schema, sample previews, and small-batch smoke tests should catch these problems early.
 
@@ -144,7 +174,7 @@ The sixth class is missing compliance material. Whether data is authorized, cont
 
 The seventh class is documentation that covers only "how to train" and not "how to reproduce." Complete documentation should include environment versions, dependency installation, data preparation, training entry, evaluation entry, model export, expected outputs, common errors, and debugging paths. MindSpore-related projects that harden these notes reduce the cost of teaching reproduction, research reproduction, and engineering handoff.
 
-## H.8 Reading and Usage Suggestions
+## H.10 Reading and Usage Suggestions
 
 When using the related companion materials, MindSpore information can be handled at four levels.
 
@@ -158,7 +188,7 @@ Fourth, as an ecosystem-extension entry. MindFace, MindFormers, MindCV, and simi
 
 In this sense, MindSpore is not promotional add-on content. It is part of the implementation context of data engineering: a mature data engineering project must answer where data comes from, how it is processed, how it enters training, how it is evaluated, how it is deployed, and how later maintainers can review it.
 
-## H.9 Acknowledgments
+## H.11 Acknowledgments
 
 Part of the teaching, practice, and companion implementation work related to this book received funding and resource support from the MindSpore ecosystem. This support helped course lab organization, environment setup, implementation validation, and engineering reproduction. The authors gratefully acknowledge the relevant support.
 

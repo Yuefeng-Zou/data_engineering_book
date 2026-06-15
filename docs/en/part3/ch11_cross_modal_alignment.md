@@ -1,6 +1,6 @@
 # Chapter 11: Cross-Modal Alignment and Fusion
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Ke Wang; Cong Wang; Jun Yu</div>
 
 ## Abstract
 

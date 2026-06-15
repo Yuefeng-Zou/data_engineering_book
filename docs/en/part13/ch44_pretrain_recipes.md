@@ -1,6 +1,6 @@
 # Chapter 44: LLM Pretraining Data Engineering in Practice: From Recipe to Deployment
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Ke Wang; Jiaen Liang; Jun Yu</div>
 
 ## Abstract
 

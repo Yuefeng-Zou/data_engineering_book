@@ -1,6 +1,6 @@
 # Chapter 16: Knowledge Distillation and Model Collaboration
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Cong Wang; Ran Zhang; Jun Yu</div>
 
 ## Abstract
 

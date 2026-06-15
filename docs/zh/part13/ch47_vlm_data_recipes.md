@@ -1,6 +1,6 @@
 # 第47章：多模态大模型（VLM）数据配方：从预训练到视觉对齐
 
-<div class="chapter-authors">王柯（Ke Wang）</div>
+<div class="chapter-authors">曹旭宏（Xuhong Cao）；王柯（Ke Wang）；Qingsong Liu</div>
 
 ## 摘要
 

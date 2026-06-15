@@ -1,6 +1,6 @@
 # Project 15: Building an Enterprise Semantic BI Assistant with DataAgent
 
-<div class="chapter-authors">caoxuhong</div>
+<div class="chapter-authors">Xuhong Cao; Zhongyi Liu; Jun Yu</div>
 
 ## Abstract
 

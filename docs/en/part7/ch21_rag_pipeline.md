@@ -1,6 +1,6 @@
 # Chapter 21: The RAG Data Pipeline
 
-<div class="chapter-authors">Wenzhuo Du</div>
+<div class="chapter-authors">Wenzhuo Du; Gongpeng Zhao; Jun Yu</div>
 
 ## Chapter Abstract
 

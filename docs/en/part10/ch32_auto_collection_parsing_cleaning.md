@@ -1,6 +1,6 @@
 # Chapter 32: Automated Collection, Parsing, and Cleaning Agents
 
-<div class="chapter-authors">Zhili Wang</div>
+<div class="chapter-authors">Jun Yu; Zhili Wang; Zhongyi Liu</div>
 
 ## Chapter Abstract
 

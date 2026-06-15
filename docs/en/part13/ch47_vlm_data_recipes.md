@@ -1,6 +1,6 @@
 # Chapter 47: Multimodal Large Model (VLM) Data Recipes: From Pre-Training to Visual Alignment
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Xuhong Cao; Ke Wang; Qingsong Liu</div>
 
 ## Abstract
 

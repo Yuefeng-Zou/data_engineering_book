@@ -1,6 +1,6 @@
 # Chapter 45: LLM Post-Training Data Engineering in Practice: SFT and Preference Alignment
 
-<div class="chapter-authors">Xin Xu</div>
+<div class="chapter-authors">Cong Wang; Xin Xu; Wei Huang</div>
 
 ## Abstract
 

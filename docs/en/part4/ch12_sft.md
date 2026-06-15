@@ -1,6 +1,6 @@
 # Chapter 12: SFT Data Design and Instruction Systems
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Jun Yu; Ran Zhang; Yang Luo</div>
 
 ## Chapter Overview
 

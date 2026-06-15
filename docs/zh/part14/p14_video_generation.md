@@ -1,6 +1,6 @@
 # 项目十四：视频生成数据集：从视频源到可用于 T2V 训练的数据流水线
 
-<div class="chapter-authors">张然（Ran Zhang）</div>
+<div class="chapter-authors">骆阳（Yang Luo）；张然（Ran Zhang）；杜文卓（Wenzhuo Du）</div>
 
 ## 摘要
 

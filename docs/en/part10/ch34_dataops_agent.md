@@ -1,6 +1,6 @@
 # Chapter 34: DataOps Agents and Platform Autonomy
 
-<div class="chapter-authors">Zhili Wang</div>
+<div class="chapter-authors">Yang Luo; Zhili Wang; Jun Yu</div>
 
 ## Chapter Abstract
 

@@ -1,6 +1,6 @@
 # Chapter 39: Image-Text Data Engineering: Candidate Pool Construction, Multimodal Filtering, and DataComp Evaluation
 
-<div class="chapter-authors">Guanlin Mu</div>
+<div class="chapter-authors">Lin Xu; Xinyu Chen; Jun Yu</div>
 
 ## Abstract
 

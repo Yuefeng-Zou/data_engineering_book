@@ -1,6 +1,6 @@
 # Project 1: Building a Distributed Mini-C4 Data Pipeline with Ray
 
-<div class="chapter-authors">Xin Xu</div>
+<div class="chapter-authors">Xin Xu; Ran Zhang; Jun Yu</div>
 
 ## Abstract
 P01 focuses on the engineering process of constructing a Mini-C4 training dataset from a Common Crawl shard. The chapter emphasizes not the results of a single crawl, but rather the organization of web archiving, body text extraction, deduplication and filtering, training packaging, and result validation into a reproducible data production pipeline.

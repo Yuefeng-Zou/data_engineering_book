@@ -1,6 +1,6 @@
 # 第44章：LLM 预训练数据工程实战：从配方到落地
 
-<div class="chapter-authors">王柯（Ke Wang）</div>
+<div class="chapter-authors">王柯（Ke Wang）；Jiaen Liang；於俊（Jun Yu）</div>
 
 ## 摘要
 

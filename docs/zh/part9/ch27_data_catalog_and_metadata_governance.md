@@ -1,6 +1,6 @@
 # 第27章：数据资产目录与元数据治理
 
-<div class="chapter-authors">杜文卓（Wenzhuo Du）</div>
+<div class="chapter-authors">张然（Ran Zhang）；Feng Zhao；杜文卓（Wenzhuo Du）</div>
 
 ## 摘要
 

@@ -1,6 +1,6 @@
 # Project 14: Video Generation Dataset — From Video Sources to a T2V-Training-Ready Data Pipeline
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Yang Luo; Ran Zhang; Wenzhuo Du</div>
 
 ## Abstract
 

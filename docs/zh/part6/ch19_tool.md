@@ -1,6 +1,6 @@
 # 第19章：Tool-Use 与函数调用数据
 
-<div class="chapter-authors">张然（Ran Zhang）</div>
+<div class="chapter-authors">於俊（Jun Yu）；张然（Ran Zhang）；刘中一（Zhongyi Liu）</div>
 
 ## 摘要
 

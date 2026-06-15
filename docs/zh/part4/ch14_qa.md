@@ -1,6 +1,6 @@
 # 第14章 标注平台、质量保障体系与数据运营
 
-<div class="chapter-authors">张然（Ran Zhang）</div>
+<div class="chapter-authors">张然（Ran Zhang）；骆阳（Yang Luo）；於俊（Jun Yu）</div>
 
 ## 摘要
 

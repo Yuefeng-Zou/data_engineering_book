@@ -1,6 +1,6 @@
 # Chapter 36: Data Compliance Frameworks and Governance
 
-<div class="chapter-authors">Zhili Wang; Xin Xu</div>
+<div class="chapter-authors">Zhili Wang; Xin Xu; Jun Yu</div>
 
 ## Chapter Guide
 

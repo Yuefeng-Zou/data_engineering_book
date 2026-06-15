@@ -1,6 +1,6 @@
 # Project 8: Building an Enterprise DataOps Platform: From Data Projects to Organizational Governance
 
-<div class="chapter-authors">Xin Xu</div>
+<div class="chapter-authors">Jun Yu; Xin Xu; Zhili Wang</div>
 
 ## Abstract
 

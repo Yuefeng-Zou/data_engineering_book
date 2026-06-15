@@ -1,6 +1,6 @@
 # Chapter 20: Agent Memory and Multi-Turn Interaction Data
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Ran Zhang; Zhongyi Liu; Jun Yu</div>
 
 ## Abstract
 

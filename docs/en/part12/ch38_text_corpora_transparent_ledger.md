@@ -1,5 +1,7 @@
 # Chapter 38: Text Corpus Data Engineering: Open Web, Filtering, Deduplication, and Transparent Ledgers
 
+<div class="chapter-authors">Guanjun Liu; Yuefeng Zou; Jun Yu</div>
+
 ## Abstract
 
 This chapter uses FineWeb and Dolma as complementary cases to explain how text-corpus data engineering turns open Web snapshots into trainable, traceable, and diagnosable data assets. FineWeb emphasizes Common Crawl extraction, filtering, deduplication, privacy processing, and processing-choice evaluation. Dolma emphasizes source ledgers, token consumption, source ablation, and transparent release. Together they show that pre-training corpora are not defined by scale alone, but by provenance, processing, versions, evidence chains, and reproducibility conditions.

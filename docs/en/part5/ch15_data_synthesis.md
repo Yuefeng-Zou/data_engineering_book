@@ -1,6 +1,6 @@
 # Chapter 15: The Synthetic Data Factory: From Seeds to Validation
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Cong Wang; Ran Zhang; Jun Yu</div>
 
 ## Chapter Introduction
 

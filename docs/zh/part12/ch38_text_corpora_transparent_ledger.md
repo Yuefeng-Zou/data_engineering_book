@@ -1,5 +1,7 @@
 # 第38章：文本语料数据工程：开放 Web、过滤去重与透明账本
 
+<div class="chapter-authors">刘冠君（Guanjun Liu）；邹月峰（Yuefeng Zou）；於俊（Jun Yu）</div>
+
 ## 摘要
 
 本章以 FineWeb 和 Dolma 为两个互补案例，讨论文本语料数据工程如何从开放 Web 快照走向可训练、可追溯、可诊断的数据资产。FineWeb 侧重 Common Crawl 文本抽取、过滤、去重、隐私处理和处理选择评估；Dolma 侧重来源账本、token 消费量、source ablation 和透明发布。两者共同说明，文本预训练语料的核心不只是规模，而是来源、处理、版本、证据链和复现条件。

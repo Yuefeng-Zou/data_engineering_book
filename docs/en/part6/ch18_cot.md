@@ -1,6 +1,6 @@
 # Chapter 18: Chain-of-Thought and Reasoning Data Engineering
 
-<div class="chapter-authors">Ran Zhang</div>
+<div class="chapter-authors">Jun Yu; Ran Zhang; Zhongyi Liu</div>
 
 ## Chapter Overview
 

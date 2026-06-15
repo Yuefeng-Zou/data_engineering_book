@@ -1,6 +1,6 @@
 # Chapter 7: Data Evaluation, Quality Feedback Loops, and Operational Iteration
 
-<div class="chapter-authors">Ke Wang</div>
+<div class="chapter-authors">Ke Wang; Fan Yu; Jun Yu</div>
 
 ## Abstract
 
