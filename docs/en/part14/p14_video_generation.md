@@ -96,6 +96,8 @@ The sixth is **cinematic language annotation**. A regular caption describes cont
 
 Table P14-1 summarizes the artifacts of each stage. The publication manuscript must retain these filenames, as they serve as the index by which readers map the main text, code, and reproduced artifacts to one another.
 
+*Table P14-1: Stage artifacts and field contracts of the video generation data pipeline*
+
 | Stage | Code Entry Point | Primary Input | Primary Output | Key Fields |
 | --- | --- | --- | --- | --- |
 | Video source loading | `load_pexels.py` | `pexels_manifest.jsonl` or `pexels_*.mp4` | `source_videos.jsonl` | `video_id`, `path`, `license`, `duration`, `fps`, `width`, `height` |
@@ -106,7 +108,7 @@ Table P14-1 summarizes the artifacts of each stage. The publication manuscript m
 | Cinematic language annotation | `shot_language_tagger.py` | `stage5_captions.jsonl`, `stage2_scenes.jsonl` | `stage6_shot_language.jsonl` | `vlm_tags`, `camera_motion`, `status` |
 | Final manifest construction | `utils.build_manifest` | Per-stage JSONL | final manifest | Provenance, clips, filters, captions, shot tags, and audit information |
 
-*Table P14-1: Stage artifacts and field contracts of the video generation data pipeline*
+
 
 An important implication of Table P14-1 is that this project does not store intermediate results temporarily in memory but saves each stage as JSONL or directory assets. This approach consumes somewhat more disk space, but yields three engineering benefits. First, a failure can be resumed from the last completed stage; second, spot-checks can trace back to a specific `shot_id`, source video, and frame image; third, subsequent safety filtering, deduplication, resampling, and WebDataset packaging can iterate independently without re-running the VLM.
 
@@ -348,11 +350,13 @@ Table P14-2 summarizes the key runtime parameters and their effects.
 | `caption_with_vlm.py --min-words` | `50` | Caption verbosity | Word count cannot substitute for factual accuracy |
 | `MAX_SAMPLES` | `5000` | Experiment scale | Set a small value first for teaching or smoke testing |
 
-*Table P14-2: Key runtime parameters of the video generation data pipeline*
+
 
 ## 5. Quality Acceptance and Release Gates
 
 Accepting a video generation dataset cannot be reduced to "checking whether captions were generated." For T2V training, at minimum, provenance, clips, motion, visual quality, text, cinematic tags, and safety boundaries must all be simultaneously verified. Table P14-3 provides the publication-grade acceptance criteria for this project.
+
+*Table P14-3: Publication acceptance checklist for the video generation data pipeline*
 
 | Acceptance Dimension | Metric / Evidence | Pre-Release Check |
 | --- | --- | --- |
@@ -365,7 +369,7 @@ Accepting a video generation dataset cannot be reduced to "checking whether capt
 | Resumability | Shard files, logs, `_DONE` markers, merge results | Confirm that failed reruns do not produce duplicate writes or lost samples |
 | Safety boundary | NSFW, watermark, OCR, portrait rights, and sensitive scene checks | Safety filter records must be supplemented before publication or public release |
 
-*Table P14-3: Publication acceptance checklist for the video generation data pipeline*
+
 
 During acceptance, it is recommended to divide samples into three spot-check groups. The first group consists of samples that pass all filters, used to confirm final training set quality. The second group consists of samples just below threshold — boundary cases used to determine whether the threshold is too strict. The third group consists of failed samples, used to determine whether failures originate from the data itself, model calls, GPU OOM, missing paths, or corrupted JSONL. Inspecting only passing samples while ignoring failed ones consistently leads to overestimating pipeline quality.
 

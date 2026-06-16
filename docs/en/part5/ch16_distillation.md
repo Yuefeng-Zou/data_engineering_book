@@ -328,7 +328,6 @@ Capacity boundaries are reflected not only in parameter scale but also in task l
 
 To present common collaboration modes and applicable tasks more clearly, Table 16-1 below maps collaboration patterns to role configurations, applicable tasks, and risk points.
 
-*Table 16-1: Collaboration Modes and Applicable Tasks*
 
 **Table 16-1: Collaboration Modes and Applicable Tasks**
 
@@ -560,7 +559,6 @@ if __name__ == "__main__":
 
 Table 16-2 below presents a distillation returns and costs comparison suitable for helping teams make more systematic decisions. As shown, typical returns and costs differ across dimensions such as inference quality, latency performance, and cost control.
 
-*Table 16-2: Distillation Returns and Costs*
 
 *Table 16-2: Distillation Returns and Costs*
 
