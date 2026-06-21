@@ -164,12 +164,12 @@
 | 图44-3 | 图 | 图44-3：预训练数据源分层地图 | Ch44 | 第44章：LLM 预训练数据工程实战：从配方到落地 | 本书资源：`docs/images/part13/ch44_03_pretrain_data_source_map.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图44-3：预训练数据源分层地图 | 是 |
 | 图44-4 | 图 | 图44-4：三模型数据组成饼图对比 (Estimated Data Mixture Ratios) | Ch44 | 第44章：LLM 预训练数据工程实战：从配方到落地 | 本书资源：`docs/images/part13/ch44_04_models_pie_chart_en.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图44-4：三模型数据组成饼图对比 (Estimated Data Mixture Ratios) | 是 |
 | 图44-5 | 图 | 图44-5：Llama-3 退火期数据组成时间轴 (Curriculum Learning Schedule) | Ch44 | 第44章：LLM 预训练数据工程实战：从配方到落地 | 本书资源：`docs/images/part13/ch44_05_llama3_annealing_schedule_en.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图44-5：Llama-3 退火期数据组成时间轴 (Curriculum Learning Schedule) | 是 |
-| 图45-1 | 图 | 图45-1：LLM 后训练三阶段流水线示意图 | Ch45 | 第45章：LLM 后训练数据工程实战：SFT 与偏好对齐 | 本书资源：`docs/images/part13/ch45_01_posttrain_three_stage_pipeline.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图45-1：LLM 后训练三阶段流水线示意图 | 是 |
-| 图45-2 | 图 | 图45-2：Self-Instruct、Evol-Instruct 与 Magpie 三流派 pipeline 对比 | Ch45 | 第45章：LLM 后训练数据工程实战：SFT 与偏好对齐 | 本书资源：`docs/images/part13/ch45_02_sft_synthesis_pipelines.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图45-2：Self-Instruct、Evol-Instruct 与 Magpie 三流派 pipeline 对比 | 是 |
-| 图45-3 | 图 | 图45-3：Tülu-3 三阶段数据流与规模示意 | Ch45 | 第45章：LLM 后训练数据工程实战：SFT 与偏好对齐 | 本书资源：`docs/images/part13/ch45_03_tulu3_posttrain_flow.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图45-3：Tülu-3 三阶段数据流与规模示意 | 是 |
-| 图46-1 | 图 | 图46-1：R1 风格推理数据飞轮四阶段 | Ch46 | 第46章：推理模型与 RL 数据工程：R1 / QwQ 范式 | 本书资源：`docs/images/part13/ch46_01_r1_reasoning_flywheel.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图46-1：R1 风格推理数据飞轮四阶段 | 是 |
-| 图46-2 | 图 | 图46-2：推理数据奖励信号与验证器结构 | Ch46 | 第46章：推理模型与 RL 数据工程：R1 / QwQ 范式 | 本书资源：`docs/images/part13/ch46_02_reward_verifier_architecture.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图46-2：推理数据奖励信号与验证器结构 | 是 |
-| 图46-3 | 图 | 图46-3：Long-CoT 数据样例剖面 | Ch46 | 第46章：推理模型与 RL 数据工程：R1 / QwQ 范式 | 本书资源：`docs/images/part13/ch46_03_long_cot_trace_patterns.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图46-3：Long-CoT 数据样例剖面 | 是 |
+| 图45-1 | 图 | 图45-1：LLM 后训练三阶段流水线示意图 | Ch45 | 第45章：LLM 后训练数据工程实战：SFT 与偏好对齐 | 本书资源：`docs/images/part13/ch45_01_posttrain_three_stage_pipeline.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图45-1：LLM 后训练三阶段流水线示意图 | 是 |
+| 图45-2 | 图 | 图45-2：Self-Instruct、Evol-Instruct 与 Magpie 三流派 pipeline 对比 | Ch45 | 第45章：LLM 后训练数据工程实战：SFT 与偏好对齐 | 本书资源：`docs/images/part13/ch45_02_sft_synthesis_pipelines.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图45-2：Self-Instruct、Evol-Instruct 与 Magpie 三流派 pipeline 对比 | 是 |
+| 图45-3 | 图 | 图45-3：Tülu-3 三阶段数据流与规模示意 | Ch45 | 第45章：LLM 后训练数据工程实战：SFT 与偏好对齐 | 本书资源：`docs/images/part13/ch45_03_tulu3_posttrain_flow.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图45-3：Tülu-3 三阶段数据流与规模示意 | 是 |
+| 图46-1 | 图 | 图46-1：R1 风格推理数据飞轮四阶段 | Ch46 | 第46章：推理模型与 RL 数据工程：R1 / QwQ 范式 | 本书资源：`docs/images/part13/ch46_01_r1_reasoning_flywheel.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图46-1：R1 风格推理数据飞轮四阶段 | 是 |
+| 图46-2 | 图 | 图46-2：推理数据奖励信号与验证器结构 | Ch46 | 第46章：推理模型与 RL 数据工程：R1 / QwQ 范式 | 本书资源：`docs/images/part13/ch46_02_reward_verifier_architecture.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图46-2：推理数据奖励信号与验证器结构 | 是 |
+| 图46-3 | 图 | 图46-3：Long-CoT 数据样例剖面 | Ch46 | 第46章：推理模型与 RL 数据工程：R1 / QwQ 范式 | 本书资源：`docs/images/part13/ch46_03_long_cot_trace_patterns.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图46-3：Long-CoT 数据样例剖面 | 是 |
 | 图47-1 | 图 | 图47-1：多模态数据工程全景图 | Ch47 | 第47章：多模态大模型（VLM）数据配方：从预训练到视觉对齐 | 本书资源：`docs/images/part13/ch47_01_multimodal_data_panorama.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图47-1：多模态数据工程全景图 | 是 |
 | 图47-2 | 图 | 图47-2：VLM 数据三阶段流水线 (3-Stage VLM Data Engineering Pipeline) | Ch47 | 第47章：多模态大模型（VLM）数据配方：从预训练到视觉对齐 | 本书资源：`docs/images/part13/ch47_02_vlm_three_stages_en.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图47-2：VLM 数据三阶段流水线 (3-Stage VLM Data Engineering Pipeline) | 是 |
 | 图47-3 | 图 | 图47-3：Native vs Dynamic Resolution 数据 pipeline 对比 (Resolution Handling) | Ch47 | 第47章：多模态大模型（VLM）数据配方：从预训练到视觉对齐 | 本书资源：`docs/images/part13/ch47_03_resolution_handling_en.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图47-3：Native vs Dynamic Resolution 数据 pipeline 对比 (Resolution Handling) | 是 |
@@ -216,85 +216,85 @@
 | 图 P03-6 | 图 | 图 P03-6 | P3 | 项目三：LLaVA 多模态指令数据工厂 | 本书资源：`docs/images/part14/p03_06_quality_loop.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P03-6 | 是 |
 | 图 P03-7 | 图 | 图 P03-7 | P3 | 项目三：LLaVA 多模态指令数据工厂 | 本书资源：`docs/images/part14/p03_07_failure_attribution.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P03-7 | 是 |
 | 图 P03-8 | 图 | 图 P03-8 | P3 | 项目三：LLaVA 多模态指令数据工厂 | 本书资源：`docs/images/part14/p03_08_validation_loop.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P03-8 | 是 |
-| 图 P04-1 | 图 | 图 P04-1 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_01_project_positioning.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-1 | 是 |
-| 图 P04-2 | 图 | 图 P04-2 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_02_goals_and_scope.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-2 | 是 |
-| 图 P04-3 | 图 | 图 P04-3 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_03_pipeline_overview.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-3 | 是 |
-| 图 P04-4 | 图 | 图 P04-4 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_04_roles_and_responsibilities.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-4 | 是 |
-| 图 P04-5 | 图 | 图 P04-5 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_05_seed_to_plan.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-5 | 是 |
-| 图 P04-6 | 图 | 图 P04-6 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_06_evol_path.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-6 | 是 |
-| 图 P04-7 | 图 | 图 P04-7 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_07_cot_vs_pot.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-7 | 是 |
-| 图 P04-8 | 图 | 图 P04-8 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_08_generation_chain.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-8 | 是 |
-| 图 P04-9 | 图 | 图 P04-9 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_09_sandbox_validation.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-9 | 是 |
-| 图 P04-10 | 图 | 图 P04-10 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_10_packaging_outputs.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-10 | 是 |
-| 图 P04-11 | 图 | 图 P04-11 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04_11_training_interface.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-11 | 是 |
-| 图 P05-1 | 图 | 图 P05-1 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05_01_overall_architecture.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-1 | 是 |
-| 图 P05-2 | 图 | 图 P05-2 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05_02_vision_vs_ocr.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-2 | 是 |
-| 图 P05-3 | 图 | 图 P05-3 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05_03_page_assets.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-3 | 是 |
-| 图 P05-4 | 图 | 图 P05-4 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05_04_indexing_pipeline.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-4 | 是 |
-| 图 P05-5 | 图 | 图 P05-5 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05_05_topk_filtering.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-5 | 是 |
-| 图 P05-6 | 图 | 图 P05-6 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05_06_multi_image_prompting.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-6 | 是 |
-| 图 P05-7 | 图 | 图 P05-7 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05_07_eval_framework.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-7 | 是 |
-| 图 P05-8 | 图 | 图 P05-8 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05_08_optimization_roadmap.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-8 | 是 |
-| 图 P05-9 | 图 | 图 P05-9 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05_09_hybrid_rag.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-9 | 是 |
-| 图 P06-1 | 图 | 图 P06-1 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06_01_prm_factory_overview.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-1 | 是 |
-| 图 P06-2 | 图 | 图 P06-2 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06_02_step_validation_loop.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-2 | 是 |
-| 图 P06-3 | 图 | 图 P06-3 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06_03_task_sampling.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-3 | 是 |
-| 图 P06-4 | 图 | 图 P06-4 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06_04_trace_types.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-4 | 是 |
-| 图 P06-5 | 图 | 图 P06-5 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06_05_step_schema.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-5 | 是 |
-| 图 P06-6 | 图 | 图 P06-6 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06_06_validation_pipeline.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-6 | 是 |
-| 图 P06-7 | 图 | 图 P06-7 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06_07_step_labels.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-7 | 是 |
-| 图 P06-8 | 图 | 图 P06-8 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06_08_training_interface.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-8 | 是 |
-| 图 P06-9 | 图 | 图 P06-9 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06_09_validation_metrics.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-9 | 是 |
-| 图 P06-10 | 图 | 图 P06-10 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06_10_noise_sources.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-10 | 是 |
-| 图 P07-1 | 图 | 图 P07-1 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_01_agent_tooluse_factory_overview.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-1 | 是 |
-| 图 P07-2 | 图 | 图 P07-2 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_02_three_layer_architecture.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-2 | 是 |
-| 图 P07-3 | 图 | 图 P07-3 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_03_roles_and_responsibilities.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-3 | 是 |
-| 图 P07-4 | 图 | 图 P07-4 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_04_tool_schema_structure.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-4 | 是 |
-| 图 P07-5 | 图 | 图 P07-5 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_05_task_specs_and_templates.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-5 | 是 |
-| 图 P07-6 | 图 | 图 P07-6 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_06_trajectory_taxonomy.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-6 | 是 |
-| 图 P07-7 | 图 | 图 P07-7 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_07_simulated_env_loop.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-7 | 是 |
-| 图 P07-8 | 图 | 图 P07-8 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_08_pipeline_steps.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-8 | 是 |
-| 图 P07-9 | 图 | 图 P07-9 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_09_recovery_flow.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-9 | 是 |
-| 图 P07-10 | 图 | 图 P07-10 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_10_memory_trajectory.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-10 | 是 |
-| 图 P07-11 | 图 | 图 P07-11 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_11_unsafe_block.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-11 | 是 |
-| 图 P07-12 | 图 | 图 P07-12 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_12_dataset_repacking.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-12 | 是 |
-| 图 P07-13 | 图 | 图 P07-13 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_13_eval_and_checks.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-13 | 是 |
-| 图 P07-14 | 图 | 图 P07-14 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07_14_roadmap.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-14 | 是 |
-| 图 P08-1 | 图 | 图 P08-1 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_01_dataops_platform_overview.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-1 | 是 |
-| 图 P08-2 | 图 | 图 P08-2 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_02_four_layer_architecture.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-2 | 是 |
-| 图 P08-3 | 图 | 图 P08-3 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_03_specs_to_ops_pipeline.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-3 | 是 |
-| 图 P08-4 | 图 | 图 P08-4 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_04_object_model.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-4 | 是 |
-| 图 P08-5 | 图 | 图 P08-5 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_05_version_lifecycle.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-5 | 是 |
-| 图 P08-6 | 图 | 图 P08-6 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_06_experiment_tracking.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-6 | 是 |
-| 图 P08-7 | 图 | 图 P08-7 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_07_lineage_graph.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-7 | 是 |
-| 图 P08-8 | 图 | 图 P08-8 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_08_rollback_flow.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-8 | 是 |
-| 图 P08-9 | 图 | 图 P08-9 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_09_observability_loop.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-9 | 是 |
-| 图 P08-10 | 图 | 图 P08-10 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_10_audit_and_incident_review.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-10 | 是 |
-| 图 P08-11 | 图 | 图 P08-11 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08_11_validation_pipeline.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-11 | 是 |
-| 图 P09-1 | 图 | 图 P09-1 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_01_privacy_pipeline_overview.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-1 | 是 |
-| 图 P09-2 | 图 | 图 P09-2 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_02_roles_and_responsibilities.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-2 | 是 |
-| 图 P09-3 | 图 | 图 P09-3 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_03_specs_layer.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-3 | 是 |
-| 图 P09-4 | 图 | 图 P09-4 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_04_raw_records_coverage.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-4 | 是 |
-| 图 P09-5 | 图 | 图 P09-5 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_05_pii_detection_distribution.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-5 | 是 |
-| 图 P09-6 | 图 | 图 P09-6 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_06_classification_and_quarantine.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-6 | 是 |
-| 图 P09-7 | 图 | 图 P09-7 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_07_redaction_strategies.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-7 | 是 |
-| 图 P09-8 | 图 | 图 P09-8 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_08_storage_zones.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-8 | 是 |
-| 图 P09-9 | 图 | 图 P09-9 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_09_alerts_and_audit.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-9 | 是 |
-| 图 P09-10 | 图 | 图 P09-10 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_10_preflight_checks.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-10 | 是 |
-| 图 P09-11 | 图 | 图 P09-11 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_11_incident_postmortem.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-11 | 是 |
-| 图 P09-12 | 图 | 图 P09-12 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09_12_execution_sequence.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-12 | 是 |
-| 图 P10-1 | 图 | 图 P10-1 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10_01_flywheel_overview.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-1 | 是 |
-| 图 P10-2 | 图 | 图 P10-2 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10_02_registry_and_interfaces.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-2 | 是 |
-| 图 P10-3 | 图 | 图 P10-3 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10_03_project_specs.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-3 | 是 |
-| 图 P10-4 | 图 | 图 P10-4 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10_04_stage_plan.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-4 | 是 |
-| 图 P10-5 | 图 | 图 P10-5 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10_05_architecture_code_mapping.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-5 | 是 |
-| 图 P10-6 | 图 | 图 P10-6 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10_06_boundaries_and_control_points.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-6 | 是 |
-| 图 P10-7 | 图 | 图 P10-7 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10_07_runs_and_milestones.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-7 | 是 |
-| 图 P10-8 | 图 | 图 P10-8 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10_08_bottleneck_map.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-8 | 是 |
-| 图 P10-9 | 图 | 图 P10-9 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10_09_metrics_codegen.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-9 | 是 |
-| 图 P10-10 | 图 | 图 P10-10 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10_10_check_contracts.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-10 | 是 |
+| 图 P04-1 | 图 | 图 P04-1 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_01_project_positioning.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-1 | 是 |
+| 图 P04-2 | 图 | 图 P04-2 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_02_goals_and_scope.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-2 | 是 |
+| 图 P04-3 | 图 | 图 P04-3 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_03_pipeline_overview.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-3 | 是 |
+| 图 P04-4 | 图 | 图 P04-4 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_04_roles_and_responsibilities.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-4 | 是 |
+| 图 P04-5 | 图 | 图 P04-5 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_05_seed_to_plan.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-5 | 是 |
+| 图 P04-6 | 图 | 图 P04-6 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_06_evol_path.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-6 | 是 |
+| 图 P04-7 | 图 | 图 P04-7 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_07_cot_vs_pot.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-7 | 是 |
+| 图 P04-8 | 图 | 图 P04-8 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_08_generation_chain.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-8 | 是 |
+| 图 P04-9 | 图 | 图 P04-9 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_09_sandbox_validation.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-9 | 是 |
+| 图 P04-10 | 图 | 图 P04-10 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_10_packaging_outputs.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-10 | 是 |
+| 图 P04-11 | 图 | 图 P04-11 | P4 | 项目四：合成数学与代码教材工厂 | 本书资源：`docs/images/part14/p04/p04_11_training_interface.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P04-11 | 是 |
+| 图 P05-1 | 图 | 图 P05-1 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05/p05_01_overall_architecture.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-1 | 是 |
+| 图 P05-2 | 图 | 图 P05-2 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05/p05_02_vision_vs_ocr.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-2 | 是 |
+| 图 P05-3 | 图 | 图 P05-3 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05/p05_03_page_assets.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-3 | 是 |
+| 图 P05-4 | 图 | 图 P05-4 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05/p05_04_indexing_pipeline.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-4 | 是 |
+| 图 P05-5 | 图 | 图 P05-5 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05/p05_05_topk_filtering.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-5 | 是 |
+| 图 P05-6 | 图 | 图 P05-6 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05/p05_06_multi_image_prompting.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-6 | 是 |
+| 图 P05-7 | 图 | 图 P05-7 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05/p05_07_eval_framework.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-7 | 是 |
+| 图 P05-8 | 图 | 图 P05-8 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05/p05_08_optimization_roadmap.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-8 | 是 |
+| 图 P05-9 | 图 | 图 P05-9 | P5 | 项目五：多模态 RAG 企业财报助手 | 本书资源：`docs/images/part14/p05/p05_09_hybrid_rag.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P05-9 | 是 |
+| 图 P06-1 | 图 | 图 P06-1 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06/p06_01_prm_factory_overview.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-1 | 是 |
+| 图 P06-2 | 图 | 图 P06-2 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06/p06_02_step_validation_loop.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-2 | 是 |
+| 图 P06-3 | 图 | 图 P06-3 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06/p06_03_task_sampling.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-3 | 是 |
+| 图 P06-4 | 图 | 图 P06-4 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06/p06_04_trace_types.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-4 | 是 |
+| 图 P06-5 | 图 | 图 P06-5 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06/p06_05_step_schema.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-5 | 是 |
+| 图 P06-6 | 图 | 图 P06-6 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06/p06_06_validation_pipeline.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-6 | 是 |
+| 图 P06-7 | 图 | 图 P06-7 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06/p06_07_step_labels.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-7 | 是 |
+| 图 P06-8 | 图 | 图 P06-8 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06/p06_08_training_interface.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-8 | 是 |
+| 图 P06-9 | 图 | 图 P06-9 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06/p06_09_validation_metrics.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-9 | 是 |
+| 图 P06-10 | 图 | 图 P06-10 | P6 | 项目六：CoT 推理数据集构建与 PRM 训练 | 本书资源：`docs/images/part14/p06/p06_10_noise_sources.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P06-10 | 是 |
+| 图 P07-1 | 图 | 图 P07-1 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_01_agent_tooluse_factory_overview.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-1 | 是 |
+| 图 P07-2 | 图 | 图 P07-2 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_02_three_layer_architecture.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-2 | 是 |
+| 图 P07-3 | 图 | 图 P07-3 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_03_roles_and_responsibilities.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-3 | 是 |
+| 图 P07-4 | 图 | 图 P07-4 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_04_tool_schema_structure.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-4 | 是 |
+| 图 P07-5 | 图 | 图 P07-5 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_05_task_specs_and_templates.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-5 | 是 |
+| 图 P07-6 | 图 | 图 P07-6 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_06_trajectory_taxonomy.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-6 | 是 |
+| 图 P07-7 | 图 | 图 P07-7 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_07_simulated_env_loop.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-7 | 是 |
+| 图 P07-8 | 图 | 图 P07-8 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_08_pipeline_steps.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-8 | 是 |
+| 图 P07-9 | 图 | 图 P07-9 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_09_recovery_flow.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-9 | 是 |
+| 图 P07-10 | 图 | 图 P07-10 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_10_memory_trajectory.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-10 | 是 |
+| 图 P07-11 | 图 | 图 P07-11 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_11_unsafe_block.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-11 | 是 |
+| 图 P07-12 | 图 | 图 P07-12 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_12_dataset_repacking.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-12 | 是 |
+| 图 P07-13 | 图 | 图 P07-13 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_13_eval_and_checks.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-13 | 是 |
+| 图 P07-14 | 图 | 图 P07-14 | P7 | 项目七：Agent Tool-Use 数据工厂 | 本书资源：`docs/images/part14/p07/p07_14_roadmap.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P07-14 | 是 |
+| 图 P08-1 | 图 | 图 P08-1 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_01_dataops_platform_overview.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-1 | 是 |
+| 图 P08-2 | 图 | 图 P08-2 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_02_four_layer_architecture.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-2 | 是 |
+| 图 P08-3 | 图 | 图 P08-3 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_03_specs_to_ops_pipeline.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-3 | 是 |
+| 图 P08-4 | 图 | 图 P08-4 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_04_object_model.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-4 | 是 |
+| 图 P08-5 | 图 | 图 P08-5 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_05_version_lifecycle.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-5 | 是 |
+| 图 P08-6 | 图 | 图 P08-6 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_06_experiment_tracking.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-6 | 是 |
+| 图 P08-7 | 图 | 图 P08-7 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_07_lineage_graph.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-7 | 是 |
+| 图 P08-8 | 图 | 图 P08-8 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_08_rollback_flow.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-8 | 是 |
+| 图 P08-9 | 图 | 图 P08-9 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_09_observability_loop.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-9 | 是 |
+| 图 P08-10 | 图 | 图 P08-10 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_10_audit_and_incident_review.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-10 | 是 |
+| 图 P08-11 | 图 | 图 P08-11 | P8 | 项目八：企业级 DataOps 平台搭建：从数据项目到组织级治理能力 | 本书资源：`docs/images/part14/p08/p08_11_validation_pipeline.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P08-11 | 是 |
+| 图 P09-1 | 图 | 图 P09-1 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_01_privacy_pipeline_overview.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-1 | 是 |
+| 图 P09-2 | 图 | 图 P09-2 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_02_roles_and_responsibilities.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-2 | 是 |
+| 图 P09-3 | 图 | 图 P09-3 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_03_specs_layer.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-3 | 是 |
+| 图 P09-4 | 图 | 图 P09-4 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_04_raw_records_coverage.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-4 | 是 |
+| 图 P09-5 | 图 | 图 P09-5 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_05_pii_detection_distribution.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-5 | 是 |
+| 图 P09-6 | 图 | 图 P09-6 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_06_classification_and_quarantine.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-6 | 是 |
+| 图 P09-7 | 图 | 图 P09-7 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_07_redaction_strategies.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-7 | 是 |
+| 图 P09-8 | 图 | 图 P09-8 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_08_storage_zones.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-8 | 是 |
+| 图 P09-9 | 图 | 图 P09-9 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_09_alerts_and_audit.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-9 | 是 |
+| 图 P09-10 | 图 | 图 P09-10 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_10_preflight_checks.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-10 | 是 |
+| 图 P09-11 | 图 | 图 P09-11 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_11_incident_postmortem.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-11 | 是 |
+| 图 P09-12 | 图 | 图 P09-12 | P9 | 项目九：隐私保护数据流水线 | 本书资源：`docs/images/part14/p09/p09_12_execution_sequence.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P09-12 | 是 |
+| 图 P10-1 | 图 | 图 P10-1 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10/p10_01_flywheel_overview.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-1 | 是 |
+| 图 P10-2 | 图 | 图 P10-2 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10/p10_02_registry_and_interfaces.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-2 | 是 |
+| 图 P10-3 | 图 | 图 P10-3 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10/p10_03_project_specs.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-3 | 是 |
+| 图 P10-4 | 图 | 图 P10-4 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10/p10_04_stage_plan.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-4 | 是 |
+| 图 P10-5 | 图 | 图 P10-5 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10/p10_05_architecture_code_mapping.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-5 | 是 |
+| 图 P10-6 | 图 | 图 P10-6 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10/p10_06_boundaries_and_control_points.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-6 | 是 |
+| 图 P10-7 | 图 | 图 P10-7 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10/p10_07_runs_and_milestones.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-7 | 是 |
+| 图 P10-8 | 图 | 图 P10-8 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10/p10_08_bottleneck_map.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-8 | 是 |
+| 图 P10-9 | 图 | 图 P10-9 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10/p10_09_metrics_codegen.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-9 | 是 |
+| 图 P10-10 | 图 | 图 P10-10 | P10 | 项目十：端到端 LLM 数据飞轮 | 本书资源：`docs/images/part14/p10/p10_10_check_contracts.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P10-10 | 是 |
 | 图 204 | 图 | Mini-DeepSeek Data Pipeline | P11 | 项目十一：Mini-DeepSeek 预训练复现 | 本书资源：`docs/images/part14/p11_mini_deepseek_arch_en.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | Mini-DeepSeek Data Pipeline | 是 |
-| 图 P12-1 | 图 | 图 P12-1 | P12 | 项目十二：教学化 R1 推理数据飞轮 | 本书资源：`docs/images/part14/p12_r1_reasoning_flywheel_architecture.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P12-1 | 是 |
+| 图 P12-1 | 图 | 图 P12-1 | P12 | 项目十二：教学化 R1 推理数据飞轮 | 本书资源：`docs/images/part14/p12/p12_r1_reasoning_flywheel_architecture.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | 图 P12-1 | 是 |
 | 图 206 | 图 | Multimodal Instruction Factory | P13 | 项目十三：Qwen-VL 多模态指令工厂 | 本书资源：`docs/images/part14/p13_mm_instruction_factory_arch_en.png` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | Multimodal Instruction Factory | 是 |
 | 图 207 | 图 | P14 Video Generation Data Pipeline | P14 | 项目十四：视频生成数据集：从视频源到可用于 T2V 训练的数据流水线 | 本书资源：`docs/images/part14/p14_video_generation_pipeline_en.svg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | P14 Video Generation Data Pipeline | 是 |
 | 图 208 | 图 | frame1 | P14 | 项目十四：视频生成数据集：从视频源到可用于 T2V 训练的数据流水线 | 本书资源：`docs/images/part14/p14_video_frame_0.jpg` | 内部自绘/改绘资源；终稿复核高清源与 AI 使用声明 | frame1 | 是 |
