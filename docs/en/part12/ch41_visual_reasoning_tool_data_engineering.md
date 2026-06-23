@@ -232,6 +232,8 @@ The multi-chart infographic reasoning dataset starts from real compound infograp
 
 ## Case B: MedImage-ToolVQA: Medical Image Local Evidence and Tool-Call Trajectories
 
+MedImage-ToolVQA is implemented with the MindSpore stack. Project URL: <https://github.com/blackkiring/MedImage-ToolVQA-Mindspore>.
+
 ### Case B.0: Learning Objectives
 
 After studying this case, readers should be able to:

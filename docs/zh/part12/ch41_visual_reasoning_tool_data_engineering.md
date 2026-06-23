@@ -233,6 +233,8 @@
 
 ## 案例B：MedImage-ToolVQA：医学图像局部证据与工具调用轨迹
 
+MedImage-ToolVQA 采用 MindSpore 体系实现。项目链接：<https://github.com/blackkiring/MedImage-ToolVQA-Mindspore>。
+
 ### 案例B.0：学习目标
 
 通过本章学习，读者应能够：
